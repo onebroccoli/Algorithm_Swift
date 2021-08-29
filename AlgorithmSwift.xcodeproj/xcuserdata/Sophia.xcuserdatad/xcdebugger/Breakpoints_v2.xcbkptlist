@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "2341893E-B440-495A-969E-27C66BF22B0A"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E44814B5-AAE4-4C64-A5A2-DC2C0A5C86C5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AlgorithmSwiftTests/Q3_Longest_Substring_Without_Repeating_Characters.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "testExample()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E4810C71-016E-4837-852D-790E9AEAD181"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AlgorithmSwiftTests/Q240_Search_a_2D_Matrix_II.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "Q240_Search_a_2D_Matrix_II"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "E4810C71-016E-4837-852D-790E9AEAD181 - 26e42dc028409c60"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AlgorithmSwiftTests.Q240_Search_a_2D_Matrix_II.__deallocating_deinit"
+                  moduleName = "AlgorithmSwiftTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sophia/Desktop/onebroccoli/Swift/AlgorithmSwiftTests/Q240_Search_a_2D_Matrix_II.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "E4810C71-016E-4837-852D-790E9AEAD181 - c996810321737800"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AlgorithmSwiftTests.Q240_Search_a_2D_Matrix_II.__allocating_init(invocation: Swift.Optional&lt;__C.NSInvocation&gt;) -&gt; AlgorithmSwiftTests.Q240_Search_a_2D_Matrix_II"
+                  moduleName = "AlgorithmSwiftTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sophia/Desktop/onebroccoli/Swift/AlgorithmSwiftTests/Q240_Search_a_2D_Matrix_II.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "E4810C71-016E-4837-852D-790E9AEAD181 - 56e8b7e105d615b9"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AlgorithmSwiftTests.Q240_Search_a_2D_Matrix_II.init(invocation: Swift.Optional&lt;__C.NSInvocation&gt;) -&gt; AlgorithmSwiftTests.Q240_Search_a_2D_Matrix_II"
+                  moduleName = "AlgorithmSwiftTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sophia/Desktop/onebroccoli/Swift/AlgorithmSwiftTests/Q240_Search_a_2D_Matrix_II.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "119">
+               </Location>
+               <Location
+                  uuid = "E4810C71-016E-4837-852D-790E9AEAD181 - 9106477bf578e6e"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AlgorithmSwiftTests.Q240_Search_a_2D_Matrix_II.__allocating_init(selector: ObjectiveC.Selector) -&gt; AlgorithmSwiftTests.Q240_Search_a_2D_Matrix_II"
+                  moduleName = "AlgorithmSwiftTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sophia/Desktop/onebroccoli/Swift/AlgorithmSwiftTests/Q240_Search_a_2D_Matrix_II.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "E4810C71-016E-4837-852D-790E9AEAD181 - effbc978ed69c419"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AlgorithmSwiftTests.Q240_Search_a_2D_Matrix_II.init(selector: ObjectiveC.Selector) -&gt; AlgorithmSwiftTests.Q240_Search_a_2D_Matrix_II"
+                  moduleName = "AlgorithmSwiftTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sophia/Desktop/onebroccoli/Swift/AlgorithmSwiftTests/Q240_Search_a_2D_Matrix_II.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "119">
+               </Location>
+               <Location
+                  uuid = "E4810C71-016E-4837-852D-790E9AEAD181 - eb6434533acf07e"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AlgorithmSwiftTests.Q240_Search_a_2D_Matrix_II.__allocating_init() -&gt; AlgorithmSwiftTests.Q240_Search_a_2D_Matrix_II"
+                  moduleName = "AlgorithmSwiftTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sophia/Desktop/onebroccoli/Swift/AlgorithmSwiftTests/Q240_Search_a_2D_Matrix_II.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "E4810C71-016E-4837-852D-790E9AEAD181 - 85c9d7851bcbe90e"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AlgorithmSwiftTests.Q240_Search_a_2D_Matrix_II.init() -&gt; AlgorithmSwiftTests.Q240_Search_a_2D_Matrix_II"
+                  moduleName = "AlgorithmSwiftTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sophia/Desktop/onebroccoli/Swift/AlgorithmSwiftTests/Q240_Search_a_2D_Matrix_II.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "93">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C314A248-3D9C-41EC-BDBC-756E7BC37B5A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AlgorithmSwiftTests/Q349_Intersection_of_Two_Arrays.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "testExample()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

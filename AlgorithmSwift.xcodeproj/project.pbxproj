@@ -1,0 +1,924 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EC0906E726C1ACBE0052A926 /* Q692_Top_K_Frequent_Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0906E626C1ACBE0052A926 /* Q692_Top_K_Frequent_Words.swift */; };
+		EC3DF67D26C3AEF000168561 /* Q349_Intersection_of_Two_Arrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3DF67C26C3AEF000168561 /* Q349_Intersection_of_Two_Arrays.swift */; };
+		EC3DF68226C4492C00168561 /* Q347_Top_K_Frequent_Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3DF68126C4492C00168561 /* Q347_Top_K_Frequent_Elements.swift */; };
+		EC3DF68726C452C000168561 /* Q268_Missing_Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3DF68626C452C000168561 /* Q268_Missing_Number.swift */; };
+		EC3DF68C26C470F100168561 /* L_Remove_Spaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3DF68B26C470F100168561 /* L_Remove_Spaces.swift */; };
+		EC3DF69126C4817900168561 /* Q1047_Remove_All_Adjacent_Duplicates_In_String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3DF69026C4817900168561 /* Q1047_Remove_All_Adjacent_Duplicates_In_String.swift */; };
+		EC3DF69626C4933300168561 /* L_Determine_If_One_String_Is_Another_Substring.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3DF69526C4933300168561 /* L_Determine_If_One_String_Is_Another_Substring.swift */; };
+		EC3DF69B26C4A18E00168561 /* Q392_Is_Subsequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3DF69A26C4A18E00168561 /* Q392_Is_Subsequence.swift */; };
+		EC3DF6A326C5B08200168561 /* Q7_Reverse_Integer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3DF6A226C5B08200168561 /* Q7_Reverse_Integer.swift */; };
+		EC3DF6A826C640E600168561 /* Q144_Binary_Tree_Preorder_Traversal.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3DF6A726C640E600168561 /* Q144_Binary_Tree_Preorder_Traversal.swift */; };
+		EC3DF6AD26C6471300168561 /* Q94_Binary_Tree_Inorder_Traversal.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3DF6AC26C6471300168561 /* Q94_Binary_Tree_Inorder_Traversal.swift */; };
+		EC3DF6B226C647C300168561 /* Q145_Binary_Tree_Postorder_Traversal.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3DF6B126C647C300168561 /* Q145_Binary_Tree_Postorder_Traversal.swift */; };
+		EC3DF6B726C64ADB00168561 /* Q110_Balanced_Binary_Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3DF6B626C64ADB00168561 /* Q110_Balanced_Binary_Tree.swift */; };
+		EC3DF6BC26C64DED00168561 /* Q49_Group_Anagrams.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3DF6BB26C64DED00168561 /* Q49_Group_Anagrams.swift */; };
+		EC3DF6C126C6518A00168561 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3DF6C026C6518A00168561 /* TreeNode.swift */; };
+		EC3DF6C626C6DF7600168561 /* Q98_Validate_Binary_Search_Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3DF6C526C6DF7600168561 /* Q98_Validate_Binary_Search_Tree.swift */; };
+		EC3DF6CB26C72AB500168561 /* Q700_Search_in_a_Binary_Search_Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3DF6CA26C72AB500168561 /* Q700_Search_in_a_Binary_Search_Tree.swift */; };
+		EC3DF6D026C72F1C00168561 /* Q701_Insert_into_a_Binary_Search_Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3DF6CF26C72F1C00168561 /* Q701_Insert_into_a_Binary_Search_Tree.swift */; };
+		EC3DF6D526CA364B00168561 /* Q450_Delete_Node_in_a_BST.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3DF6D426CA364B00168561 /* Q450_Delete_Node_in_a_BST.swift */; };
+		EC7AA250269E44B20028738E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7AA24F269E44B20028738E /* AppDelegate.swift */; };
+		EC7AA257269E44B20028738E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC7AA255269E44B20028738E /* Main.storyboard */; };
+		EC7AA259269E44B50028738E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC7AA258269E44B50028738E /* Assets.xcassets */; };
+		EC7AA25C269E44B50028738E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC7AA25A269E44B50028738E /* LaunchScreen.storyboard */; };
+		EC7AA272269E44B60028738E /* AlgorithmSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7AA271269E44B60028738E /* AlgorithmSwiftUITests.swift */; };
+		EC7AA283269E46F60028738E /* Q1_Two_Sum.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7AA282269E46F60028738E /* Q1_Two_Sum.swift */; };
+		EC7AA28B269E59940028738E /* Q100_Same_Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7AA28A269E59940028738E /* Q100_Same_Tree.swift */; };
+		EC7AA298269E5DEA0028738E /* Q101_Symmetric_Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7AA297269E5DEA0028738E /* Q101_Symmetric_Tree.swift */; };
+		EC7AA29F269E68300028738E /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7AA28F269E59DE0028738E /* TreeNode.swift */; };
+		EC97FA3826B2114F00E2B001 /* Q78_Subsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97FA3726B2114F00E2B001 /* Q78_Subsets.swift */; };
+		EC97FA3D26B22C1500E2B001 /* Q22_Generate_Parentheses.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97FA3C26B22C1500E2B001 /* Q22_Generate_Parentheses.swift */; };
+		EC97FA4A26B271EC00E2B001 /* L_Combinations_Of_Coins.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97FA4926B271EB00E2B001 /* L_Combinations_Of_Coins.swift */; };
+		EC97FA4F26B27F3000E2B001 /* Q46_Permutations.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97FA4E26B27F3000E2B001 /* Q46_Permutations.swift */; };
+		EC97FA5426B3332200E2B001 /* Q90_Subsets_II.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97FA5326B3332200E2B001 /* Q90_Subsets_II.swift */; };
+		EC97FA5926B35D6400E2B001 /* L_All_Subsets_of_Size_K.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97FA5826B35D6400E2B001 /* L_All_Subsets_of_Size_K.swift */; };
+		EC97FA5F26B3A67300E2B001 /* Q20_Valid_Parentheses.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97FA5E26B3A67300E2B001 /* Q20_Valid_Parentheses.swift */; };
+		EC97FA6726B3BE1F00E2B001 /* L_All_Valid_Permutations_Of_Parentheses_II.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97FA6626B3BE1F00E2B001 /* L_All_Valid_Permutations_Of_Parentheses_II.swift */; };
+		EC97FA6C26B3CDAA00E2B001 /* L_All_Permutations_of_Subsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97FA6B26B3CDAA00E2B001 /* L_All_Permutations_of_Subsets.swift */; };
+		EC97FA7126B3D2B200E2B001 /* Q254_Factor_Combinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97FA7026B3D2B200E2B001 /* Q254_Factor_Combinations.swift */; };
+		EC97FA7626B3DED100E2B001 /* Q21_Merge_Two_Sorted_Lists.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97FA7526B3DED100E2B001 /* Q21_Merge_Two_Sorted_Lists.swift */; };
+		EC97FA7B26B3DF0D00E2B001 /* ListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97FA7A26B3DF0D00E2B001 /* ListNode.swift */; };
+		EC97FA8026B47E2100E2B001 /* Q47_Permutations_II.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97FA7F26B47E2100E2B001 /* Q47_Permutations_II.swift */; };
+		EC97FA8526B49EB800E2B001 /* L_Two_Subsets_with_Min_Difference.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97FA8426B49EB800E2B001 /* L_Two_Subsets_with_Min_Difference.swift */; };
+		EC97FA8A26B8C9C900E2B001 /* Q17_Letter_Combinations_of_a_Phone_Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97FA8926B8C9C900E2B001 /* Q17_Letter_Combinations_of_a_Phone_Number.swift */; };
+		ECB29DA026A0AEEE000C26B5 /* Q378_Kth_Smallest_Element_in_a_Sorted_Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB29D9F26A0AEEE000C26B5 /* Q378_Kth_Smallest_Element_in_a_Sorted_Matrix.swift */; };
+		ECB29DA826A0AEFA000C26B5 /* Q958_Check_Completeness_of_a_Binary_Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB29DA726A0AEFA000C26B5 /* Q958_Check_Completeness_of_a_Binary_Tree.swift */; };
+		ECB29DB026A245EF000C26B5 /* Q15_3Sum.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB29DAF26A245EF000C26B5 /* Q15_3Sum.swift */; };
+		ECB29DB526A2535B000C26B5 /* Q16_3Sum_Closest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB29DB426A2535B000C26B5 /* Q16_3Sum_Closest.swift */; };
+		ECB29DBF26A69A54000C26B5 /* Q18_KSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB29DBE26A69A54000C26B5 /* Q18_KSum.swift */; };
+		ECB29DC426A6C206000C26B5 /* Q66_plus_one.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB29DC326A6C206000C26B5 /* Q66_plus_one.swift */; };
+		ECB29DC926A79892000C26B5 /* Q340_Longest_Substring_with_At_Most_K_Distinct_Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB29DC826A79891000C26B5 /* Q340_Longest_Substring_with_At_Most_K_Distinct_Characters.swift */; };
+		ECB29DCE26A7DEDB000C26B5 /* 259. 3Sum Smaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB29DCD26A7DEDA000C26B5 /* 259. 3Sum Smaller.swift */; };
+		ECB29DD626A89E24000C26B5 /* Q3_Longest_Substring_Without_Repeating_Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB29DD526A89E23000C26B5 /* Q3_Longest_Substring_Without_Repeating_Characters.swift */; };
+		ECB29DEF26A94448000C26B5 /* Q159_Longest_Substring_with_At_Most_Two_Distinct_Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB29DEE26A94448000C26B5 /* Q159_Longest_Substring_with_At_Most_Two_Distinct_Characters.swift */; };
+		ECB29DF426AA23AA000C26B5 /* Q67_Add_Binary.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB29DF326AA23AA000C26B5 /* Q67_Add_Binary.swift */; };
+		ECB29E0126AA4726000C26B5 /* Q1249_Minimum_Remove_to_Make_Valid_Parentheses.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB29E0026AA4726000C26B5 /* Q1249_Minimum_Remove_to_Make_Valid_Parentheses.swift */; };
+		ECB29E0926AB3697000C26B5 /* Q125_Valid_Palindrome.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB29E0826AB3697000C26B5 /* Q125_Valid_Palindrome.swift */; };
+		ECB29E0E26AB4EBB000C26B5 /* Q620_Valid_Palindrome_II.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB29E0D26AB4EBB000C26B5 /* Q620_Valid_Palindrome_II.swift */; };
+		ECB29E1326AB7DF1000C26B5 /* Q9_Palindrome_Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB29E1226AB7DF1000C26B5 /* Q9_Palindrome_Number.swift */; };
+		ECB29E1826AE3122000C26B5 /* Q704_Binary_Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB29E1726AE3121000C26B5 /* Q704_Binary_Search.swift */; };
+		ECB29E1D26AF3745000C26B5 /* Q74_Search_a_2D_Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB29E1C26AF3745000C26B5 /* Q74_Search_a_2D_Matrix.swift */; };
+		ECB29E2226AF4258000C26B5 /* Q240_Search_a_2D_Matrix_II.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB29E2126AF4258000C26B5 /* Q240_Search_a_2D_Matrix_II.swift */; };
+		ECB29E2726AF7291000C26B5 /* Q658_Find_K_Closest_Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB29E2626AF7291000C26B5 /* Q658_Find_K_Closest_Elements.swift */; };
+		ECB29E2C26AF9F2C000C26B5 /* Q278_First_Bad_Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB29E2B26AF9F2C000C26B5 /* Q278_First_Bad_Version.swift */; };
+		ECB29E3126AFA09D000C26B5 /* Q702_Search_in_a_Sorted_Array_of_Unknown_Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB29E3026AFA09D000C26B5 /* Q702_Search_in_a_Sorted_Array_of_Unknown_Size.swift */; };
+		ECB29E3626AFE6E2000C26B5 /* Q34_Find_First_and_Last_Position_of_Element_in_Sorted_Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB29E3526AFE6E2000C26B5 /* Q34_Find_First_and_Last_Position_of_Element_in_Sorted_Array.swift */; };
+		ECB29E3B26B0B5D4000C26B5 /* Q744_Find_Smallest_Letter_Greater_Than_Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB29E3A26B0B5D4000C26B5 /* Q744_Find_Smallest_Letter_Greater_Than_Target.swift */; };
+		ECB29E4026B0D002000C26B5 /* L636_Smallest_Element_Larger_than_Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB29E3F26B0D001000C26B5 /* L636_Smallest_Element_Larger_than_Target.swift */; };
+		ECB29E4626B0D7C9000C26B5 /* Q509_Fibonacci_Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB29E4526B0D7C8000C26B5 /* Q509_Fibonacci_Number.swift */; };
+		ECCFCAAD26BB080A00AAC8FF /* Q93_Restore_IP_Addresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCFCAAC26BB080A00AAC8FF /* Q93_Restore_IP_Addresses.swift */; };
+		ECCFCAB226BB58B800AAC8FF /* Q206_Reverse_Linked_List.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCFCAB126BB58B800AAC8FF /* Q206_Reverse_Linked_List.swift */; };
+		ECCFCAB726BB636C00AAC8FF /* Q876_Middle_of_the_Linked_List.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCFCAB626BB636C00AAC8FF /* Q876_Middle_of_the_Linked_List.swift */; };
+		ECCFCABC26BB64E100AAC8FF /* Q141_Linked_List_Cycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCFCABB26BB64E100AAC8FF /* Q141_Linked_List_Cycle.swift */; };
+		ECCFCAC126BB691500AAC8FF /* Q147_Insertion_Sort_List.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCFCAC026BB691500AAC8FF /* Q147_Insertion_Sort_List.swift */; };
+		ECCFCAC626BB776000AAC8FF /* Q86_Partition_List.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCFCAC526BB776000AAC8FF /* Q86_Partition_List.swift */; };
+		ECCFCACB26BC56F800AAC8FF /* Q234_Palindrome_Linked_List.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCFCACA26BC56F800AAC8FF /* Q234_Palindrome_Linked_List.swift */; };
+		ECCFCAD026BC61F200AAC8FF /* Q2_Add_Two_Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCFCACF26BC61F200AAC8FF /* Q2_Add_Two_Numbers.swift */; };
+		ECCFCAD526BC6F2300AAC8FF /* Q203_Remove_Linked_List_Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCFCAD426BC6F2300AAC8FF /* Q203_Remove_Linked_List_Elements.swift */; };
+		ECCFCADA26BC9B4100AAC8FF /* Q27_Remove_Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCFCAD926BC9B4100AAC8FF /* Q27_Remove_Element.swift */; };
+		ECCFCAE826BDB76000AAC8FF /* Q232_Implement_Queue_using_Stacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCFCAE726BDB76000AAC8FF /* Q232_Implement_Queue_using_Stacks.swift */; };
+		ECCFCAF026BDC20600AAC8FF /* Q225_Implement_Stack_using_Queues.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCFCAEF26BDC20600AAC8FF /* Q225_Implement_Stack_using_Queues.swift */; };
+		ECCFCAF526BDEF1300AAC8FF /* Q155_Min_Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCFCAF426BDEF1300AAC8FF /* Q155_Min_Stack.swift */; };
+		ECD2369226CB19B800C2B9CA /* Q773_Sliding_Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD2369126CB19B800C2B9CA /* Q773_Sliding_Puzzle.swift */; };
+		ECD2369726CB37F000C2B9CA /* Q127_Word_Ladder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD2369626CB37F000C2B9CA /* Q127_Word_Ladder.swift */; };
+		ECD2369C26CB891C00C2B9CA /* Q102_Binary_Tree_Level_Order_Traversal.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD2369B26CB891C00C2B9CA /* Q102_Binary_Tree_Level_Order_Traversal.swift */; };
+		ECD236A126CB8FC400C2B9CA /* Q104_Maximum_Depth_of_Binary_Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD236A026CB8FC400C2B9CA /* Q104_Maximum_Depth_of_Binary_Tree.swift */; };
+		ECD236A626CC2DEA00C2B9CA /* Q107_Binary_Tree_Level_Order_Traversal_II.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD236A526CC2DEA00C2B9CA /* Q107_Binary_Tree_Level_Order_Traversal_II.swift */; };
+		ECD236AE26CC86C200C2B9CA /* Q4_Median_of_Two_Sorted_Arrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD236AD26CC86C200C2B9CA /* Q4_Median_of_Two_Sorted_Arrays.swift */; };
+		ECD236B326CCC92900C2B9CA /* Q6_ZigZag_Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD236B226CCC92900C2B9CA /* Q6_ZigZag_Conversion.swift */; };
+		ECD236B826CCE7BA00C2B9CA /* Q19_Remove_Nth_Node_From_End_of_List.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD236B726CCE7BA00C2B9CA /* Q19_Remove_Nth_Node_From_End_of_List.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC7AA263269E44B60028738E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC7AA244269E44B20028738E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC7AA24B269E44B20028738E;
+			remoteInfo = AlgorithmSwift;
+		};
+		EC7AA26E269E44B60028738E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC7AA244269E44B20028738E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC7AA24B269E44B20028738E;
+			remoteInfo = AlgorithmSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EC0906E626C1ACBE0052A926 /* Q692_Top_K_Frequent_Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q692_Top_K_Frequent_Words.swift; sourceTree = "<group>"; };
+		EC3DF67C26C3AEF000168561 /* Q349_Intersection_of_Two_Arrays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q349_Intersection_of_Two_Arrays.swift; sourceTree = "<group>"; };
+		EC3DF68126C4492C00168561 /* Q347_Top_K_Frequent_Elements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q347_Top_K_Frequent_Elements.swift; sourceTree = "<group>"; };
+		EC3DF68626C452C000168561 /* Q268_Missing_Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q268_Missing_Number.swift; sourceTree = "<group>"; };
+		EC3DF68B26C470F100168561 /* L_Remove_Spaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L_Remove_Spaces.swift; sourceTree = "<group>"; };
+		EC3DF69026C4817900168561 /* Q1047_Remove_All_Adjacent_Duplicates_In_String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q1047_Remove_All_Adjacent_Duplicates_In_String.swift; sourceTree = "<group>"; };
+		EC3DF69526C4933300168561 /* L_Determine_If_One_String_Is_Another_Substring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L_Determine_If_One_String_Is_Another_Substring.swift; sourceTree = "<group>"; };
+		EC3DF69A26C4A18E00168561 /* Q392_Is_Subsequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q392_Is_Subsequence.swift; sourceTree = "<group>"; };
+		EC3DF6A226C5B08200168561 /* Q7_Reverse_Integer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q7_Reverse_Integer.swift; sourceTree = "<group>"; };
+		EC3DF6A726C640E600168561 /* Q144_Binary_Tree_Preorder_Traversal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q144_Binary_Tree_Preorder_Traversal.swift; sourceTree = "<group>"; };
+		EC3DF6AC26C6471300168561 /* Q94_Binary_Tree_Inorder_Traversal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q94_Binary_Tree_Inorder_Traversal.swift; sourceTree = "<group>"; };
+		EC3DF6B126C647C300168561 /* Q145_Binary_Tree_Postorder_Traversal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q145_Binary_Tree_Postorder_Traversal.swift; sourceTree = "<group>"; };
+		EC3DF6B626C64ADB00168561 /* Q110_Balanced_Binary_Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q110_Balanced_Binary_Tree.swift; sourceTree = "<group>"; };
+		EC3DF6BB26C64DED00168561 /* Q49_Group_Anagrams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q49_Group_Anagrams.swift; sourceTree = "<group>"; };
+		EC3DF6C026C6518A00168561 /* TreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNode.swift; sourceTree = "<group>"; };
+		EC3DF6C526C6DF7600168561 /* Q98_Validate_Binary_Search_Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q98_Validate_Binary_Search_Tree.swift; sourceTree = "<group>"; };
+		EC3DF6CA26C72AB500168561 /* Q700_Search_in_a_Binary_Search_Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q700_Search_in_a_Binary_Search_Tree.swift; sourceTree = "<group>"; };
+		EC3DF6CF26C72F1C00168561 /* Q701_Insert_into_a_Binary_Search_Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q701_Insert_into_a_Binary_Search_Tree.swift; sourceTree = "<group>"; };
+		EC3DF6D426CA364B00168561 /* Q450_Delete_Node_in_a_BST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q450_Delete_Node_in_a_BST.swift; sourceTree = "<group>"; };
+		EC7AA24C269E44B20028738E /* AlgorithmSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlgorithmSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC7AA24F269E44B20028738E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EC7AA256269E44B20028738E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EC7AA258269E44B50028738E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EC7AA25B269E44B50028738E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EC7AA25D269E44B50028738E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC7AA262269E44B60028738E /* AlgorithmSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlgorithmSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC7AA268269E44B60028738E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC7AA26D269E44B60028738E /* AlgorithmSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlgorithmSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC7AA271269E44B60028738E /* AlgorithmSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmSwiftUITests.swift; sourceTree = "<group>"; };
+		EC7AA273269E44B60028738E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC7AA282269E46F60028738E /* Q1_Two_Sum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q1_Two_Sum.swift; sourceTree = "<group>"; };
+		EC7AA28A269E59940028738E /* Q100_Same_Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q100_Same_Tree.swift; sourceTree = "<group>"; };
+		EC7AA28F269E59DE0028738E /* TreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNode.swift; sourceTree = "<group>"; };
+		EC7AA297269E5DEA0028738E /* Q101_Symmetric_Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q101_Symmetric_Tree.swift; sourceTree = "<group>"; };
+		EC97FA3726B2114F00E2B001 /* Q78_Subsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q78_Subsets.swift; sourceTree = "<group>"; };
+		EC97FA3C26B22C1500E2B001 /* Q22_Generate_Parentheses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q22_Generate_Parentheses.swift; sourceTree = "<group>"; };
+		EC97FA4926B271EB00E2B001 /* L_Combinations_Of_Coins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L_Combinations_Of_Coins.swift; sourceTree = "<group>"; };
+		EC97FA4E26B27F3000E2B001 /* Q46_Permutations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q46_Permutations.swift; sourceTree = "<group>"; };
+		EC97FA5326B3332200E2B001 /* Q90_Subsets_II.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q90_Subsets_II.swift; sourceTree = "<group>"; };
+		EC97FA5826B35D6400E2B001 /* L_All_Subsets_of_Size_K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L_All_Subsets_of_Size_K.swift; sourceTree = "<group>"; };
+		EC97FA5E26B3A67300E2B001 /* Q20_Valid_Parentheses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q20_Valid_Parentheses.swift; sourceTree = "<group>"; };
+		EC97FA6626B3BE1F00E2B001 /* L_All_Valid_Permutations_Of_Parentheses_II.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L_All_Valid_Permutations_Of_Parentheses_II.swift; sourceTree = "<group>"; };
+		EC97FA6B26B3CDAA00E2B001 /* L_All_Permutations_of_Subsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L_All_Permutations_of_Subsets.swift; sourceTree = "<group>"; };
+		EC97FA7026B3D2B200E2B001 /* Q254_Factor_Combinations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q254_Factor_Combinations.swift; sourceTree = "<group>"; };
+		EC97FA7526B3DED100E2B001 /* Q21_Merge_Two_Sorted_Lists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q21_Merge_Two_Sorted_Lists.swift; sourceTree = "<group>"; };
+		EC97FA7A26B3DF0D00E2B001 /* ListNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNode.swift; sourceTree = "<group>"; };
+		EC97FA7F26B47E2100E2B001 /* Q47_Permutations_II.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q47_Permutations_II.swift; sourceTree = "<group>"; };
+		EC97FA8426B49EB800E2B001 /* L_Two_Subsets_with_Min_Difference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L_Two_Subsets_with_Min_Difference.swift; sourceTree = "<group>"; };
+		EC97FA8926B8C9C900E2B001 /* Q17_Letter_Combinations_of_a_Phone_Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q17_Letter_Combinations_of_a_Phone_Number.swift; sourceTree = "<group>"; };
+		EC97FA8E26B91D4300E2B001 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		ECB29D9F26A0AEEE000C26B5 /* Q378_Kth_Smallest_Element_in_a_Sorted_Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Q378_Kth_Smallest_Element_in_a_Sorted_Matrix.swift; sourceTree = "<group>"; };
+		ECB29DA726A0AEFA000C26B5 /* Q958_Check_Completeness_of_a_Binary_Tree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Q958_Check_Completeness_of_a_Binary_Tree.swift; sourceTree = "<group>"; };
+		ECB29DAF26A245EF000C26B5 /* Q15_3Sum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q15_3Sum.swift; sourceTree = "<group>"; };
+		ECB29DB426A2535B000C26B5 /* Q16_3Sum_Closest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q16_3Sum_Closest.swift; sourceTree = "<group>"; };
+		ECB29DBE26A69A54000C26B5 /* Q18_KSum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q18_KSum.swift; sourceTree = "<group>"; };
+		ECB29DC326A6C206000C26B5 /* Q66_plus_one.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q66_plus_one.swift; sourceTree = "<group>"; };
+		ECB29DC826A79891000C26B5 /* Q340_Longest_Substring_with_At_Most_K_Distinct_Characters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q340_Longest_Substring_with_At_Most_K_Distinct_Characters.swift; sourceTree = "<group>"; };
+		ECB29DCD26A7DEDA000C26B5 /* 259. 3Sum Smaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "259. 3Sum Smaller.swift"; sourceTree = "<group>"; };
+		ECB29DD526A89E23000C26B5 /* Q3_Longest_Substring_Without_Repeating_Characters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q3_Longest_Substring_Without_Repeating_Characters.swift; sourceTree = "<group>"; };
+		ECB29DEE26A94448000C26B5 /* Q159_Longest_Substring_with_At_Most_Two_Distinct_Characters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Q159_Longest_Substring_with_At_Most_Two_Distinct_Characters.swift; sourceTree = "<group>"; };
+		ECB29DF326AA23AA000C26B5 /* Q67_Add_Binary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q67_Add_Binary.swift; sourceTree = "<group>"; };
+		ECB29E0026AA4726000C26B5 /* Q1249_Minimum_Remove_to_Make_Valid_Parentheses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q1249_Minimum_Remove_to_Make_Valid_Parentheses.swift; sourceTree = "<group>"; };
+		ECB29E0826AB3697000C26B5 /* Q125_Valid_Palindrome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q125_Valid_Palindrome.swift; sourceTree = "<group>"; };
+		ECB29E0D26AB4EBB000C26B5 /* Q620_Valid_Palindrome_II.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q620_Valid_Palindrome_II.swift; sourceTree = "<group>"; };
+		ECB29E1226AB7DF1000C26B5 /* Q9_Palindrome_Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q9_Palindrome_Number.swift; sourceTree = "<group>"; };
+		ECB29E1726AE3121000C26B5 /* Q704_Binary_Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q704_Binary_Search.swift; sourceTree = "<group>"; };
+		ECB29E1C26AF3745000C26B5 /* Q74_Search_a_2D_Matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q74_Search_a_2D_Matrix.swift; sourceTree = "<group>"; };
+		ECB29E2126AF4258000C26B5 /* Q240_Search_a_2D_Matrix_II.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q240_Search_a_2D_Matrix_II.swift; sourceTree = "<group>"; };
+		ECB29E2626AF7291000C26B5 /* Q658_Find_K_Closest_Elements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q658_Find_K_Closest_Elements.swift; sourceTree = "<group>"; };
+		ECB29E2B26AF9F2C000C26B5 /* Q278_First_Bad_Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q278_First_Bad_Version.swift; sourceTree = "<group>"; };
+		ECB29E3026AFA09D000C26B5 /* Q702_Search_in_a_Sorted_Array_of_Unknown_Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q702_Search_in_a_Sorted_Array_of_Unknown_Size.swift; sourceTree = "<group>"; };
+		ECB29E3526AFE6E2000C26B5 /* Q34_Find_First_and_Last_Position_of_Element_in_Sorted_Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q34_Find_First_and_Last_Position_of_Element_in_Sorted_Array.swift; sourceTree = "<group>"; };
+		ECB29E3A26B0B5D4000C26B5 /* Q744_Find_Smallest_Letter_Greater_Than_Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q744_Find_Smallest_Letter_Greater_Than_Target.swift; sourceTree = "<group>"; };
+		ECB29E3F26B0D001000C26B5 /* L636_Smallest_Element_Larger_than_Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L636_Smallest_Element_Larger_than_Target.swift; sourceTree = "<group>"; };
+		ECB29E4526B0D7C8000C26B5 /* Q509_Fibonacci_Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q509_Fibonacci_Number.swift; sourceTree = "<group>"; };
+		ECCFCAAC26BB080A00AAC8FF /* Q93_Restore_IP_Addresses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q93_Restore_IP_Addresses.swift; sourceTree = "<group>"; };
+		ECCFCAB126BB58B800AAC8FF /* Q206_Reverse_Linked_List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q206_Reverse_Linked_List.swift; sourceTree = "<group>"; };
+		ECCFCAB626BB636C00AAC8FF /* Q876_Middle_of_the_Linked_List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q876_Middle_of_the_Linked_List.swift; sourceTree = "<group>"; };
+		ECCFCABB26BB64E100AAC8FF /* Q141_Linked_List_Cycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q141_Linked_List_Cycle.swift; sourceTree = "<group>"; };
+		ECCFCAC026BB691500AAC8FF /* Q147_Insertion_Sort_List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q147_Insertion_Sort_List.swift; sourceTree = "<group>"; };
+		ECCFCAC526BB776000AAC8FF /* Q86_Partition_List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q86_Partition_List.swift; sourceTree = "<group>"; };
+		ECCFCACA26BC56F800AAC8FF /* Q234_Palindrome_Linked_List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q234_Palindrome_Linked_List.swift; sourceTree = "<group>"; };
+		ECCFCACF26BC61F200AAC8FF /* Q2_Add_Two_Numbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q2_Add_Two_Numbers.swift; sourceTree = "<group>"; };
+		ECCFCAD426BC6F2300AAC8FF /* Q203_Remove_Linked_List_Elements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q203_Remove_Linked_List_Elements.swift; sourceTree = "<group>"; };
+		ECCFCAD926BC9B4100AAC8FF /* Q27_Remove_Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q27_Remove_Element.swift; sourceTree = "<group>"; };
+		ECCFCAE726BDB76000AAC8FF /* Q232_Implement_Queue_using_Stacks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q232_Implement_Queue_using_Stacks.swift; sourceTree = "<group>"; };
+		ECCFCAEF26BDC20600AAC8FF /* Q225_Implement_Stack_using_Queues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q225_Implement_Stack_using_Queues.swift; sourceTree = "<group>"; };
+		ECCFCAF426BDEF1300AAC8FF /* Q155_Min_Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q155_Min_Stack.swift; sourceTree = "<group>"; };
+		ECD2369126CB19B800C2B9CA /* Q773_Sliding_Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q773_Sliding_Puzzle.swift; sourceTree = "<group>"; };
+		ECD2369626CB37F000C2B9CA /* Q127_Word_Ladder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q127_Word_Ladder.swift; sourceTree = "<group>"; };
+		ECD2369B26CB891C00C2B9CA /* Q102_Binary_Tree_Level_Order_Traversal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q102_Binary_Tree_Level_Order_Traversal.swift; sourceTree = "<group>"; };
+		ECD236A026CB8FC400C2B9CA /* Q104_Maximum_Depth_of_Binary_Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q104_Maximum_Depth_of_Binary_Tree.swift; sourceTree = "<group>"; };
+		ECD236A526CC2DEA00C2B9CA /* Q107_Binary_Tree_Level_Order_Traversal_II.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q107_Binary_Tree_Level_Order_Traversal_II.swift; sourceTree = "<group>"; };
+		ECD236AD26CC86C200C2B9CA /* Q4_Median_of_Two_Sorted_Arrays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q4_Median_of_Two_Sorted_Arrays.swift; sourceTree = "<group>"; };
+		ECD236B226CCC92900C2B9CA /* Q6_ZigZag_Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q6_ZigZag_Conversion.swift; sourceTree = "<group>"; };
+		ECD236B726CCE7BA00C2B9CA /* Q19_Remove_Nth_Node_From_End_of_List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q19_Remove_Nth_Node_From_End_of_List.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC7AA249269E44B20028738E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC7AA25F269E44B60028738E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC7AA26A269E44B60028738E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EC7AA243269E44B20028738E = {
+			isa = PBXGroup;
+			children = (
+				EC7AA24E269E44B20028738E /* AlgorithmSwift */,
+				EC7AA265269E44B60028738E /* AlgorithmSwiftTests */,
+				EC7AA270269E44B60028738E /* AlgorithmSwiftUITests */,
+				EC7AA24D269E44B20028738E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EC7AA24D269E44B20028738E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC7AA24C269E44B20028738E /* AlgorithmSwift.app */,
+				EC7AA262269E44B60028738E /* AlgorithmSwiftTests.xctest */,
+				EC7AA26D269E44B60028738E /* AlgorithmSwiftUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC7AA24E269E44B20028738E /* AlgorithmSwift */ = {
+			isa = PBXGroup;
+			children = (
+				EC7AA24F269E44B20028738E /* AppDelegate.swift */,
+				EC7AA255269E44B20028738E /* Main.storyboard */,
+				EC7AA28F269E59DE0028738E /* TreeNode.swift */,
+				EC7AA258269E44B50028738E /* Assets.xcassets */,
+				EC7AA25A269E44B50028738E /* LaunchScreen.storyboard */,
+				EC7AA25D269E44B50028738E /* Info.plist */,
+			);
+			path = AlgorithmSwift;
+			sourceTree = "<group>";
+		};
+		EC7AA265269E44B60028738E /* AlgorithmSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC7AA28A269E59940028738E /* Q100_Same_Tree.swift */,
+				EC7AA268269E44B60028738E /* Info.plist */,
+				EC7AA282269E46F60028738E /* Q1_Two_Sum.swift */,
+				ECB29DA726A0AEFA000C26B5 /* Q958_Check_Completeness_of_a_Binary_Tree.swift */,
+				ECB29D9F26A0AEEE000C26B5 /* Q378_Kth_Smallest_Element_in_a_Sorted_Matrix.swift */,
+				EC7AA297269E5DEA0028738E /* Q101_Symmetric_Tree.swift */,
+				ECB29DAF26A245EF000C26B5 /* Q15_3Sum.swift */,
+				ECB29DB426A2535B000C26B5 /* Q16_3Sum_Closest.swift */,
+				ECB29DCD26A7DEDA000C26B5 /* 259. 3Sum Smaller.swift */,
+				ECB29DBE26A69A54000C26B5 /* Q18_KSum.swift */,
+				ECB29DC326A6C206000C26B5 /* Q66_plus_one.swift */,
+				ECB29DC826A79891000C26B5 /* Q340_Longest_Substring_with_At_Most_K_Distinct_Characters.swift */,
+				ECB29DEE26A94448000C26B5 /* Q159_Longest_Substring_with_At_Most_Two_Distinct_Characters.swift */,
+				ECB29DD526A89E23000C26B5 /* Q3_Longest_Substring_Without_Repeating_Characters.swift */,
+				ECB29DF326AA23AA000C26B5 /* Q67_Add_Binary.swift */,
+				ECB29E0026AA4726000C26B5 /* Q1249_Minimum_Remove_to_Make_Valid_Parentheses.swift */,
+				ECB29E0826AB3697000C26B5 /* Q125_Valid_Palindrome.swift */,
+				ECB29E0D26AB4EBB000C26B5 /* Q620_Valid_Palindrome_II.swift */,
+				ECB29E1226AB7DF1000C26B5 /* Q9_Palindrome_Number.swift */,
+				ECB29E1726AE3121000C26B5 /* Q704_Binary_Search.swift */,
+				ECB29E1C26AF3745000C26B5 /* Q74_Search_a_2D_Matrix.swift */,
+				ECB29E2126AF4258000C26B5 /* Q240_Search_a_2D_Matrix_II.swift */,
+				ECB29E2626AF7291000C26B5 /* Q658_Find_K_Closest_Elements.swift */,
+				ECB29E2B26AF9F2C000C26B5 /* Q278_First_Bad_Version.swift */,
+				ECB29E3026AFA09D000C26B5 /* Q702_Search_in_a_Sorted_Array_of_Unknown_Size.swift */,
+				ECB29E3526AFE6E2000C26B5 /* Q34_Find_First_and_Last_Position_of_Element_in_Sorted_Array.swift */,
+				ECB29E3A26B0B5D4000C26B5 /* Q744_Find_Smallest_Letter_Greater_Than_Target.swift */,
+				ECB29E3F26B0D001000C26B5 /* L636_Smallest_Element_Larger_than_Target.swift */,
+				ECB29E4526B0D7C8000C26B5 /* Q509_Fibonacci_Number.swift */,
+				EC97FA3726B2114F00E2B001 /* Q78_Subsets.swift */,
+				EC97FA3C26B22C1500E2B001 /* Q22_Generate_Parentheses.swift */,
+				EC97FA4926B271EB00E2B001 /* L_Combinations_Of_Coins.swift */,
+				EC97FA4E26B27F3000E2B001 /* Q46_Permutations.swift */,
+				EC97FA5326B3332200E2B001 /* Q90_Subsets_II.swift */,
+				EC97FA5826B35D6400E2B001 /* L_All_Subsets_of_Size_K.swift */,
+				EC97FA5E26B3A67300E2B001 /* Q20_Valid_Parentheses.swift */,
+				EC97FA6626B3BE1F00E2B001 /* L_All_Valid_Permutations_Of_Parentheses_II.swift */,
+				EC97FA6B26B3CDAA00E2B001 /* L_All_Permutations_of_Subsets.swift */,
+				EC97FA7026B3D2B200E2B001 /* Q254_Factor_Combinations.swift */,
+				EC97FA7526B3DED100E2B001 /* Q21_Merge_Two_Sorted_Lists.swift */,
+				EC97FA7A26B3DF0D00E2B001 /* ListNode.swift */,
+				EC97FA7F26B47E2100E2B001 /* Q47_Permutations_II.swift */,
+				EC97FA8426B49EB800E2B001 /* L_Two_Subsets_with_Min_Difference.swift */,
+				EC97FA8926B8C9C900E2B001 /* Q17_Letter_Combinations_of_a_Phone_Number.swift */,
+				EC97FA8E26B91D4300E2B001 /* MyPlayground.playground */,
+				ECCFCAAC26BB080A00AAC8FF /* Q93_Restore_IP_Addresses.swift */,
+				ECCFCAB126BB58B800AAC8FF /* Q206_Reverse_Linked_List.swift */,
+				ECCFCAB626BB636C00AAC8FF /* Q876_Middle_of_the_Linked_List.swift */,
+				ECCFCABB26BB64E100AAC8FF /* Q141_Linked_List_Cycle.swift */,
+				ECCFCAC026BB691500AAC8FF /* Q147_Insertion_Sort_List.swift */,
+				ECCFCAC526BB776000AAC8FF /* Q86_Partition_List.swift */,
+				ECCFCACA26BC56F800AAC8FF /* Q234_Palindrome_Linked_List.swift */,
+				ECCFCACF26BC61F200AAC8FF /* Q2_Add_Two_Numbers.swift */,
+				ECCFCAD426BC6F2300AAC8FF /* Q203_Remove_Linked_List_Elements.swift */,
+				ECCFCAD926BC9B4100AAC8FF /* Q27_Remove_Element.swift */,
+				ECCFCAE726BDB76000AAC8FF /* Q232_Implement_Queue_using_Stacks.swift */,
+				ECCFCAEF26BDC20600AAC8FF /* Q225_Implement_Stack_using_Queues.swift */,
+				ECCFCAF426BDEF1300AAC8FF /* Q155_Min_Stack.swift */,
+				EC0906E626C1ACBE0052A926 /* Q692_Top_K_Frequent_Words.swift */,
+				EC3DF67C26C3AEF000168561 /* Q349_Intersection_of_Two_Arrays.swift */,
+				EC3DF68126C4492C00168561 /* Q347_Top_K_Frequent_Elements.swift */,
+				EC3DF68626C452C000168561 /* Q268_Missing_Number.swift */,
+				EC3DF68B26C470F100168561 /* L_Remove_Spaces.swift */,
+				EC3DF69026C4817900168561 /* Q1047_Remove_All_Adjacent_Duplicates_In_String.swift */,
+				EC3DF69526C4933300168561 /* L_Determine_If_One_String_Is_Another_Substring.swift */,
+				EC3DF69A26C4A18E00168561 /* Q392_Is_Subsequence.swift */,
+				EC3DF6A226C5B08200168561 /* Q7_Reverse_Integer.swift */,
+				EC3DF6A726C640E600168561 /* Q144_Binary_Tree_Preorder_Traversal.swift */,
+				EC3DF6AC26C6471300168561 /* Q94_Binary_Tree_Inorder_Traversal.swift */,
+				EC3DF6B126C647C300168561 /* Q145_Binary_Tree_Postorder_Traversal.swift */,
+				EC3DF6B626C64ADB00168561 /* Q110_Balanced_Binary_Tree.swift */,
+				EC3DF6BB26C64DED00168561 /* Q49_Group_Anagrams.swift */,
+				EC3DF6C026C6518A00168561 /* TreeNode.swift */,
+				EC3DF6C526C6DF7600168561 /* Q98_Validate_Binary_Search_Tree.swift */,
+				EC3DF6CA26C72AB500168561 /* Q700_Search_in_a_Binary_Search_Tree.swift */,
+				EC3DF6CF26C72F1C00168561 /* Q701_Insert_into_a_Binary_Search_Tree.swift */,
+				EC3DF6D426CA364B00168561 /* Q450_Delete_Node_in_a_BST.swift */,
+				ECD2369126CB19B800C2B9CA /* Q773_Sliding_Puzzle.swift */,
+				ECD2369626CB37F000C2B9CA /* Q127_Word_Ladder.swift */,
+				ECD2369B26CB891C00C2B9CA /* Q102_Binary_Tree_Level_Order_Traversal.swift */,
+				ECD236A026CB8FC400C2B9CA /* Q104_Maximum_Depth_of_Binary_Tree.swift */,
+				ECD236A526CC2DEA00C2B9CA /* Q107_Binary_Tree_Level_Order_Traversal_II.swift */,
+				ECD236AD26CC86C200C2B9CA /* Q4_Median_of_Two_Sorted_Arrays.swift */,
+				ECD236B226CCC92900C2B9CA /* Q6_ZigZag_Conversion.swift */,
+				ECD236B726CCE7BA00C2B9CA /* Q19_Remove_Nth_Node_From_End_of_List.swift */,
+			);
+			path = AlgorithmSwiftTests;
+			sourceTree = "<group>";
+		};
+		EC7AA270269E44B60028738E /* AlgorithmSwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EC7AA271269E44B60028738E /* AlgorithmSwiftUITests.swift */,
+				EC7AA273269E44B60028738E /* Info.plist */,
+			);
+			path = AlgorithmSwiftUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC7AA24B269E44B20028738E /* AlgorithmSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC7AA276269E44B60028738E /* Build configuration list for PBXNativeTarget "AlgorithmSwift" */;
+			buildPhases = (
+				EC7AA248269E44B20028738E /* Sources */,
+				EC7AA249269E44B20028738E /* Frameworks */,
+				EC7AA24A269E44B20028738E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AlgorithmSwift;
+			productName = AlgorithmSwift;
+			productReference = EC7AA24C269E44B20028738E /* AlgorithmSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EC7AA261269E44B60028738E /* AlgorithmSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC7AA279269E44B60028738E /* Build configuration list for PBXNativeTarget "AlgorithmSwiftTests" */;
+			buildPhases = (
+				EC7AA25E269E44B60028738E /* Sources */,
+				EC7AA25F269E44B60028738E /* Frameworks */,
+				EC7AA260269E44B60028738E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC7AA264269E44B60028738E /* PBXTargetDependency */,
+			);
+			name = AlgorithmSwiftTests;
+			productName = AlgorithmSwiftTests;
+			productReference = EC7AA262269E44B60028738E /* AlgorithmSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EC7AA26C269E44B60028738E /* AlgorithmSwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC7AA27C269E44B60028738E /* Build configuration list for PBXNativeTarget "AlgorithmSwiftUITests" */;
+			buildPhases = (
+				EC7AA269269E44B60028738E /* Sources */,
+				EC7AA26A269E44B60028738E /* Frameworks */,
+				EC7AA26B269E44B60028738E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC7AA26F269E44B60028738E /* PBXTargetDependency */,
+			);
+			name = AlgorithmSwiftUITests;
+			productName = AlgorithmSwiftUITests;
+			productReference = EC7AA26D269E44B60028738E /* AlgorithmSwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC7AA244269E44B20028738E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					EC7AA24B269E44B20028738E = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					EC7AA261269E44B60028738E = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = EC7AA24B269E44B20028738E;
+					};
+					EC7AA26C269E44B60028738E = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = EC7AA24B269E44B20028738E;
+					};
+				};
+			};
+			buildConfigurationList = EC7AA247269E44B20028738E /* Build configuration list for PBXProject "AlgorithmSwift" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EC7AA243269E44B20028738E;
+			productRefGroup = EC7AA24D269E44B20028738E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC7AA24B269E44B20028738E /* AlgorithmSwift */,
+				EC7AA261269E44B60028738E /* AlgorithmSwiftTests */,
+				EC7AA26C269E44B60028738E /* AlgorithmSwiftUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC7AA24A269E44B20028738E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC7AA25C269E44B50028738E /* LaunchScreen.storyboard in Resources */,
+				EC7AA259269E44B50028738E /* Assets.xcassets in Resources */,
+				EC7AA257269E44B20028738E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC7AA260269E44B60028738E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC7AA26B269E44B60028738E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC7AA248269E44B20028738E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC7AA250269E44B20028738E /* AppDelegate.swift in Sources */,
+				EC7AA29F269E68300028738E /* TreeNode.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC7AA25E269E44B60028738E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECCFCAB226BB58B800AAC8FF /* Q206_Reverse_Linked_List.swift in Sources */,
+				EC7AA283269E46F60028738E /* Q1_Two_Sum.swift in Sources */,
+				ECCFCAD026BC61F200AAC8FF /* Q2_Add_Two_Numbers.swift in Sources */,
+				EC3DF6B226C647C300168561 /* Q145_Binary_Tree_Postorder_Traversal.swift in Sources */,
+				ECCFCAAD26BB080A00AAC8FF /* Q93_Restore_IP_Addresses.swift in Sources */,
+				ECB29DD626A89E24000C26B5 /* Q3_Longest_Substring_Without_Repeating_Characters.swift in Sources */,
+				EC3DF67D26C3AEF000168561 /* Q349_Intersection_of_Two_Arrays.swift in Sources */,
+				EC97FA6726B3BE1F00E2B001 /* L_All_Valid_Permutations_Of_Parentheses_II.swift in Sources */,
+				ECB29DA826A0AEFA000C26B5 /* Q958_Check_Completeness_of_a_Binary_Tree.swift in Sources */,
+				ECB29E2C26AF9F2C000C26B5 /* Q278_First_Bad_Version.swift in Sources */,
+				EC3DF68226C4492C00168561 /* Q347_Top_K_Frequent_Elements.swift in Sources */,
+				ECCFCAC126BB691500AAC8FF /* Q147_Insertion_Sort_List.swift in Sources */,
+				ECCFCAB726BB636C00AAC8FF /* Q876_Middle_of_the_Linked_List.swift in Sources */,
+				EC7AA298269E5DEA0028738E /* Q101_Symmetric_Tree.swift in Sources */,
+				ECCFCAC626BB776000AAC8FF /* Q86_Partition_List.swift in Sources */,
+				ECB29E3626AFE6E2000C26B5 /* Q34_Find_First_and_Last_Position_of_Element_in_Sorted_Array.swift in Sources */,
+				EC3DF69B26C4A18E00168561 /* Q392_Is_Subsequence.swift in Sources */,
+				EC3DF6BC26C64DED00168561 /* Q49_Group_Anagrams.swift in Sources */,
+				ECCFCAE826BDB76000AAC8FF /* Q232_Implement_Queue_using_Stacks.swift in Sources */,
+				EC3DF6C626C6DF7600168561 /* Q98_Validate_Binary_Search_Tree.swift in Sources */,
+				EC7AA28B269E59940028738E /* Q100_Same_Tree.swift in Sources */,
+				ECCFCAD526BC6F2300AAC8FF /* Q203_Remove_Linked_List_Elements.swift in Sources */,
+				ECB29DC926A79892000C26B5 /* Q340_Longest_Substring_with_At_Most_K_Distinct_Characters.swift in Sources */,
+				ECB29E2726AF7291000C26B5 /* Q658_Find_K_Closest_Elements.swift in Sources */,
+				EC97FA7626B3DED100E2B001 /* Q21_Merge_Two_Sorted_Lists.swift in Sources */,
+				EC97FA7126B3D2B200E2B001 /* Q254_Factor_Combinations.swift in Sources */,
+				ECB29E3B26B0B5D4000C26B5 /* Q744_Find_Smallest_Letter_Greater_Than_Target.swift in Sources */,
+				EC3DF6AD26C6471300168561 /* Q94_Binary_Tree_Inorder_Traversal.swift in Sources */,
+				ECB29E1326AB7DF1000C26B5 /* Q9_Palindrome_Number.swift in Sources */,
+				ECB29DEF26A94448000C26B5 /* Q159_Longest_Substring_with_At_Most_Two_Distinct_Characters.swift in Sources */,
+				ECD236B326CCC92900C2B9CA /* Q6_ZigZag_Conversion.swift in Sources */,
+				ECCFCAF026BDC20600AAC8FF /* Q225_Implement_Stack_using_Queues.swift in Sources */,
+				EC97FA7B26B3DF0D00E2B001 /* ListNode.swift in Sources */,
+				ECD236A126CB8FC400C2B9CA /* Q104_Maximum_Depth_of_Binary_Tree.swift in Sources */,
+				ECB29E1D26AF3745000C26B5 /* Q74_Search_a_2D_Matrix.swift in Sources */,
+				EC97FA3D26B22C1500E2B001 /* Q22_Generate_Parentheses.swift in Sources */,
+				ECD236A626CC2DEA00C2B9CA /* Q107_Binary_Tree_Level_Order_Traversal_II.swift in Sources */,
+				ECCFCACB26BC56F800AAC8FF /* Q234_Palindrome_Linked_List.swift in Sources */,
+				EC3DF6B726C64ADB00168561 /* Q110_Balanced_Binary_Tree.swift in Sources */,
+				ECD236B826CCE7BA00C2B9CA /* Q19_Remove_Nth_Node_From_End_of_List.swift in Sources */,
+				EC3DF6A326C5B08200168561 /* Q7_Reverse_Integer.swift in Sources */,
+				EC3DF6D526CA364B00168561 /* Q450_Delete_Node_in_a_BST.swift in Sources */,
+				EC3DF68726C452C000168561 /* Q268_Missing_Number.swift in Sources */,
+				ECB29E0126AA4726000C26B5 /* Q1249_Minimum_Remove_to_Make_Valid_Parentheses.swift in Sources */,
+				EC3DF69626C4933300168561 /* L_Determine_If_One_String_Is_Another_Substring.swift in Sources */,
+				ECB29E0926AB3697000C26B5 /* Q125_Valid_Palindrome.swift in Sources */,
+				ECB29DC426A6C206000C26B5 /* Q66_plus_one.swift in Sources */,
+				EC0906E726C1ACBE0052A926 /* Q692_Top_K_Frequent_Words.swift in Sources */,
+				ECD236AE26CC86C200C2B9CA /* Q4_Median_of_Two_Sorted_Arrays.swift in Sources */,
+				EC3DF6CB26C72AB500168561 /* Q700_Search_in_a_Binary_Search_Tree.swift in Sources */,
+				EC97FA4F26B27F3000E2B001 /* Q46_Permutations.swift in Sources */,
+				EC97FA5926B35D6400E2B001 /* L_All_Subsets_of_Size_K.swift in Sources */,
+				ECD2369C26CB891C00C2B9CA /* Q102_Binary_Tree_Level_Order_Traversal.swift in Sources */,
+				ECB29E4626B0D7C9000C26B5 /* Q509_Fibonacci_Number.swift in Sources */,
+				EC97FA8A26B8C9C900E2B001 /* Q17_Letter_Combinations_of_a_Phone_Number.swift in Sources */,
+				EC3DF69126C4817900168561 /* Q1047_Remove_All_Adjacent_Duplicates_In_String.swift in Sources */,
+				EC3DF6C126C6518A00168561 /* TreeNode.swift in Sources */,
+				ECB29DB526A2535B000C26B5 /* Q16_3Sum_Closest.swift in Sources */,
+				ECD2369726CB37F000C2B9CA /* Q127_Word_Ladder.swift in Sources */,
+				EC97FA8026B47E2100E2B001 /* Q47_Permutations_II.swift in Sources */,
+				ECCFCABC26BB64E100AAC8FF /* Q141_Linked_List_Cycle.swift in Sources */,
+				EC97FA3826B2114F00E2B001 /* Q78_Subsets.swift in Sources */,
+				ECB29E1826AE3122000C26B5 /* Q704_Binary_Search.swift in Sources */,
+				EC97FA5426B3332200E2B001 /* Q90_Subsets_II.swift in Sources */,
+				ECB29DBF26A69A54000C26B5 /* Q18_KSum.swift in Sources */,
+				EC97FA6C26B3CDAA00E2B001 /* L_All_Permutations_of_Subsets.swift in Sources */,
+				EC3DF68C26C470F100168561 /* L_Remove_Spaces.swift in Sources */,
+				ECCFCAF526BDEF1300AAC8FF /* Q155_Min_Stack.swift in Sources */,
+				ECD2369226CB19B800C2B9CA /* Q773_Sliding_Puzzle.swift in Sources */,
+				EC97FA5F26B3A67300E2B001 /* Q20_Valid_Parentheses.swift in Sources */,
+				ECB29E0E26AB4EBB000C26B5 /* Q620_Valid_Palindrome_II.swift in Sources */,
+				EC3DF6A826C640E600168561 /* Q144_Binary_Tree_Preorder_Traversal.swift in Sources */,
+				EC97FA4A26B271EC00E2B001 /* L_Combinations_Of_Coins.swift in Sources */,
+				ECB29E3126AFA09D000C26B5 /* Q702_Search_in_a_Sorted_Array_of_Unknown_Size.swift in Sources */,
+				EC97FA8526B49EB800E2B001 /* L_Two_Subsets_with_Min_Difference.swift in Sources */,
+				ECB29DA026A0AEEE000C26B5 /* Q378_Kth_Smallest_Element_in_a_Sorted_Matrix.swift in Sources */,
+				ECB29DF426AA23AA000C26B5 /* Q67_Add_Binary.swift in Sources */,
+				ECB29DB026A245EF000C26B5 /* Q15_3Sum.swift in Sources */,
+				EC3DF6D026C72F1C00168561 /* Q701_Insert_into_a_Binary_Search_Tree.swift in Sources */,
+				ECB29E4026B0D002000C26B5 /* L636_Smallest_Element_Larger_than_Target.swift in Sources */,
+				ECCFCADA26BC9B4100AAC8FF /* Q27_Remove_Element.swift in Sources */,
+				ECB29E2226AF4258000C26B5 /* Q240_Search_a_2D_Matrix_II.swift in Sources */,
+				ECB29DCE26A7DEDB000C26B5 /* 259. 3Sum Smaller.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC7AA269269E44B60028738E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC7AA272269E44B60028738E /* AlgorithmSwiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC7AA264269E44B60028738E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC7AA24B269E44B20028738E /* AlgorithmSwift */;
+			targetProxy = EC7AA263269E44B60028738E /* PBXContainerItemProxy */;
+		};
+		EC7AA26F269E44B60028738E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC7AA24B269E44B20028738E /* AlgorithmSwift */;
+			targetProxy = EC7AA26E269E44B60028738E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EC7AA255269E44B20028738E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC7AA256269E44B20028738E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EC7AA25A269E44B50028738E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC7AA25B269E44B50028738E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EC7AA274269E44B60028738E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EC7AA275269E44B60028738E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EC7AA277269E44B60028738E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CN9333TZ4H;
+				INFOPLIST_FILE = AlgorithmSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sophiazhu.pp.AlgorithmSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EC7AA278269E44B60028738E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CN9333TZ4H;
+				INFOPLIST_FILE = AlgorithmSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sophiazhu.pp.AlgorithmSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EC7AA27A269E44B60028738E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CN9333TZ4H;
+				INFOPLIST_FILE = AlgorithmSwiftTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sophiazhu.pp.AlgorithmSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlgorithmSwift.app/AlgorithmSwift";
+			};
+			name = Debug;
+		};
+		EC7AA27B269E44B60028738E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CN9333TZ4H;
+				INFOPLIST_FILE = AlgorithmSwiftTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sophiazhu.pp.AlgorithmSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlgorithmSwift.app/AlgorithmSwift";
+			};
+			name = Release;
+		};
+		EC7AA27D269E44B60028738E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CN9333TZ4H;
+				INFOPLIST_FILE = AlgorithmSwiftUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sophiazhu.pp.AlgorithmSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AlgorithmSwift;
+			};
+			name = Debug;
+		};
+		EC7AA27E269E44B60028738E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CN9333TZ4H;
+				INFOPLIST_FILE = AlgorithmSwiftUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sophiazhu.pp.AlgorithmSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AlgorithmSwift;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC7AA247269E44B20028738E /* Build configuration list for PBXProject "AlgorithmSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC7AA274269E44B60028738E /* Debug */,
+				EC7AA275269E44B60028738E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC7AA276269E44B60028738E /* Build configuration list for PBXNativeTarget "AlgorithmSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC7AA277269E44B60028738E /* Debug */,
+				EC7AA278269E44B60028738E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC7AA279269E44B60028738E /* Build configuration list for PBXNativeTarget "AlgorithmSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC7AA27A269E44B60028738E /* Debug */,
+				EC7AA27B269E44B60028738E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC7AA27C269E44B60028738E /* Build configuration list for PBXNativeTarget "AlgorithmSwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC7AA27D269E44B60028738E /* Debug */,
+				EC7AA27E269E44B60028738E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EC7AA244269E44B20028738E /* Project object */;
+}
