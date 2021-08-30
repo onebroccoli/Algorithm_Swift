@@ -27,7 +27,6 @@
   
  */
 
-@testable import AlgorithmSwift
 
 import XCTest
 
