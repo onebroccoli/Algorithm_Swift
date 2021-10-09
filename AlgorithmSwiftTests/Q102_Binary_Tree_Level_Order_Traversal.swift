@@ -30,15 +30,15 @@ import XCTest
 
 class Q102_Binary_Tree_Level_Order_Traversal: XCTestCase {
     func levelOrder(_ root: TreeNode?) -> [[Int]] {
-        guard let root = root else {return []}
+        //base case
+        guard let root = root else {return [[]]}
         var queue = [TreeNode]()
         var output = [[Int]]()
         queue.append(root)
         
-        while queue.isEmpty == false {
+        while !queue.isEmpty {
             //start new level
-            //number of elements in the current level
-            var levelCount = queue.count
+            var levelCount = queue.count //store how many nodes on the current level
             var levelNodes = [Int]()
             while levelCount > 0 {
                 let node = queue.first!
@@ -53,13 +53,49 @@ class Q102_Binary_Tree_Level_Order_Traversal: XCTestCase {
                 if let right = node.right {
                     queue.append(right)
                 }
-            
             }
-            //add nodes by level
             output.append(levelNodes)
         }
         return output
     }
+    
+    
+    
+    
+    
+    
+//    func levelOrder(_ root: TreeNode?) -> [[Int]] {
+//        //base case
+//        guard let root = root else {return []}
+//        var queue = [TreeNode]()
+//        var output = [[Int]]()
+//        queue.append(root)
+//
+//        while !queue.isEmpty {
+//            //start new level
+//            //number of elements in the current level
+//            var levelCount = queue.count
+//            var levelNodes = [Int]()
+//            while levelCount > 0 {
+//                let node = queue.first!
+//                queue.removeFirst()
+//                levelCount -= 1
+//                levelNodes.append(node.val)
+//                //add left child node
+//                if let left = node.left {
+//                    queue.append(left)
+//                }
+//                //add right child node
+//                if let right = node.right {
+//                    queue.append(right)
+//                }
+//
+//            }
+//            //add nodes by level
+//            output.append(levelNodes)
+//        }
+//        return output
+//    }
     
 
     func testExample() throws {
