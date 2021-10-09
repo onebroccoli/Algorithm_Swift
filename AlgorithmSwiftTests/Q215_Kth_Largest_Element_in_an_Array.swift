@@ -27,42 +27,131 @@
 import XCTest
 
 private class Solution {
-    func findKthLargest(_ nums: [Int], _ k: Int) -> Int {
-        let quickSortResult = quickSort(nums, 0, nums.count - 1)
-        let resultNums = quickSortResult.0
-        print(resultNums)
-        let keyIndex = quickSortResult.1
-        
-        if keyIndex + 1 == k {
-            
-        } else if keyIndex + 1 > k {
-            return findKthLargest(Array(resultNums[0..<keyIndex]), k)
-        } else {
-            let index = resultNums.index(after:keyIndex)
-            let endIndex = resultNums.endIndex
-            return findKthLargest(Array(resultNums[index..<endIndex]), k - keyIndex - 1)
+func findKthLargest(_ nums: [Int], _ k: Int) -> Int {
+    //pick a pivot (start from the right side)
+    var nums = nums
+    return quickSelect(&nums, 0, nums.count - 1, k - 1) //k-1 to get k into zero-based index format. kth largest = [k-1] position in the array
+    
+    
+}
+
+func quickSelect(_ nums: inout [Int], _ begin: Int, _ end: Int, _ k: Int) -> Int {
+    let pivot = end
+    var i = begin
+    
+    //partition:
+    for j in i..<pivot {
+        if nums[j] > nums[pivot] {
+            nums.swapAt(i, j)
+            i += 1
         }
-        return resultNums[keyIndex]
+    }
+    //put pivot in the correct position
+    nums.swapAt(i, pivot)
+    
+    //base case
+    if (i == k) {
+        return nums[i]
+    }
+    
+    //recursion
+    if (i < k) {
+        return quickSelect(&nums, i + 1, end, k) //go right
+    }
+    return quickSelect(&nums, begin, i - 1, k)
+    
+}
+    
+}
+
+
+private class Solution2 {
+    func parent(_ i: Int) -> Int {
+        return Int(floor(Double(i - 1)/2))
+    }
+    
+    func left(_ i: Int) -> Int {
+        return 2*i + 1
+    }
+    func right(_ i: Int) -> Int {
+        return 2*i + 2
         
     }
     
-    func quickSort(_ nums: [Int], _ left: Int, _ right: Int) -> ([Int], Int) {
-        var numsArray = nums
-        var i = left
-        var j = right
-        let key = numsArray[i]
-        while i != j {
-            while j > i && numsArray[j] <= key {
-                j -= 1
-            }
-            numsArray.swapAt(i, j)
-            while j > i && numsArray[i] >= key {
-                i += 1
-            }
-            numsArray.swapAt(i, j)
+    func siftUp(_ minheap: inout Array<Int>, _ i:Int) {
+        if(i==0) { return} //base case we are at root
+        let parent = self.parent(i)
+        if(minheap[i] < minheap[parent]){
+            minheap.swapAt(i,parent)
+            siftUp(&minheap, parent)
         }
-        numsArray[i] = key
-        return (numsArray, i)
+        
+    }
+    
+    func siftDown(_ minheap: inout Array<Int>, _ i:Int) {
+        let left = self.left(i)
+        let right = self.right(i)
+        
+        if(i>minheap.count-1 || left > minheap.count-1 || right > minheap.count-1){
+            return
+        }
+        
+        var candidate = i;
+        if(minheap[candidate] > minheap[left]){
+            candidate = left
+        }
+        if(minheap[candidate] > minheap[right]) {
+            candidate = right
+        }
+        
+        //we swapped parent with a child, so keep checking if we need to continue sifting down
+        if(i == candidate){
+            return //no swap needed
+        }
+        
+        minheap.swapAt(i,candidate)
+        siftDown(&minheap,candidate)
+    }
+    
+    
+    
+    func insert(_ minheap: inout Array<Int>, _ value:Int) {
+        minheap.append(value)
+        siftUp(&minheap, minheap.count-1)
+    }
+    
+    func remove(_ minheap: inout Array<Int>) {
+        if(minheap.count == 0) {return}
+        minheap.swapAt(0,minheap.count-1)
+        minheap.remove(at:minheap.count-1)
+        siftDown(&minheap,0)
+    }
+    
+    
+    func findKthLargest(_ nums: [Int], _ k: Int) -> Int {
+        
+        var minheap : Array<Int> = Array<Int>()
+        
+        for n in nums {
+            //insert into minheap
+                //fix the minheap if minheap.count == k
+                //if n < minheap.top
+                    //continue; there are already k items larger than n inside the minheap
+                //if n >= minheap.top
+                    //remove minheap.top and insert n because n is candidate but minheap.top is not anymore
+            
+            if(minheap.count == k && minheap.count > 0) {
+                if(n < minheap[0]) {
+                    continue;
+                } else {
+                    remove(&minheap)
+                }
+            }
+            
+            insert(&minheap,n)
+            
+        }
+        return minheap[0]
     }
 }
 
@@ -75,7 +164,7 @@ class Q215_Kth_Largest_Element_in_an_Array: XCTestCase {
         let array = [3,2,1,5,6,4]
         let k = 2
         let res = s.findKthLargest(array, k)
-        print(res)
+        print("result is: \(res)")
     }
 
 
