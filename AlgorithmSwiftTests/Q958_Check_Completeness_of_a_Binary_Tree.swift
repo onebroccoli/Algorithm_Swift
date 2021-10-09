@@ -45,8 +45,8 @@ private class Solution{
                     return false
                 }
             } else {
-                    flag = true
-                }
+                flag = true
+            }
             
             if let right = cur.right {
                 queue.append(right)
