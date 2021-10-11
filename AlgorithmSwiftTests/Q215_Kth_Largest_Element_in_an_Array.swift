@@ -65,95 +65,97 @@ func quickSelect(_ nums: inout [Int], _ begin: Int, _ end: Int, _ k: Int) -> Int
 }
 
 
-private class Solution2 {
-    func parent(_ i: Int) -> Int {
-        return Int(floor(Double(i - 1)/2))
-    }
+ class Solution2 {
     
-    func left(_ i: Int) -> Int {
-        return 2*i + 1
-    }
-    func right(_ i: Int) -> Int {
-        return 2*i + 2
-        
-    }
+     //MINHEAP
     
-    func siftUp(_ minheap: inout Array<Int>, _ i:Int) {
-        if(i==0) { return} //base case we are at root
+     func parent(_ i:Int) -> Int{
+         return Int(floor(Double((i-1))/2));
+     }
+    
+     func left(_ i:Int) -> Int {
+         return 2*i+1
+     }
+
+     func right(_ i:Int) -> Int {
+         return 2*i+2
+     }
+    
+     //What is siftUp and siftDown
+ //https://www.raywenderlich.com/586-swift-algorithm-club-heap-and-priority-queue-data-structure
+     func siftUp(_ minheap: inout Array<Int>, _ i:Int) {
+         if(i==0) { return} //base case we are at root
         let parent = self.parent(i)
-        if(minheap[i] < minheap[parent]){
-            minheap.swapAt(i,parent)
-            siftUp(&minheap, parent)
-        }
+         if(minheap[i] < minheap[parent]){
+             minheap.swapAt(i,parent)
+             siftUp(&minheap, parent)
+         }
         
-    }
+     }
     
-    func siftDown(_ minheap: inout Array<Int>, _ i:Int) {
+     func siftDown(_ minheap: inout Array<Int>, _ i:Int) {
         let left = self.left(i)
         let right = self.right(i)
         
-        if(i>minheap.count-1 || left > minheap.count-1 || right > minheap.count-1){
-            return
-        }
+         if(i>minheap.count-1 || left > minheap.count-1 || right > minheap.count-1){
+             return
+         }
         
-        var candidate = i;
-        if(minheap[candidate] > minheap[left]){
-            candidate = left
-        }
-        if(minheap[candidate] > minheap[right]) {
-            candidate = right
-        }
+         var candidate = i;
+         if(minheap[candidate] > minheap[left]){
+             candidate = left
+         }
+         if(minheap[candidate] > minheap[right]) {
+             candidate = right
+         }
         
-        //we swapped parent with a child, so keep checking if we need to continue sifting down
-        if(i == candidate){
-            return //no swap needed
-        }
+         //we swapped parent with a child, so keep checking if we need to continue sifting down
+         if(i == candidate){
+             return //no swap needed
+         }
         
-        minheap.swapAt(i,candidate)
-        siftDown(&minheap,candidate)
-    }
+         minheap.swapAt(i,candidate)
+         siftDown(&minheap,candidate)
+     }
     
+     func insert(_ minheap: inout Array<Int>, _ value:Int) {
+         minheap.append(value)
+         siftUp(&minheap, minheap.count-1)
+     }
     
+     func remove(_ minheap: inout Array<Int>) {
+         if(minheap.count == 0) {return}
+         minheap.swapAt(0,minheap.count-1)
+         minheap.remove(at:minheap.count-1)
+         siftDown(&minheap,0)
+     }
     
-    func insert(_ minheap: inout Array<Int>, _ value:Int) {
-        minheap.append(value)
-        siftUp(&minheap, minheap.count-1)
-    }
-    
-    func remove(_ minheap: inout Array<Int>) {
-        if(minheap.count == 0) {return}
-        minheap.swapAt(0,minheap.count-1)
-        minheap.remove(at:minheap.count-1)
-        siftDown(&minheap,0)
-    }
-    
-    
-    func findKthLargest(_ nums: [Int], _ k: Int) -> Int {
+     func findKthLargest(_ nums: [Int], _ k: Int) -> Int {
         
-        var minheap : Array<Int> = Array<Int>()
+         var minheap : Array<Int> = Array<Int>()
         
-        for n in nums {
-            //insert into minheap
-                //fix the minheap if minheap.count == k
-                //if n < minheap.top
-                    //continue; there are already k items larger than n inside the minheap
-                //if n >= minheap.top
-                    //remove minheap.top and insert n because n is candidate but minheap.top is not anymore
+         for n in nums {
+             //insert into minheap
+                 //fix the minheap if minheap.count == k
+                 //if n < minheap.top
+                     //continue; there are already k items larger than n inside the minheap
+                 //if n >= minheap.top
+                     //remove minheap.top and insert n because n is candidate but minheap.top is not anymore
             
-            if(minheap.count == k && minheap.count > 0) {
-                if(n < minheap[0]) {
-                    continue;
-                } else {
-                    remove(&minheap)
-                }
-            }
+             if(minheap.count == k && minheap.count > 0) {
+                 if(n < minheap[0]) {
+                     continue;
+                 } else {
+                     remove(&minheap)
+                 }
+             }
             
-            insert(&minheap,n)
+             insert(&minheap,n)
             
-        }
-        return minheap[0]
-    }
-}
+         }
+         return minheap[0]
+     }
+ }
 
 
 class Q215_Kth_Largest_Element_in_an_Array: XCTestCase {
