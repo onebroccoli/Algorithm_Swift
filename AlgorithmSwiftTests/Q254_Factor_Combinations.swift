@@ -59,30 +59,31 @@ import XCTest
 //}
 
 private class Solution{
-    func getFactors(_ n:Int) -> [[Int]]{
-        var res:[[Int]] = [[Int]]()
-        var arr:[Int] = [Int]()
-        helper(n,2,&arr,&res)
-        return res
+    func getFactors(_ n: Int) -> [[Int]] {
+        var result = [[Int]]()
+        var path = [Int]()
+        dfs(&result,&path, n, 2)
+        return result
     }
     
-    func helper(_ n:Int,_ start:Int,_ out:inout [Int],_ res:inout [[Int]])
-    {
-        var num:Int = Int(floor(sqrt(Double(n))))
-        var i :Int = start
-        while(i <= num)
-        {
-            if n % i == 0
-            {
-                var new_out:[Int] = out
+
+    private func dfs(_ result: inout [[Int]], _ path: inout [Int], _ n: Int, _ start: Int) {
+        //need to find sqrt of n
+        var num: Int = Int(floor(sqrt(Double(n))))
+
+        var i = start
+        while (i <= num) {
+            if n % i == 0 {
+                var new_out: [Int] = path
                 new_out.append(i)
-                helper(n / i, i, &new_out, &res)
+                dfs(&result, &new_out, n/i, i)
                 new_out.append(n / i)
-                res.append(new_out)
+                result.append(new_out)
             }
             i += 1
         }
     }
+    
 }
 
 
@@ -92,8 +93,8 @@ class Q254_Factor_Combinations: XCTestCase {
 
     func testExample() throws {
         let s = Solution()
-        let result = s.getFactors(20)
-        print (result)
+        let result = s.getFactors(12)
+        print (result) //[[2,6],[3,4],[2,2,3]]
     }
 
 
