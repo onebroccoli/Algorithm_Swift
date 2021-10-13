@@ -38,7 +38,8 @@ private class Solution {
         return result
     }
     
-    func dfs(_ target: Int, _ coins: [Int], _ index: Int, _ temp: inout [Int], _ result: inout [[Int]]) {
+    func dfs(_ target: Int, _ coins: [Int], _ index: Int, _ temp: inout [Int], _ result: inout [[Int]]){
+        //termination condition
         if index == coins.count - 1 {
             if (target % coins[coins.count - 1] == 0) {
                 temp.append(target / coins[coins.count - 1])
@@ -48,6 +49,7 @@ private class Solution {
             
             return
         }
+        
         
         let max = target / coins[index]
         for i in 0...max {
@@ -66,7 +68,7 @@ class L_Combinations_Of_Coins: XCTestCase {
 
     func testExample() throws {
         let s = Solution()
-        let result = s.combinations(4, [1,2])
+        let result = s.combinations(10, [1,2,5])
         print (result)
     }
 
