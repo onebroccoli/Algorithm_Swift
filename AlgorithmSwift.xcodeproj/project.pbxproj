@@ -26,15 +26,19 @@
 		EC3DF6CB26C72AB500168561 /* Q700_Search_in_a_Binary_Search_Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3DF6CA26C72AB500168561 /* Q700_Search_in_a_Binary_Search_Tree.swift */; };
 		EC3DF6D026C72F1C00168561 /* Q701_Insert_into_a_Binary_Search_Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3DF6CF26C72F1C00168561 /* Q701_Insert_into_a_Binary_Search_Tree.swift */; };
 		EC3DF6D526CA364B00168561 /* Q450_Delete_Node_in_a_BST.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3DF6D426CA364B00168561 /* Q450_Delete_Node_in_a_BST.swift */; };
-		EC7AA250269E44B20028738E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7AA24F269E44B20028738E /* AppDelegate.swift */; };
-		EC7AA257269E44B20028738E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC7AA255269E44B20028738E /* Main.storyboard */; };
-		EC7AA259269E44B50028738E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC7AA258269E44B50028738E /* Assets.xcassets */; };
-		EC7AA25C269E44B50028738E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC7AA25A269E44B50028738E /* LaunchScreen.storyboard */; };
+		EC3E5E942713F67D007AD14B /* Q103_Binary_Tree_Zigzag_Level_Order_Traversal.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3E5E932713F67D007AD14B /* Q103_Binary_Tree_Zigzag_Level_Order_Traversal.swift */; };
+		EC3E5E992716611B007AD14B /* L_All_Valid_Permutations_Of_Parentheses_II.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3E5E982716611B007AD14B /* L_All_Valid_Permutations_Of_Parentheses_II.swift */; };
+		EC3E5EAE27169CB0007AD14B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3E5EAD27169CAF007AD14B /* AppDelegate.swift */; };
+		EC3E5EB32716A0DE007AD14B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC3E5EB22716A0DE007AD14B /* Main.storyboard */; };
+		EC46B14626DE0C6400560EBD /* Q13_Roman_to_Integer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC46B14526DE0C6300560EBD /* Q13_Roman_to_Integer.swift */; };
+		EC46B14B26DE133600560EBD /* Q12_Integer_to_Roman.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC46B14A26DE133600560EBD /* Q12_Integer_to_Roman.swift */; };
 		EC7AA272269E44B60028738E /* AlgorithmSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7AA271269E44B60028738E /* AlgorithmSwiftUITests.swift */; };
 		EC7AA283269E46F60028738E /* Q1_Two_Sum.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7AA282269E46F60028738E /* Q1_Two_Sum.swift */; };
 		EC7AA28B269E59940028738E /* Q100_Same_Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7AA28A269E59940028738E /* Q100_Same_Tree.swift */; };
 		EC7AA298269E5DEA0028738E /* Q101_Symmetric_Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7AA297269E5DEA0028738E /* Q101_Symmetric_Tree.swift */; };
 		EC7AA29F269E68300028738E /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7AA28F269E59DE0028738E /* TreeNode.swift */; };
+		EC952893270D16CD003D6FF1 /* Q215_Kth_Largest_Element_in_an_Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC952892270D16CD003D6FF1 /* Q215_Kth_Largest_Element_in_an_Array.swift */; };
+		EC952898270FA76F003D6FF1 /* Q785_Is_Graph_Bipartite.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC952897270FA76E003D6FF1 /* Q785_Is_Graph_Bipartite.swift */; };
 		EC97FA3826B2114F00E2B001 /* Q78_Subsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97FA3726B2114F00E2B001 /* Q78_Subsets.swift */; };
 		EC97FA3D26B22C1500E2B001 /* Q22_Generate_Parentheses.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97FA3C26B22C1500E2B001 /* Q22_Generate_Parentheses.swift */; };
 		EC97FA4A26B271EC00E2B001 /* L_Combinations_Of_Coins.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97FA4926B271EB00E2B001 /* L_Combinations_Of_Coins.swift */; };
@@ -42,7 +46,6 @@
 		EC97FA5426B3332200E2B001 /* Q90_Subsets_II.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97FA5326B3332200E2B001 /* Q90_Subsets_II.swift */; };
 		EC97FA5926B35D6400E2B001 /* L_All_Subsets_of_Size_K.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97FA5826B35D6400E2B001 /* L_All_Subsets_of_Size_K.swift */; };
 		EC97FA5F26B3A67300E2B001 /* Q20_Valid_Parentheses.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97FA5E26B3A67300E2B001 /* Q20_Valid_Parentheses.swift */; };
-		EC97FA6726B3BE1F00E2B001 /* L_All_Valid_Permutations_Of_Parentheses_II.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97FA6626B3BE1F00E2B001 /* L_All_Valid_Permutations_Of_Parentheses_II.swift */; };
 		EC97FA6C26B3CDAA00E2B001 /* L_All_Permutations_of_Subsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97FA6B26B3CDAA00E2B001 /* L_All_Permutations_of_Subsets.swift */; };
 		EC97FA7126B3D2B200E2B001 /* Q254_Factor_Combinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97FA7026B3D2B200E2B001 /* Q254_Factor_Combinations.swift */; };
 		EC97FA7626B3DED100E2B001 /* Q21_Merge_Two_Sorted_Lists.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97FA7526B3DED100E2B001 /* Q21_Merge_Two_Sorted_Lists.swift */; };
@@ -135,11 +138,14 @@
 		EC3DF6CA26C72AB500168561 /* Q700_Search_in_a_Binary_Search_Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q700_Search_in_a_Binary_Search_Tree.swift; sourceTree = "<group>"; };
 		EC3DF6CF26C72F1C00168561 /* Q701_Insert_into_a_Binary_Search_Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q701_Insert_into_a_Binary_Search_Tree.swift; sourceTree = "<group>"; };
 		EC3DF6D426CA364B00168561 /* Q450_Delete_Node_in_a_BST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q450_Delete_Node_in_a_BST.swift; sourceTree = "<group>"; };
+		EC3E5E932713F67D007AD14B /* Q103_Binary_Tree_Zigzag_Level_Order_Traversal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q103_Binary_Tree_Zigzag_Level_Order_Traversal.swift; sourceTree = "<group>"; };
+		EC3E5E982716611B007AD14B /* L_All_Valid_Permutations_Of_Parentheses_II.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L_All_Valid_Permutations_Of_Parentheses_II.swift; sourceTree = "<group>"; };
+		EC3E5EA927169BCF007AD14B /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EC3E5EAD27169CAF007AD14B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EC3E5EB22716A0DE007AD14B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		EC46B14526DE0C6300560EBD /* Q13_Roman_to_Integer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q13_Roman_to_Integer.swift; sourceTree = "<group>"; };
+		EC46B14A26DE133600560EBD /* Q12_Integer_to_Roman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q12_Integer_to_Roman.swift; sourceTree = "<group>"; };
 		EC7AA24C269E44B20028738E /* AlgorithmSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlgorithmSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC7AA24F269E44B20028738E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EC7AA256269E44B20028738E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EC7AA258269E44B50028738E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EC7AA25B269E44B50028738E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC7AA25D269E44B50028738E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC7AA262269E44B60028738E /* AlgorithmSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlgorithmSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC7AA268269E44B60028738E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -150,6 +156,8 @@
 		EC7AA28A269E59940028738E /* Q100_Same_Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q100_Same_Tree.swift; sourceTree = "<group>"; };
 		EC7AA28F269E59DE0028738E /* TreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNode.swift; sourceTree = "<group>"; };
 		EC7AA297269E5DEA0028738E /* Q101_Symmetric_Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q101_Symmetric_Tree.swift; sourceTree = "<group>"; };
+		EC952892270D16CD003D6FF1 /* Q215_Kth_Largest_Element_in_an_Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q215_Kth_Largest_Element_in_an_Array.swift; sourceTree = "<group>"; };
+		EC952897270FA76E003D6FF1 /* Q785_Is_Graph_Bipartite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q785_Is_Graph_Bipartite.swift; sourceTree = "<group>"; };
 		EC97FA3726B2114F00E2B001 /* Q78_Subsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q78_Subsets.swift; sourceTree = "<group>"; };
 		EC97FA3C26B22C1500E2B001 /* Q22_Generate_Parentheses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q22_Generate_Parentheses.swift; sourceTree = "<group>"; };
 		EC97FA4926B271EB00E2B001 /* L_Combinations_Of_Coins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L_Combinations_Of_Coins.swift; sourceTree = "<group>"; };
@@ -157,7 +165,6 @@
 		EC97FA5326B3332200E2B001 /* Q90_Subsets_II.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q90_Subsets_II.swift; sourceTree = "<group>"; };
 		EC97FA5826B35D6400E2B001 /* L_All_Subsets_of_Size_K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L_All_Subsets_of_Size_K.swift; sourceTree = "<group>"; };
 		EC97FA5E26B3A67300E2B001 /* Q20_Valid_Parentheses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q20_Valid_Parentheses.swift; sourceTree = "<group>"; };
-		EC97FA6626B3BE1F00E2B001 /* L_All_Valid_Permutations_Of_Parentheses_II.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L_All_Valid_Permutations_Of_Parentheses_II.swift; sourceTree = "<group>"; };
 		EC97FA6B26B3CDAA00E2B001 /* L_All_Permutations_of_Subsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L_All_Permutations_of_Subsets.swift; sourceTree = "<group>"; };
 		EC97FA7026B3D2B200E2B001 /* Q254_Factor_Combinations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q254_Factor_Combinations.swift; sourceTree = "<group>"; };
 		EC97FA7526B3DED100E2B001 /* Q21_Merge_Two_Sorted_Lists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q21_Merge_Two_Sorted_Lists.swift; sourceTree = "<group>"; };
@@ -262,12 +269,11 @@
 		EC7AA24E269E44B20028738E /* AlgorithmSwift */ = {
 			isa = PBXGroup;
 			children = (
-				EC7AA24F269E44B20028738E /* AppDelegate.swift */,
-				EC7AA255269E44B20028738E /* Main.storyboard */,
 				EC7AA28F269E59DE0028738E /* TreeNode.swift */,
-				EC7AA258269E44B50028738E /* Assets.xcassets */,
-				EC7AA25A269E44B50028738E /* LaunchScreen.storyboard */,
+				EC3E5EAD27169CAF007AD14B /* AppDelegate.swift */,
+				EC3E5EB22716A0DE007AD14B /* Main.storyboard */,
 				EC7AA25D269E44B50028738E /* Info.plist */,
+				EC3E5EA927169BCF007AD14B /* MyPlayground.playground */,
 			);
 			path = AlgorithmSwift;
 			sourceTree = "<group>";
@@ -311,7 +317,6 @@
 				EC97FA5326B3332200E2B001 /* Q90_Subsets_II.swift */,
 				EC97FA5826B35D6400E2B001 /* L_All_Subsets_of_Size_K.swift */,
 				EC97FA5E26B3A67300E2B001 /* Q20_Valid_Parentheses.swift */,
-				EC97FA6626B3BE1F00E2B001 /* L_All_Valid_Permutations_Of_Parentheses_II.swift */,
 				EC97FA6B26B3CDAA00E2B001 /* L_All_Permutations_of_Subsets.swift */,
 				EC97FA7026B3D2B200E2B001 /* Q254_Factor_Combinations.swift */,
 				EC97FA7526B3DED100E2B001 /* Q21_Merge_Two_Sorted_Lists.swift */,
@@ -360,6 +365,12 @@
 				ECD236AD26CC86C200C2B9CA /* Q4_Median_of_Two_Sorted_Arrays.swift */,
 				ECD236B226CCC92900C2B9CA /* Q6_ZigZag_Conversion.swift */,
 				ECD236B726CCE7BA00C2B9CA /* Q19_Remove_Nth_Node_From_End_of_List.swift */,
+				EC46B14526DE0C6300560EBD /* Q13_Roman_to_Integer.swift */,
+				EC46B14A26DE133600560EBD /* Q12_Integer_to_Roman.swift */,
+				EC952892270D16CD003D6FF1 /* Q215_Kth_Largest_Element_in_an_Array.swift */,
+				EC952897270FA76E003D6FF1 /* Q785_Is_Graph_Bipartite.swift */,
+				EC3E5E932713F67D007AD14B /* Q103_Binary_Tree_Zigzag_Level_Order_Traversal.swift */,
+				EC3E5E982716611B007AD14B /* L_All_Valid_Permutations_Of_Parentheses_II.swift */,
 			);
 			path = AlgorithmSwiftTests;
 			sourceTree = "<group>";
@@ -476,9 +487,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC7AA25C269E44B50028738E /* LaunchScreen.storyboard in Resources */,
-				EC7AA259269E44B50028738E /* Assets.xcassets in Resources */,
-				EC7AA257269E44B20028738E /* Main.storyboard in Resources */,
+				EC3E5EB32716A0DE007AD14B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,7 +512,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC7AA250269E44B20028738E /* AppDelegate.swift in Sources */,
+				EC3E5EAE27169CB0007AD14B /* AppDelegate.swift in Sources */,
 				EC7AA29F269E68300028738E /* TreeNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -519,7 +528,6 @@
 				ECCFCAAD26BB080A00AAC8FF /* Q93_Restore_IP_Addresses.swift in Sources */,
 				ECB29DD626A89E24000C26B5 /* Q3_Longest_Substring_Without_Repeating_Characters.swift in Sources */,
 				EC3DF67D26C3AEF000168561 /* Q349_Intersection_of_Two_Arrays.swift in Sources */,
-				EC97FA6726B3BE1F00E2B001 /* L_All_Valid_Permutations_Of_Parentheses_II.swift in Sources */,
 				ECB29DA826A0AEFA000C26B5 /* Q958_Check_Completeness_of_a_Binary_Tree.swift in Sources */,
 				ECB29E2C26AF9F2C000C26B5 /* Q278_First_Bad_Version.swift in Sources */,
 				EC3DF68226C4492C00168561 /* Q347_Top_K_Frequent_Elements.swift in Sources */,
@@ -550,6 +558,7 @@
 				EC97FA3D26B22C1500E2B001 /* Q22_Generate_Parentheses.swift in Sources */,
 				ECD236A626CC2DEA00C2B9CA /* Q107_Binary_Tree_Level_Order_Traversal_II.swift in Sources */,
 				ECCFCACB26BC56F800AAC8FF /* Q234_Palindrome_Linked_List.swift in Sources */,
+				EC952893270D16CD003D6FF1 /* Q215_Kth_Largest_Element_in_an_Array.swift in Sources */,
 				EC3DF6B726C64ADB00168561 /* Q110_Balanced_Binary_Tree.swift in Sources */,
 				ECD236B826CCE7BA00C2B9CA /* Q19_Remove_Nth_Node_From_End_of_List.swift in Sources */,
 				EC3DF6A326C5B08200168561 /* Q7_Reverse_Integer.swift in Sources */,
@@ -557,6 +566,8 @@
 				EC3DF68726C452C000168561 /* Q268_Missing_Number.swift in Sources */,
 				ECB29E0126AA4726000C26B5 /* Q1249_Minimum_Remove_to_Make_Valid_Parentheses.swift in Sources */,
 				EC3DF69626C4933300168561 /* L_Determine_If_One_String_Is_Another_Substring.swift in Sources */,
+				EC3E5E942713F67D007AD14B /* Q103_Binary_Tree_Zigzag_Level_Order_Traversal.swift in Sources */,
+				EC952898270FA76F003D6FF1 /* Q785_Is_Graph_Bipartite.swift in Sources */,
 				ECB29E0926AB3697000C26B5 /* Q125_Valid_Palindrome.swift in Sources */,
 				ECB29DC426A6C206000C26B5 /* Q66_plus_one.swift in Sources */,
 				EC0906E726C1ACBE0052A926 /* Q692_Top_K_Frequent_Words.swift in Sources */,
@@ -572,11 +583,13 @@
 				ECB29DB526A2535B000C26B5 /* Q16_3Sum_Closest.swift in Sources */,
 				ECD2369726CB37F000C2B9CA /* Q127_Word_Ladder.swift in Sources */,
 				EC97FA8026B47E2100E2B001 /* Q47_Permutations_II.swift in Sources */,
+				EC46B14B26DE133600560EBD /* Q12_Integer_to_Roman.swift in Sources */,
 				ECCFCABC26BB64E100AAC8FF /* Q141_Linked_List_Cycle.swift in Sources */,
 				EC97FA3826B2114F00E2B001 /* Q78_Subsets.swift in Sources */,
 				ECB29E1826AE3122000C26B5 /* Q704_Binary_Search.swift in Sources */,
 				EC97FA5426B3332200E2B001 /* Q90_Subsets_II.swift in Sources */,
 				ECB29DBF26A69A54000C26B5 /* Q18_KSum.swift in Sources */,
+				EC46B14626DE0C6400560EBD /* Q13_Roman_to_Integer.swift in Sources */,
 				EC97FA6C26B3CDAA00E2B001 /* L_All_Permutations_of_Subsets.swift in Sources */,
 				EC3DF68C26C470F100168561 /* L_Remove_Spaces.swift in Sources */,
 				ECCFCAF526BDEF1300AAC8FF /* Q155_Min_Stack.swift in Sources */,
@@ -594,6 +607,7 @@
 				ECB29E4026B0D002000C26B5 /* L636_Smallest_Element_Larger_than_Target.swift in Sources */,
 				ECCFCADA26BC9B4100AAC8FF /* Q27_Remove_Element.swift in Sources */,
 				ECB29E2226AF4258000C26B5 /* Q240_Search_a_2D_Matrix_II.swift in Sources */,
+				EC3E5E992716611B007AD14B /* L_All_Valid_Permutations_Of_Parentheses_II.swift in Sources */,
 				ECB29DCE26A7DEDB000C26B5 /* 259. 3Sum Smaller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -620,25 +634,6 @@
 			targetProxy = EC7AA26E269E44B60028738E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		EC7AA255269E44B20028738E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EC7AA256269E44B20028738E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		EC7AA25A269E44B50028738E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EC7AA25B269E44B50028738E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		EC7AA274269E44B60028738E /* Debug */ = {
