@@ -60,11 +60,43 @@ import XCTest
 //        nums[right] = tmp
 //    }
 //}
+
+private class Solution {
+    func allPermutationsOfSubsets(_ set: String) -> [String] {
+        var result =  [String]()
+        if set == nil {
+            return result
+        }
+        var path = Array(set)
+        dfs(&path, &result, 0)
+        return result
+    }
+    
+    private func dfs(_ path: inout [Character], _ result: inout [String], _ index: Int) {
+        var partial_path = path[..<index]
+        result.append(String(partial_path))
+        if path.count > 0 {
+            
+            for i in index..<path.count {
+                print("i is: ", i)
+                path.swapAt(index, i)
+                dfs(&path, &result, index + 1)
+                path.swapAt(index, i)
+            }
+        }
+        
+    }
+}
+
+
+
 class L_All_Permutations_of_Subsets: XCTestCase {
 
     func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let s = Solution()
+        let a = "abc"
+        let result = s.allPermutationsOfSubsets(a)
+        print(result)
     }
 
 
