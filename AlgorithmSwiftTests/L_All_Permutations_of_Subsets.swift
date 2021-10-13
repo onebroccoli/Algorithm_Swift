@@ -78,7 +78,6 @@ private class Solution {
         if path.count > 0 {
             
             for i in index..<path.count {
-                print("i is: ", i)
                 path.swapAt(index, i)
                 dfs(&path, &result, index + 1)
                 path.swapAt(index, i)
