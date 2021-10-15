@@ -17,40 +17,40 @@
  */
 import XCTest
 private class Solution {
-func subSetsOfSizeK(_ set: String, _ k: Int)-> [String] {
-    var result = [String]()
-    if set == nil {
+    func subSetsOfSizeK(_ set: String, _ k: Int)-> [String] {
+        var result = [String]()
+        if set == nil {
+            return result
+        }
+        var array = Array(set)
+        //record the current subset
+        var path = [Character]()
+        dfs(array, k, &path, 0, &result)
         return result
-    }
-    var array = Array(set)
-    //record the current subset
-    var path = [Character]()
-    dfs(array, k, &path, 0, &result)
-    return result
-    
-}
-
-private func dfs(_ array: [Character], _ k: Int, _ path: inout [Character], _ index: Int, _ result: inout [String]) {
-    //temrination condition
-    //when reached k elements, add the subset to result and return
-    if path.count == k {
-        result.append(String(path))
-        return
+        
     }
     
-    //when we finishes determining for all the characters pick or not, we must return
-    if index == array.count {
-        return
+    private func dfs(_ array: [Character], _ k: Int, _ path: inout [Character], _ index: Int, _ result: inout [String]) {
+        //temrination condition
+        //when reached k elements, add the subset to result and return
+        if path.count == k {
+            result.append(String(path))
+            return
+        }
+        
+        //when we finishes determining for all the characters pick or not, we must return
+        if index == array.count {
+            return
+        }
+        
+        //1. not pick the character at index
+        dfs(array, k, &path, index + 1, &result)
+        
+        //2.pick the character at index
+        path.append(array[index])
+        dfs(array, k, &path, index + 1, &result)
+        path.removeLast()
     }
-    
-    //1. not pick the character at index
-    dfs(array, k, &path, index + 1, &result)
-    
-    //2.pick the character at index
-    path.append(array[index])
-    dfs(array, k, &path, index + 1, &result)
-    path.removeLast()
-}
     
     
     
