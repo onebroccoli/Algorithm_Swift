@@ -23,34 +23,34 @@
  */
 import XCTest
 private class Solution {
-    func permuteUnique(_ nums: [Int]) -> [[Int]] {
-        var result = [[Int]]()
-        let nums = nums.sorted()
-        //sanity check
-        if nums.count == 0 {
-            return result
-        }
-        dfs(nums, 0, &result)
+func permuteUnique(_ nums: [Int]) -> [[Int]] {
+    var result = [[Int]]()
+    let nums = nums.sorted()
+    //sanity check
+    if nums.count == 0 {
         return result
     }
+    dfs(nums, 0, &result)
+    return result
+}
+
+func dfs(_ nums: [Int], _ index: Int, _ result: inout [[Int]]) {
+    //terminate condition
+    if index == nums.count - 1 {
+        result.append(nums)
+        return
+    }
     
-    func dfs(_ nums: [Int], _ index: Int, _ result: inout [[Int]]) {
-        //terminate condition
-        if index == nums.count - 1 {
-            result.append(nums)
-            return
-        }
-        
-        var nums = nums
-        for i in index..<nums.count {
-            if i == index || nums[i] != nums[index] {
-                nums.swapAt(index, i)
-                dfs(nums, index + 1, &result)
-                
-            }
+    var nums = nums
+    for i in index..<nums.count {
+        if i == index || nums[i] != nums[index] {
+            nums.swapAt(index, i)
+            dfs(nums, index + 1, &result)
             
         }
+        
     }
+}
 }
 
 
