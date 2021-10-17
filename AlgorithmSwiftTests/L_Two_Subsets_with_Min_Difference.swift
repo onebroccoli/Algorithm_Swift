@@ -40,7 +40,9 @@ private class Solution {
         if index == array.count {
             return
         }
+        //case1: add into subset
         dfs(array, totalSum, &minDiff, index + 1, count + 1, curSum + array[index])
+        //case2: not add into subset
         dfs(array, totalSum, &minDiff, index + 1, count, curSum)
     }
     
@@ -56,7 +58,9 @@ class L_Two_Subsets_with_Min_Difference: XCTestCase {
 
     func testExample() throws {
         let s = Solution()
-        let result = s.minDifference([1,1,1,3])
+//        let result = s.minDifference([1,1,1,3])
+        let result = s.minDifference([1,2,3])
+
         print("~~~~~~~~~~~~RESULT:")
         print (result)
     }
