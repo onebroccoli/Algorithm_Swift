@@ -35,85 +35,140 @@
  */
 import XCTest
 private class Solution {
-//    func restoreIpAddresses(_ s: String) -> [String]{
-//        //sanity check
-//        if s.count < 4 || s.count > 1 {
-//            return []
-//        }
-//        let chars = Array(s)
-//        var result = [String]()
-//        var candidate = [String]()
-//        dfs(chars, 0, &candidate, &result)
-//        return result
-//    }
-//
-//    func dfs(_ characters: [Character], _ index: Int, _ candidate: inout [String], _ result: inout [Strig]) {
-//        if candidate.count  == 4 {
-//            result.append(candidate.joined(separator: "."))
-//            return
-//        }
-//
-//
-//    }
     
-    func restoreIpAddresses(_ s: String) -> [String]{
-        var result = [String]()
-        var candidate = [String]()
-        if s.count == 0 {
-            return result
+func restoreIpAddresses(_ s: String) -> [String] {
+    var result = [String]()
+    var path = [String]()
+    var array = Array(s)
+    guard !s.isEmpty else {return []}
+    dfs(array, 0, 0, &path, &result)
+    return result
+}
+private func dfs(_ array: [Character], _ level: Int, _ index: Int, _ path: inout [String], _ result: inout [String]) {
+    //termination condition:
+    if level == 4 {
+        if index == array.count {
+            result.append(path.joined(separator: "."))
         }
-        dfs(Array(s), 0, 0, &candidate, &result)
-        return result
+        return
     }
-
-    func dfs(_ ip: [Character], _ level: Int, _ index: Int, _ candidate: inout [String], _ result: inout [String]) {
-        if level == 4 {
-            if index == ip.count {
-                result.append(candidate.joined(separator: "."))
-            }            
-            return
-        }
-            
-        //case 1
-        if index < ip.count {
-            let num = String(ip[index])
-            candidate.append(num)
-            dfs(ip, level + 1, index + 1, &candidate, &result)
-            candidate.removeLast()
+    
+    //case 1 add 1 digit
+    if index < array.count {
+        path.append(String(array[index]))
+        dfs(array, level + 1, index + 1, &path, &result)
+        path.removeLast()
+    }
+    
+    //case2  2digits
+    if index + 1 < array.count {
+        let a = String(array[index])
+        let b = String(array[index + 1])
+        if a != "0" {
+            let num = a + b
+//                let num = String(array[index..<(index + 1 + 1)])
+            path.append(num)
+            dfs(array, level + 1, index + 2, &path, &result)
+            path.removeLast()
         }
         
-        //case 2 2digits
-        if index + 1 < ip.count {
-            let a = String(ip[index])
-            let b = String(ip[index + 1])
-            if a != "0" {
-                let num = a + b
-//                let num = String(ip[index..<(index + 1 + 1)])
-                candidate.append(num)
-                dfs(ip, level + 1, index + 2, &candidate, &result)
-                candidate.removeLast()
-            }
-        }
-        //case3: 3 digits
-        if index + 2 < ip.count {
-            let a = String(ip[index])
-            let b = String(ip[index + 1])
-            let c = String(ip[index + 2])
-            //logic:
-            //1) a = 1
-            //2) a = 2, b <5
-            //3) a = 2, b = 5, c <= 5
-            if (a == "1" || (a == "2" && b >= "0" && b <= "4") || (a == "2" && b == "5" && c >= "0" && c <= "5")) {
-//                let num = String(ip[index..<(index + 2 + 1)])
-                let num = a + b + c
-                candidate.append(num)
-                dfs(ip, level + 1, index + 3, &candidate, &result)
-                candidate.removeLast()
-            }
+    }
+    
+    //case 3 : 3digits
+    if index + 2 < array.count {
+        let a = String(array[index])
+        let b = String(array[index + 1])
+        let c = String(array[index + 2])
+        //logic:
+        //1) a = 1
+        //2) a = 2, b < 5
+        //3) a = 2, b = 5, c < 5
+        if (a == "1" || (a == "2" && b >= "0" && b <= "4") || (a == "2" && b == "5" && c >= "0" && c <= "5")) {
+            let num = a + b + c
+            path.append(num)
+            dfs(array, level + 1, index + 3, &path, &result)
+            path.removeLast()
         }
     }
 }
-
+}
+        
+        //case3: 3 digits
+       //        if index + 2 < ip.count {
+       //            let a = String(ip[index])
+       //            let b = String(ip[index + 1])
+       //            let c = String(ip[index + 2])
+       //            //logic:
+       //            //1) a = 1
+       //            //2) a = 2, b <5
+       //            //3) a = 2, b = 5, c <= 5
+       //            if (a == "1" || (a == "2" && b >= "0" && b <= "4") || (a == "2" && b == "5" && c >= "0" && c <= "5")) {
+       ////                let num = String(ip[index..<(index + 2 + 1)])
+       //                let num = a + b + c
+       //                candidate.append(num)
+       //                dfs(ip, level + 1, index + 3, &candidate, &result)
+       //                candidate.removeLast()
+       //            }
+       //        }
+//    }
+//
+//    func restoreIpAddresses(_ s: String) -> [String]{
+//        var result = [String]()
+//        var candidate = [String]()
+//        if s.count == 0 {
+//            return result
+//        }
+//        dfs(Array(s), 0, 0, &candidate, &result)
+//        return result
+//    }
+//
+//    func dfs(_ ip: [Character], _ level: Int, _ index: Int, _ candidate: inout [String], _ result: inout [String]) {
+//        if level == 4 {
+//            if index == ip.count {
+//                result.append(candidate.joined(separator: "."))
+//            }
+//            return
+//        }
+//
+//        //case 1
+//        if index < ip.count {
+//            let num = String(ip[index])
+//            candidate.append(num)
+//            dfs(ip, level + 1, index + 1, &candidate, &result)
+//            candidate.removeLast()
+//        }
+//
+//        //case 2 2digits
+//        if index + 1 < ip.count {
+//            let a = String(ip[index])
+//            let b = String(ip[index + 1])
+//            if a != "0" {
+//                let num = a + b
+////                let num = String(ip[index..<(index + 1 + 1)])
+//                candidate.append(num)
+//                dfs(ip, level + 1, index + 2, &candidate, &result)
+//                candidate.removeLast()
+//            }
+//        }
+//        //case3: 3 digits
+//        if index + 2 < ip.count {
+//            let a = String(ip[index])
+//            let b = String(ip[index + 1])
+//            let c = String(ip[index + 2])
+//            //logic:
+//            //1) a = 1
+//            //2) a = 2, b <5
+//            //3) a = 2, b = 5, c <= 5
+//            if (a == "1" || (a == "2" && b >= "0" && b <= "4") || (a == "2" && b == "5" && c >= "0" && c <= "5")) {
+////                let num = String(ip[index..<(index + 2 + 1)])
+//                let num = a + b + c
+//                candidate.append(num)
+//                dfs(ip, level + 1, index + 3, &candidate, &result)
+//                candidate.removeLast()
+//            }
+//        }
+//    }
+//}
 
 class Q93_Restore_IP_Addresses: XCTestCase {
 
