@@ -33,55 +33,54 @@
  digits[i] is a digit in the range ['2', '9'].
  */
 
-//
-//import XCTest
-//extension StringProtocol  {
-//    var digits: [Int] { compactMap(\.wholeNumberValue) }
-//}
-//
-//private class Solution {
-//    func combinations(_ digits: String) -> [String] {
-//        var result = [String]()
-//        guard !digits.isEmpty else { return result}
-//
-//        let numToChar = ["", "", "abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"]
-//        dfs(digits, numToChar, 0, "", &result)
-//        return result
-//
-//    }
-//
-//    func dfs(_ digits: String, _ numToChar: [String],  _ level: Int, _ current: String, _ result: inout [String]) {
-//        //termination case
-//        if (level == digits.count) {
-//            result.append(current)
-//            return
-//        }
-////        var chars = Array(numToChar[number[level]])
-//        let digitString = String(digits[String.Index(encodedOffset: level)])
-//        let digit = Int(digitString)
-////        let digit = digits.digits[level]
-//        let chars = Array(numToChar[digit])
-////        let digit = String(digits[String.Index(encodedOffset: level)])
-//        if chars.count == 0 {
-//            dfs(digits, numToChar, level + 1, current, &result)
-//        } else {
-//            for char in chars {
-//                let newCurrent = current + String(char)
-//                dfs(digits, numToChar, level + 1, newCurrent, &result)
-//
-//            }
-//        }
-//    }
-//}
-//
-//class Q17_Letter_Combinations_of_a_Phone_Number: XCTestCase {
-//
-//
-//    func testExample() throws {
-//        let s = Solution()
-//        let result = s.combinations("132")
-//        print (result)
-//    }
-//
-//
-//}
+
+import XCTest
+private class Solution {
+func letterCombinations(_ digits: String) -> [String] {
+    var result = [String]()
+    guard !digits.isEmpty else { return result}
+
+    let numToChar = ["", "", "abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"]
+    let digits = Array(digits)
+    var path = [String]()
+    dfs(digits, numToChar, 0, &path, &result)
+    return result
+
+}
+
+func dfs(_ digits: [Character], _ numToChar: [String],  _ level: Int, _ path: inout [String], _ result: inout [String]) {
+    //termination case
+    if (level == digits.count) {
+        result.append(path.joined())
+        return
+    }
+    
+    var chars = Array(numToChar[Int(String(digits[level]))!])
+    //empty string means 0  or 1, do not add any letter to string
+    if chars.count == 0 {
+        dfs(digits, numToChar, level + 1, &path, &result)
+    } else {
+        for char in chars {
+            path.append(String(char))
+            dfs(digits, numToChar, level + 1, &path, &result)
+            path.removeLast()
+        }
+    }
+    
+}
+}
+
+
+class Q17_Letter_Combinations_of_a_Phone_Number: XCTestCase {
+
+
+    func testExample() throws {
+        let s = Solution()
+        let result = s.letterCombinations("132")
+        print (result)
+
+        
+    }
+
+
+}
