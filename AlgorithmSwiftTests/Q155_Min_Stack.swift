@@ -38,36 +38,36 @@
  */
 import XCTest
 private class Solution {
-/** initialize your data structure here. */
-init() {
+    /** initialize your data structure here. */
+    init() {
+        
+    }
+    var stack: [(Int, Int)] = []
+    var currentMin: Int = Int.max
     
-}
-var stack: [(Int, Int)] = []
-var currentMin: Int = Int.max
-
-func push(_ val: Int) {
-    if val < currentMin {
-        currentMin = val
+    func push(_ val: Int) {
+        if val < currentMin {
+            currentMin = val
+        }
+        stack.append((val, currentMin))
     }
-    stack.append((val, currentMin))
-}
-//remove the last element in stack, if stack still has at least 1 element, assign the new min to current min , if now, can change to Int.max
-func pop() {
-    stack.removeLast()
-    if let nextMin = stack.last?.1 {
-        currentMin = nextMin
-    } else {
-        currentMin = Int.max
+    //remove the last element in stack, if stack still has at least 1 element, assign the new min to current min , if now, can change to Int.max
+    func pop() {
+        stack.removeLast()
+        if let nextMin = stack.last?.1 {
+            currentMin = nextMin
+        } else {
+            currentMin = Int.max
+        }
     }
-}
-
-func top() -> Int {
-    return stack.last?.0 ?? Int.max
-}
-
-func getMin() -> Int {
-    return currentMin
-}
+    
+    func top() -> Int {
+        return stack.last?.0 ?? Int.max
+    }
+    
+    func getMin() -> Int {
+        return currentMin
+    }
 }
 class Q155_Min_Stack: XCTestCase {
 
