@@ -47,39 +47,53 @@
  */
 import XCTest
 private class Solution {
-    /** Initialize your data structure here. */
-        init() {
-            
-        }
-    var stack: [Int] = []
-    var tmpStack: [Int] = []
-    /** push element x to the back of queue.*/
+    init() {
+        
+    }
+    
+    var stack = [Int]()
+    var tempStack =  [Int]()
+    
+    //push element x to the back of queue
     func push(_ x: Int) {
         stack.append(x)
     }
     
+    //move all the elements from stack1 to stack2 until the last one
+    //record the last element
+    //move all the elements from stack2 back to stack1
+    //return the recorded last element
     func pop() -> Int {
         while stack.count != 1 {
-            tmpStack.append((stack.removeLast()))
+            tempStack.append(stack.removeLast())
         }
         let h = stack.removeLast()
-        while tmpStack.count != 0 {
-            stack.append(tmpStack.removeLast())
+        while tempStack.count != 0 {
+            stack.append(tempStack.removeLast())
         }
         return h
     }
     
-    func pick() -> Int {
+    
+    //same as pop except, not remove instead just call .last
+    func peek() -> Int {
         while stack.count != 1 {
-            tmpStack.append(stack.removeLast())
+            tempStack.append(stack.removeLast())
         }
-        let h = stack.last
-        while tmpStack.count != 0 {
-            stack.append(tmpStack.removeLast())
+        let h = stack.last!
+        while tempStack.count != 0 {
+            stack.append(tempStack.removeLast())
         }
-        return h!
+        return h
     }
     
+    func empty() -> Bool {
+        if stack.count == 0 {
+            return true
+        } else {
+            return false
+        }
+    }
     //还可以用array的特性， stack[0], 以及remove(at:0) 来完成操作
 //    /** Removes the element from in front of queue and returns that element. */
 //       func pop() -> Int {
@@ -99,19 +113,12 @@ private class Solution {
 //       }
     
     
-    func isEmpty() -> Bool {
-        //        return stack.isEmpty
-        if stack.count == 0{
-            return true
-        } else {
-            return false
-        }
-    }
+
     static func getSolution() -> Void {
         let queue = Solution()
         queue.push(1); queue.push(2); queue.push(3); queue.push(4);
         print(queue.pop()); print(queue.pop()); print(queue.pop()); print(queue.pop());
-        print(queue.isEmpty())
+        print(queue.empty())
         
     }
 }
@@ -124,7 +131,7 @@ class Q232_Implement_Queue_using_Stacks: XCTestCase {
         let queue = Solution()
         queue.push(1); queue.push(2); queue.push(3); queue.push(4);
         print(queue.pop()); print(queue.pop()); print(queue.pop()); print(queue.pop());
-        print(queue.isEmpty())
+        print(queue.empty())
     }
 
 
