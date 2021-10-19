@@ -48,31 +48,65 @@
 import XCTest
 
 private class Solution {
-    var queue = [Int]()
-//    var queue2 = [Int]()
+
+    init() {
+        
+    }
     
-    func push(_ n: Int) {
-        queue.append(n)
+    var queue = [Int]()
+    
+    func push(_ x: Int) {
+        queue.append(x)
+        var size = queue.count
+        while size > 1 {
+            queue.append(queue.first!)
+            queue.removeFirst()
+            size -= 1
+        }
     }
     
     func pop() -> Int {
-        let n = queue.removeLast()
-        return n
+        let h = queue.first!
+        queue.removeFirst()
+        return h
     }
     
-    func top() -> Int{
-        let n = queue.last
-        return n!
+    func top() -> Int {
+        return queue.first!
     }
     
     func empty() -> Bool {
-        if queue.count == 0 {
-            return true
-        } else {
-            return false
-        }
+        return queue.isEmpty
     }
 }
+
+
+//private class Solution {
+//    var queue = [Int]()
+////    var queue2 = [Int]()
+//
+//    func push(_ n: Int) {
+//        queue.append(n)
+//    }
+//
+//    func pop() -> Int {
+//        let n = queue.removeLast()
+//        return n
+//    }
+//
+//    func top() -> Int{
+//        let n = queue.last
+//        return n!
+//    }
+//
+//    func empty() -> Bool {
+//        if queue.count == 0 {
+//            return true
+//        } else {
+//            return false
+//        }
+//    }
+//}
 
 
 
