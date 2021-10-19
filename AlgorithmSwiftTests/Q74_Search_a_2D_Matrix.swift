@@ -29,26 +29,26 @@ import XCTest
 
 private class Solution {
     func searchMatrix(_ matrix: [[Int]], _ target: Int) -> Bool {
-        if matrix[0].count == 0 {
+        if matrix == nil || matrix[0].count == 0 {
             return false
         }
-        let row = matrix.count
-        let column = matrix[0].count
+        var row = matrix.count
+        var col = matrix[0].count
         var left = 0
-        var right = row * column - 1
+        var right = row * col - 1
         while left <= right {
             let mid = left + (right - left) / 2
-            if matrix[mid / column][mid % column] == target {
+            var tmpRow = mid / col
+            var tmpCol = mid % col
+            if matrix[tmpRow][tmpCol] == target {
                 return true
-            } else if matrix[mid / column][mid % column] < target {
+            } else if matrix[tmpRow][tmpCol] < target {
                 left = mid + 1
             } else {
                 right = mid - 1
             }
-            
         }
         return false
-        
     }
 }
 
