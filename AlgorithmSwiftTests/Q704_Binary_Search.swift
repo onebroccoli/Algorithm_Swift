@@ -28,14 +28,14 @@ import XCTest
  */
 private class Solution {
     func search(_ nums: [Int], _ target: Int) -> Int {
-        if nums.count == 0 {
+        if nums == nil || nums.count == 0 {
             return -1
         }
         var left = 0
         var right = nums.count - 1
         while left <= right {
-            let mid = left + (right - left) / 2
-            if (nums[mid] == target){
+            var mid = left + (right - left) / 2
+            if nums[mid] == target {
                 return mid
             } else if nums[mid] < target {
                 left = mid + 1
