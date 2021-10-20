@@ -23,32 +23,38 @@
 
  */
 import XCTest
-//private class Solution{
-//    func search(_ reader: ArrayReader, _ target: Int) -> Int {
-//        if reader.get(0) == target {
-//            return 0
-//        }
-//        var left = 0
-//        var right = 1
-//        while reader.get(right) < target {
-//            left = right
-//            right *= 2
-//        }
-//
-//        while left <= right {
-//            let mid = left + (right - left) / 2
-//            let num = reader.get(mid)
-//            if num == target {
-//                return mid
-//            } else if num < target {
-//                left = mid + 1
-//            } else {
-//                right = mid - 1
-//            }
-//        }
-//        return -1
-//    }
-//}
+private class Solution{
+func search(_ reader: ArrayReader, _ target: Int) -> Int {
+    var left = 0
+    var right = 1
+    //find the right boundary for binary search
+    //extends until we are sure the target is within the [left, right] range
+    while reader.get(right) != nil && reader.get(right) < target {
+        //1. move left to right
+        //2. double right index
+        left = right
+        right = 2 * right
+    }
+    return binarySearch(reader, target, left, right)
+    
+}
+
+func binarySearch(_ reader: ArrayReader, _ target: Int, _ left: Int, _ right: Int) -> Int {
+    var left = left
+    var right = right
+    while left <= right {
+        var mid = left + (right - left) / 2
+        if reader.get(mid) == nil || reader.get(mid) > target {
+            right = mid - 1
+        } else if reader.get(mid) < target {
+            left = mid + 1
+        } else {
+            return mid
+        }
+    }
+    return -1
+}
+}
 
 
 class Q702_Search_in_a_Sorted_Array_of_Unknown_Size: XCTestCase {
