@@ -23,7 +23,14 @@
 
  */
 import XCTest
+class ArrayReader {
+    public func get(_ index: Int) -> Int {
+        return 0
+    }
+}
+
 private class Solution{
+
 func search(_ reader: ArrayReader, _ target: Int) -> Int {
     var left = 0
     var right = 1
