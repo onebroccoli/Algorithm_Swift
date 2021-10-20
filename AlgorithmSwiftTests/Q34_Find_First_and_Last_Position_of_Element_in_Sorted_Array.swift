@@ -7,57 +7,45 @@
 
 import XCTest
 private class Solution {
-    func searchRange(_ nums: [Int], _ target: Int) -> [Int] {
-        let firstOccurrence = findBound(nums, target, true)
-        if (firstOccurrence == -1){
-            return [-1, -1]
-        }
-        let lastOccurrence = findBound(nums, target, false)
-        return [firstOccurrence, lastOccurrence]
+func searchRange(_ nums: [Int], _ target: Int) -> [Int] {
+    let firstOccurrence = findBound(nums, target, true)
+    if (firstOccurrence == -1){
+        return [-1, -1]
     }
-    func findBound(_ nums: [Int], _ target: Int, _ isFirst: Bool) -> Int {
-        var left = 0
-        var right = nums.count - 1
-        while left <= right {
-            let mid = left + (right - left) / 2
-            if nums[mid] == target {
-                if 
-            }
-        }
-    
-    
-    }
-    
-    func findBound2(_ nums: [Int], _ target: Int, _ isFirst: Bool) -> Int {
-        var begin = 0
-        var end = nums.count - 1
-        while begin <= end {
-            let mid = (begin + end) / 2
-            if nums[mid] == target {
-                if isFirst {
-                    //means we found our lower bound
-                    if mid == begin || nums[mid - 1] != target {
-                        return mid
-                    }
-                    //search on the left side for the bound
-                    end = mid - 1
-                } else {
-                    //thsi means we found our upper bound
-                    if mid == end || nums[mid + 1] != target{
-                        return mid
-                    }
-                    //search on the right side for the bound
-                    begin = mid + 1
+    let lastOccurrence = findBound(nums, target, false)
+    return [firstOccurrence, lastOccurrence]
+}
+func findBound(_ nums: [Int], _ target: Int, _ isFirst: Bool) -> Int {
+    var left = 0
+    var right = nums.count - 1
+    while left <= right {
+        let mid = left + (right - left) / 2
+        if nums[mid] == target {
+            //isFirst = true: find lower bound
+            if isFirst {
+                //case1.1: mid is at beginning
+                //case1.2: left of mid != target
+                if mid == left || nums[mid - 1] != target {
+                    return mid
                 }
-                
-            } else if nums[mid] > target {
-                end = mid - 1
+                right = mid - 1 //search for left side for the bound
             } else {
-                begin = mid + 1
+            //isFirst = false : find upper bound
+                if mid == right || nums[mid + 1] != target {
+                    return mid
+                }
+                left = mid + 1 //search for the right side for the bound
             }
+        } else if nums[mid] < target {
+            left = mid + 1
+        } else {
+            right = mid - 1
         }
-        return -1
     }
+    return -1
+}
+    
+
 }
 
 class Q34_Find_First_and_Last_Position_of_Element_in_Sorted_Array: XCTestCase {
@@ -66,6 +54,7 @@ class Q34_Find_First_and_Last_Position_of_Element_in_Sorted_Array: XCTestCase {
     func testExample() throws {
         let s = Solution()
         let result = s.searchRange([5,7,7,8,8,10], 8)
+        print ("RESULT:========", result)
         let expected = [3,4]
         XCTAssert(result == expected);
     }
