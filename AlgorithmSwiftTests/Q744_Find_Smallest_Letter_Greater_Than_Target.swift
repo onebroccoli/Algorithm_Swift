@@ -47,8 +47,8 @@ import XCTest
 private class Solution {
     func nextGreatestLetter(_ letters: [Character], _ target: Character) -> Character {
         var left = 0
-        var right = letters.count
-        while left < right {
+        var right = letters.count - 1
+        while left + 1 < right {
             let mid = left + (right - left) / 2
             if letters[mid] <= target {
                 left = mid + 1
@@ -56,7 +56,13 @@ private class Solution {
                 right = mid
             }
         }
-        return letters[left % letters.count]
+        
+        if letters[left] > target{
+            return letters[left]
+        } else if letters[right] > target {
+            return letters[right]
+        }
+        return letters[0]
     }
 }
 
