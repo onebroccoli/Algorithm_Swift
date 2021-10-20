@@ -15,9 +15,20 @@ private class Solution {
         let lastOccurrence = findBound(nums, target, false)
         return [firstOccurrence, lastOccurrence]
     }
-    
-    
     func findBound(_ nums: [Int], _ target: Int, _ isFirst: Bool) -> Int {
+        var left = 0
+        var right = nums.count - 1
+        while left <= right {
+            let mid = left + (right - left) / 2
+            if nums[mid] == target {
+                if 
+            }
+        }
+    
+    
+    }
+    
+    func findBound2(_ nums: [Int], _ target: Int, _ isFirst: Bool) -> Int {
         var begin = 0
         var end = nums.count - 1
         while begin <= end {
