@@ -26,50 +26,50 @@
 import XCTest
 
 private class Solution{
-    func findClosestElements(_ arr: [Int], _ k: Int, _ x: Int) -> [Int]{
-            var result = [Int]()
-            //base case
-            if (k == 0){
-                return [0]
-            }
-            if arr.count == 0 || arr.count == k {
-                return arr
-            }
-
-            //binary search to find the closest element
-            var left = 0
-            var right = arr.count
-            var mid = 0
-            while (left < right){
-                mid = left + (right - left) / 2
-                if arr[mid] >= x {
-                    right = mid
-                } else {
-                    left = mid + 1
-                }
-            }
-            //initialize our sliding window's bounds
-            left -= 1
-            right = left + 1
-            //while the window size is less than k
-            while (right - left - 1 < k){
-                //be careful to not go out of bounds
-                if left == -1 {
-                    right += 1
-                    continue
-                }
-                if (right == arr.count || abs(arr[left] - x) <= abs(arr[right] - x)){
-                    left -= 1
-                } else {
-                    right += 1
-                }
-            }
-            //build and return the window
-           for i in (left + 1)..<right {
-               result.append(arr[i])
-           }
-            return result
+func findClosestElements(_ arr: [Int], _ k: Int, _ x: Int) -> [Int]{
+        var result = [Int]()
+        //base case
+        if (k == 0){
+            return [0]
         }
+        if arr.count == 0 || arr.count == k {
+            return arr
+        }
+
+        //binary search to find the closest element
+        var left = 0
+        var right = arr.count
+        var mid = 0
+        while (left < right){
+            mid = left + (right - left) / 2
+            if arr[mid] >= x {
+                right = mid
+            } else {
+                left = mid + 1
+            }
+        }
+        //initialize our sliding window's bounds
+        left -= 1
+        right = left + 1
+        //while the window size is less than k
+        while (right - left - 1 < k){
+            //be careful to not go out of bounds
+            if left == -1 {
+                right += 1
+                continue
+            }
+            if (right == arr.count || abs(arr[left] - x) <= abs(arr[right] - x)){
+                left -= 1
+            } else {
+                right += 1
+            }
+        }
+        //build and return the window
+       for i in (left + 1)..<right {
+           result.append(arr[i])
+       }
+        return result
+    }
     
 //    func findClosestElements2(_ arr: [Int], _ k: Int, _ x: Int) -> [Int]{
 //            if arr.count == 0 {
@@ -132,8 +132,9 @@ class Q658_Find_K_Closest_Elements: XCTestCase {
         
         let s = Solution()
         let result = s.findClosestElements([1,2,3,4,5], 4, 3)
-        let expected = [1, 2, 3, 4]
-        XCTAssert(result == expected);
+        print(result)
+//        let expected = [1, 2, 3, 4]
+//        XCTAssert(result == expected);
     }
 
 
