@@ -47,16 +47,16 @@ private class Solution {
             return prev
         }
     
-    func reverseList_recursive(_ head: ListNode?) -> ListNode? {
-            if head == nil || head?.next == nil {
-                return head
-            }
-            
-            var newHead = reverseList_recursive(head?.next)
-            head?.next?.next = head
-            head?.next = nil
-            return newHead
-        }
+func reverseList_recursive(_ head: ListNode?) -> ListNode? {
+    if head == nil || head?.next == nil {
+        return head
+    }
+    
+    var newHead = reverseList_recursive(head?.next)
+    head?.next?.next = head
+    head?.next = nil
+    return newHead
+}
 }
 class Q206_Reverse_Linked_List: XCTestCase {
 
