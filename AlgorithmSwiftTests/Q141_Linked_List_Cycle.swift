@@ -44,21 +44,21 @@
  */
 import XCTest
 private class Solution {
-    func hasCycle(_ head: ListNode?) -> Bool {
-        if head == nil || head?.next == nil {
-            return false
-        }
-        var slow: ListNode? = head
-        var fast: ListNode? = head
-        while fast != nil && fast?.next != nil {
-            slow = slow?.next
-            fast = fast?.next?.next
-            if slow === fast {
-                return true
-            }
-        }
+func hasCycle(_ head: ListNode?) -> Bool {
+    if head == nil || head?.next == nil {
         return false
     }
+    var slow: ListNode? = head
+    var fast: ListNode? = head
+    while fast != nil && fast?.next != nil {
+        slow = slow?.next
+        fast = fast?.next?.next
+        if slow === fast {
+            return true
+        }
+    }
+    return false
+}
 }
 
 
