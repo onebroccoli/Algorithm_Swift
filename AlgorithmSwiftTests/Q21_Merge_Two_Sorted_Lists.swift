@@ -34,41 +34,63 @@
 import XCTest
 
 private class Solution {
-    func reorderList(_ head: ListNode?) {
-        if head == nil {
-            return
-        }
-        //step1: find the middle of the list
-        var slow: ListNode? = head
-        var fast: ListNode? = head
-        while (fast != nil && fast?.next != nil) {
-            slow = slow?.next
-            fast = fast?.next?.next
-        }
-        //reverse the second part of the list
-        var prev: ListNode? = nil
-        var curr = slow
-        while curr != nil {
-            var tmp = curr?.next
-            curr?.next = prev
-            prev = curr
-            curr = tmp
-        }
-        
-        //merge two sorted linked list
-        var first = head
-        var second = prev
-        while second?.next != nil {
-            var tmp = first?.next
-            first?.next = second
-            first = tmp
-            
-            tmp = second?.next
-            second?.next = first
-            second = tmp
+func mergeTwoLists(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
+    var l1 = l1
+    var l2 = l2
+    
+    let head: ListNode = ListNode(0)
+    var tmp = head
+    while l1 != nil && l2 != nil {
+        let v1 = l1!.val
+        let v2 = l2!.val
+        if v1 > v2{
+            tmp.next = l2!
+            l2 = l2?.next
+        } else {
+            tmp.next = l1!
+            l1 = l1?.next
             
         }
+        tmp = tmp.next!
     }
+    tmp.next = l1 ?? l2
+    return head.next
+}
+//    func reorderList(_ head: ListNode?) {
+//        if head == nil {
+//            return
+//        }
+//        //step1: find the middle of the list
+//        var slow: ListNode? = head
+//        var fast: ListNode? = head
+//        while (fast != nil && fast?.next != nil) {
+//            slow = slow?.next
+//            fast = fast?.next?.next
+//        }
+//        //reverse the second part of the list
+//        var prev: ListNode? = nil
+//        var curr = slow
+//        while curr != nil {
+//            var tmp = curr?.next
+//            curr?.next = prev
+//            prev = curr
+//            curr = tmp
+//        }
+//
+//        //merge two sorted linked list
+//        var first = head
+//        var second = prev
+//        while second?.next != nil {
+//            var tmp = first?.next
+//            first?.next = second
+//            first = tmp
+//
+//            tmp = second?.next
+//            second?.next = first
+//            second = tmp
+//
+//        }
+//    }
 }
 
 class Q21_Merge_Two_Sorted_Lists: XCTestCase {
