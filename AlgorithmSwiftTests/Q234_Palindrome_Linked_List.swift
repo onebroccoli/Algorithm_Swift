@@ -10,40 +10,41 @@
 import XCTest
 
 private class Solution {
-    func isPalindrome(_ head: ListNode?) -> Bool {
-        if head == nil || head?.next == nil {
-            return true
-        }
-        var fast = head
-        var slow = head
-        while fast?.next != nil && fast?.next?.next != nil {
-            fast = fast?.next?.next
-            slow = slow?.next
-        }
-        var secondHalfHead = reverse(slow!.next)
-        var firstHalfHead = head
-        
-        
-        while secondHalfHead != nil && firstHalfHead != nil {
-            guard firstHalfHead!.val == secondHalfHead!.val else {
-                return false
-            }
-            secondHalfHead = secondHalfHead!.next
-            firstHalfHead = firstHalfHead!.next
-        }
+func isPalindrome(_ head: ListNode?) -> Bool {
+    if head == nil || head?.next == nil {
         return true
     }
-    func reverse(_ head: ListNode?) -> ListNode? {
-        var head = head
-        var newHead: ListNode? = nil
-        while head != nil {
-            let next = head!.next
-            head?.next = newHead
-            newHead = head
-            head = next
-        }
-        return newHead
+    var fast = head
+    var slow = head
+    while fast?.next != nil && fast?.next?.next != nil {
+        fast = fast?.next?.next
+        slow = slow?.next
     }
+    var secondHalfHead = reverse(slow!.next)
+    var firstHalfHead = head
+    
+    
+    while secondHalfHead != nil && firstHalfHead != nil {
+        guard firstHalfHead!.val == secondHalfHead!.val else {
+            return false
+        }
+        secondHalfHead = secondHalfHead!.next
+        firstHalfHead = firstHalfHead!.next
+    }
+    firstHalfHead?.next = reverse(secondHalfHead) //restore original order
+    return true
+}
+func reverse(_ head: ListNode?) -> ListNode? {
+    var head = head
+    var newHead: ListNode? = nil
+    while head != nil {
+        let next = head!.next
+        head?.next = newHead
+        newHead = head
+        head = next
+    }
+    return newHead
+}
 }
 
 
