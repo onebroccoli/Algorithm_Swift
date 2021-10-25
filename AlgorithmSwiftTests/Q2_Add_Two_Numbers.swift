@@ -59,7 +59,14 @@ private class Solution {
         
     }
 }
-
+/*
+//test case:
+[9,9,9,9,9,9,9]
+[9,9,9,9]
+ 
+ Output Expected
+ [8,9,9,9,0,0,0,1]
+*/
 
 class Q2_Add_Two_Numbers: XCTestCase {
 
