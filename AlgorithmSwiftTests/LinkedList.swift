@@ -7,13 +7,26 @@
 
 import Foundation
 
-
-public class LinkedList {
+public class LinkedList: CustomStringConvertible {
     var head : ListNode?
     
+    //computed property
+    public var description: String {
+        var desc = ""
+        var curr = self.head;
+        while curr != nil {
+            desc = desc + String(curr!.val)
+            if curr!.next != nil {
+                desc = desc + "->"
+            }
+            curr = curr!.next
+        }
+        return desc
+    }
+    
     init(_ array: [Int]) {
-        var list = array
-        var head = ListNode(0)
+        let list = array
+        let head = ListNode(0)
         var cur : ListNode = head
         for i in list {
             cur.next = ListNode(i)
@@ -25,26 +38,29 @@ public class LinkedList {
         print("value is: =====" ,head.next!.val)
         self.head = head.next
     }
-
     
-    func printLinkedList(_ head: ListNode?) {
-        var head = head
-        while head != nil {
-            print(head!.val)
+    func removeElements(_ val: Int) {
+        var head = self.head
+        if head == nil {
+            return
+        }
+        var temp = head?.next
+        var prev = head
+        while temp != nil {
+            if temp?.val == val {
+                prev?.next = temp?.next
+                temp = prev?.next
+            } else {
+                temp = temp?.next
+                prev = prev?.next
+            }
+        }
+        //post processing: head == val
+        if head?.val == val {
             head = head?.next
         }
+        self.head = head
     }
-    
 }
 
-//
-//class LinkedListPrint: XCTestCase {
-//
-//    func testExample() throws {
-//        let s = Solution()
-//        let a = [1,2,3,4]
-//        let b = s.generateLinkedList(a)
-//        s.printLinkedList(b)
-//        print("++++++++DONE!!!++++++++")
-//    }
-//}
+
