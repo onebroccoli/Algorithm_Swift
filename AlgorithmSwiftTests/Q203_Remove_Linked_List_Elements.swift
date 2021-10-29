@@ -62,8 +62,17 @@ class Q203_Remove_Linked_List_Elements: XCTestCase {
     func testExample() throws {
         let s = Solution()
         let arr = [1,2,3,4]
-        let list = LinkedList(arr)
-        let result = s.removeElements(list.head, 3)
         
+        
+        let list = LinkedList(arr)
+        
+        //Option 1 this one works for solving leetcode not basic fuctions.
+        let result = s.removeElements(list.head, 3)
+        ListNode.printList(result)
+        
+//        //Option 2 this is more object oriented.
+//        list.removeElements(3)
+//        print(list)
+
     }
 }
