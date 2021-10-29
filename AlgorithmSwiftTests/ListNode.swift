@@ -14,5 +14,18 @@ public class ListNode {
         self.val = val
         self.next = nil
     }
+    
+    static public  func printList(_ head : ListNode?) {
+        var curr = head;
+        var str = ""
+        while curr != nil {
+            str += String(curr!.val)
+            if curr!.next != nil{
+                str += " -> "
+            }
+            curr = curr!.next
+        }
+        print(str)
+    }
 }
 
