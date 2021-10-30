@@ -46,6 +46,7 @@
 import XCTest
 
 private class Solution {
+    //Solution1: Recursion
 func preorderTraversalRecursion(_ root: TreeNode?) -> [Int] {
     var res = [Int]()
     helperRecursion(root, &res)
@@ -59,7 +60,7 @@ func helperRecursion(_ root: TreeNode?, _ res: inout [Int]) {
     helperRecursion(root.right, &res)
 }
     
-    
+    //Solution2: Iterative
 func preorderTraversalIter(_ root: TreeNode?) -> [Int] {
     var res = [Int]()
     var stack: [TreeNode] = []
