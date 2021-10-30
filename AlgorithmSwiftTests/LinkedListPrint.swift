@@ -23,6 +23,7 @@ private class Solution {
         return head.next
     }
     
+    
     func printLinkedList(_ head: ListNode?) {
         var head = head
         while head != nil {
