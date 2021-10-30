@@ -55,12 +55,17 @@ private class Solution {
         result.append(root.val)
         
     }
+    
 func postorderTraversalIterative(_ root: TreeNode?) -> [Int] {
     var res = [Int]()
     guard let root = root else {return res}
-    var stack : [TreeNode] = [root]
-    while let node = stack.popLast() {
+    var stack: [TreeNode] = [root]
+    while !stack.isEmpty {
+        var node = stack.removeLast()
+        //conduct the result for special pre-order traversal
         res.append(node.val)
+        //in pre-order the right subtree will be traversed before the
+              //left subtree so pushing left child first
         if let left = node.left {
             stack.append(left)
         }
@@ -69,8 +74,8 @@ func postorderTraversalIterative(_ root: TreeNode?) -> [Int] {
         }
     }
     return res.reversed()
-    
 }
+
 }
 
 
