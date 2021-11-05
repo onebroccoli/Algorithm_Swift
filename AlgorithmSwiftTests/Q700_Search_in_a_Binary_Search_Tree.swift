@@ -34,39 +34,21 @@
 import XCTest
 
 private class Solution {
-func searchBST(_ root: TreeNode?, _ val: Int) -> TreeNode? {
-    var cur = root
-    while cur != nil && cur!.val != val {
-        if cur!.val < val {
-            cur = cur!.right
-        } else if cur!.val >= val {
-            cur = cur!.left
-        }
-    }
-    return cur
-}
-
-func insertIntoBST(_ root: TreeNode?, _ val: Int) -> TreeNode? {
-    guard let root = root else {return TreeNode(val)}
-
-    var cur : TreeNode? = root //optional
-    while cur != nil && cur?.val != val {
-        guard let c = cur else {break}
-        if c.val < val {
-            if c.right == nil {
-                c.right = TreeNode(val)
+    
+    
+    func searchBST(_ root: TreeNode?, _ val: Int) -> TreeNode? {
+        var cur = root
+        while cur != nil && cur!.val != val {
+            if cur!.val < val {
+                cur = cur!.right
+            } else if cur!.val >= val {
+                cur = cur!.left
             }
-            cur = c.right
-        } else {
-            if c.left == nil {
-                c.left = TreeNode(val)
-            }
-            cur = c.left
         }
+        return cur
     }
-    return root
 
-}
+
 }
 
 
