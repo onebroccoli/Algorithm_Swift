@@ -43,37 +43,41 @@
  */
 import XCTest
 private class Solution {
-func missingNumber(_ nums: [Int]) -> Int {
-        let n = nums.count
-        var sum = (1+n) * n / 2
-        for n in nums {
-            sum -= n
+//    func missingNumber(_ nums: [Int]) -> Int {
+//        let n = nums.count
+//        var sum = (1+n) * n / 2
+//        for n in nums {
+//            sum -= n
+//        }
+//        return sum
+//    }
+    
+    //有问题还没修好
+    func missingNumber(_ nums: [Int]) -> Int {
+        var temp = Array(repeating: false, count: nums.count)
+        for i in nums {
+            temp[i] = true
         }
-        return sum
+        for j in 0..<temp.count {
+            if temp[j] == false {
+                return j
+            }
+        }
+        return nums.count
     }
+    
+    
 }
 
 
 class Q268_Missing_Number: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+  
 
     func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+        let s = Solution()
+        let r = s.missingNumber([0,1,3])
+        print(r)
     }
 
 }
