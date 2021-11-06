@@ -58,14 +58,14 @@
 import XCTest
 private class Solution {
 func removeElement(_ nums: inout [Int], _ val: Int) -> Int {
-    var i = 0
-    for j in 0..<nums.count {
-        if nums[j] != val {
-            nums[i] = nums[j]
-            i += 1
+    var slow = 0
+    for fast in 0..<nums.count {
+        if nums[fast] != val {
+            nums[slow] = nums[fast]
+            slow += 1
         }
     }
-    return i
+    return slow
 }
 }
 
@@ -75,13 +75,6 @@ class Q27_Remove_Element: XCTestCase {
         var a = [3,2,2,3]
         let res = s.removeElement(&a, 3)
         print (res)
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
     }
 
 }
