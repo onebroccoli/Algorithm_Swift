@@ -33,20 +33,41 @@
  */
 import XCTest
 private class Solution{
-func removeDuplicates(_ s: String) -> String {
-    var stack = [Character]()
-    for char in s {
-        if stack.last == char {
-            stack.removeLast()
+    func removeDuplicates(_ s: String) -> String {
+        var stack = [Character]()
+        for char in s {
+            if stack.last == char {
+                stack.removeLast()
+                
+            } else {
+                stack.append(char)
+            }
             
-        } else {
-            stack.append(char)
         }
+        return String(stack)
+    }
+    
+    func removeDuplicates_all(_ s: String) -> String {
+        if s == nil || s.count == 0 {
+            var result = ""
+            return result
+        }
+        //convert string to array
+        var chars = Array(s)
+        var slow = 0
+        for fast in 0..<chars.count {
+            if fast == 0 || chars[fast] != chars[fast - 1] {
+                chars[slow] = chars[fast]
+                slow += 1
+            }
+        }
+        return String(chars[0..<slow])
         
     }
-    return String(stack)
-}
-    
+    0 1 2 3 4 5 6 7 8
+    a b b b a a c c z
+          f
+        s
 }
         //two pointer解法不对
 //        if s.count <= 1{
@@ -94,7 +115,7 @@ class Q1047_Remove_All_Adjacent_Duplicates_In_String: XCTestCase {
 
     func testExample() throws {
         let s = Solution()
-        let result = s.removeDuplicates("abbbaaccz")
+        let result = s.removeDuplicates_all("abbbaaccz")
         print ("result is : ", result)
     }
 
