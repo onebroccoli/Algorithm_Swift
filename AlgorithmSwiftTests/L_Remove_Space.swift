@@ -58,7 +58,7 @@ class L_Remove_Space: XCTestCase {
 
     func testMiddle() throws {
         let s = Solution()
-        var a = "he m o"
+        var a = "   he m o"
         let res = s.removeSpaces(a)
         print("==RESULT IS===\(res)")
         XCTAssert(res == "he m o")
