@@ -47,7 +47,8 @@ private class Solution{
         return String(stack)
     }
     
-    func removeDuplicates_all(_ s: String) -> String {
+    //remove adjacent repeated characters in a given string , leaving only one character for each group
+    func removeDuplicates_leave_one_per_group(_ s: String) -> String {
         if s == nil || s.count == 0 {
             var result = ""
             return result
@@ -64,59 +65,53 @@ private class Solution{
         return String(chars[0..<slow])
         
     }
-    0 1 2 3 4 5 6 7 8
-    a b b b a a c c z
-          f
-        s
+    
+    
+func removeDuplicate_all(_ s: String) -> String {
+    var res = ""
+    if s == nil || s.count == 0 {
+        return res
+    }
+    if s.count == 1 {
+        return s
+    }
+    //convert string to char[], and do it inplace
+    var chars = Array(s)
+    //instead of using an extra stack explicitly,
+    //reuse the left side of the original char[] as the "stack"
+    //end: is where the top of the stack is.
+    var slow = 0
+    for fast in 1..<chars.count {
+        //if the stack is empty(when end == -1) or there is no duplicate chars,
+        //push the character into the stack
+        if slow == -1 || chars[fast] != chars[slow] {
+            slow += 1
+            chars[slow] = chars[fast]
+            
+        } else {
+            //otherwise, need to pop the top element by slow pointer--;
+            //ignore all the consecutive duplicate chars
+            slow -= 1
+            if fast + 1 < chars.count && chars[fast] == chars[fast + 1] {
+                continue
+            }
+        }
+    }
+    return String(chars[0..<slow + 1])
 }
-        //two pointer解法不对
-//        if s.count <= 1{
-//            return s
-//        }
-//        //convert string to char[] to do it inplace
-//        var array = Array(s)
-//        //instead of using an extra stack explicitly, reuse the left side of the original char[] as the "stack"
-//        //end: is where the top of the stack is.
-//        var slow = 0
-//        for fast in 1..<array.count {
-//            //if the stack is empty(when end == -1) or there is no duplicate chars, push the character into the stack
-//            if (slow == -1 || array[fast] != array[slow]) {
-//                slow += 1
-//                array[slow] = array[fast]
-//            } else {
-//                //otherwise need to pop the top element by slow pointer -1
-//                //ignore all the consecutive duplicate chars
-//                slow -= 1
-//                while fast + 1 < array.count && array[fast] == array[fast + 1] {
-//                    continue
-//                }
-//            }
-//        }
-//        return String(array[0..<slow + 1])
-    //非该题解，只去除重复字，不连环去除
-//    func removeDuplicates(_ s: String) -> String {
-//        if s.isEmpty {
-//            return s
-//        }
-//        var array = Array(s)
-//        var slow = 0
-//        for fast in 0..<array.count {
-//            if fast == 0 || array[fast] != array[fast - 1] {
-//                array[slow] = array[fast]
-//                slow += 1
-//            }
-//        }
-//        return String(array[0, slow + 1])
-//    }
-
+}
 
 
 class Q1047_Remove_All_Adjacent_Duplicates_In_String: XCTestCase {
 
     func testExample() throws {
         let s = Solution()
-        let result = s.removeDuplicates_all("abbbaaccz")
-        print ("result is : ", result)
+//        let result = s.removeDuplicates_leave_one_per_group("abbaaccz")
+//        print ("result is : ", result) //az
+        
+        
+        let result2 = s.removeDuplicate_all("abbaaccz")
+        print ("----result2 is: -----" , result2)//z
     }
 
 }
