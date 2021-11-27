@@ -23,15 +23,31 @@
 
  */
 import XCTest
+private class Solution {
+func reverseString(_ s: inout [Character]) -> [Character] {
+    var left = 0
+    var right = s.count - 1
+    while left < right {
+        var tmp = s[left]
+        s[left] = s[right]
+        s[right] = tmp
+        left += 1
+        right -= 1
+    }
+    return s
+}
+}
+
 
 class Q344_Reverse_String: XCTestCase {
-
    
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+//    func testExample() throws {
+//        let s = Solution()
+//        let a = ["h","e","l","l","o"]
+//        var res = s.reverseString(a)
+//
+//    }
 
    
 
