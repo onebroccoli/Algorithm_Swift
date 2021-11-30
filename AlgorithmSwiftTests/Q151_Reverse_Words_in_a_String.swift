@@ -45,36 +45,63 @@
 import XCTest
 
 private class Solution {
-    func reverseWords(_ s: String) -> String {
-        //convert it char to solve the problem in place
-        var array = Array(s)
-        //1. reverse the whole char array
-        reverse(&array, 0, array.count - 1)
-        var start = 0
-        //2. reverse each of the word
-        for i in 0..<array.count {
-            //define start index of a word
-            if array[i] != " " && (i == 0 || array[i - 1] == " ") {
-                start = i
-            }
-            //define end index of a word
-            if (array[i] != " " && (i == array.count - 1 || array[i + 1] == " ")) {
-                reverse(&array, start, i)
-            }
-        }
-        return String(array)
+func reverseWords(_ s: String) -> String {
+    if s == nil || s.count == 0 {
+        return ""
     }
+    var words = s.split(separator: " ", omittingEmptySubsequences: true)
+    var res = ""
+    for i in stride(from: words.count - 1, to: -1, by: -1){
+        if i == 0 {
+               res += words[i]
+           } else {
+               res += words[i]
+               res += " "
+           }
+    }
+    return res
+}
+        
+//    func reverseWords(_ s: String) -> String {
+//        //convert it char to solve the problem in place
+//        var array = Array(s)
+//        //1. reverse the whole char array
+//        reverse(&array, 0, array.count - 1)
+//        var start = 0
+//        //2. reverse each of the word
+//        for i in 0..<array.count {
+//            //define start index of a word
+//            if array[i] != " " && (i == 0 || array[i - 1] == " ") {
+//                start = i
+//            }
+//            //define end index of a word
+//            if (array[i] != " " && (i == array.count - 1 || array[i + 1] == " ")) {
+//                reverse(&array, start, i)
+//            }
+//        }
+//
+//        var left = 0
+//        var right = array.count - 1
+//        while left < right && array[left] == " " {left += 1}
+//        while left < right && array[right] == " " {right -= 1}
+//
+//        return String(array[left...right])
+//    }
+//
+//    func reverse(_ array: inout [Character], _ left: Int, _ right: Int) {
+//        var left = left
+//        var right = right
+//        while left < right {
+//            var tmp = array[left]
+//            array[left] = array[right]
+//            array[right] = tmp
+//            left += 1
+//            right -= 1
+//        }
+//    }
     
-    func reverse(_ array: inout [Character], _ left: Int, _ right: Int) {
-        var left = left
-        var right = right
-        while left < right {
-            var tmp = array[left]
-            array[left] = array[right]
-            array[right] = tmp
-            left += 1
-            right -= 1
-        }
+    func reverseWords2(_ s: String) -> String {
+        return String(s.split(separator: " ").reversed().reduce("") { total, word in total + word + " "}.dropLast())
     }
 }
 
@@ -84,9 +111,13 @@ class Q151_Reverse_Words_in_a_String: XCTestCase {
 
     func testExample() throws {
         let s = Solution()
-        var a = "I love Google"
-        var res = s.reverseWords(a)
-        print("RESULT : ======= ",res)
+//        var a = "I love Google"
+//        var res = s.reverseWords(a)
+//        print("RESULT : ======= ",res)
+        var b = "  hello world   hdiowhd  "
+        var res2 = s.reverseWords(b)
+
+        print("RESULT : ======= ",res2) //should be "world hello"
     }
 
 }
