@@ -59,20 +59,50 @@ import XCTest
 //max = (4, 6-2+1)
 private class Solution{
     func lengthOfLongestSubstring(_ s: String) -> Int {
-        var maxLen = 0, startIdx = 0, seenCharToPos = [Character: Int]()
-        let sChars = Array(s)
-        for (i, char) in sChars.enumerated(){
-            if let pos = seenCharToPos[char]{
-                startIdx = max(startIdx, pos)
+        //assumption: the input string is not null
+        //the distinct set contains all distinct characters
+        //in the sliding window of (slow, fast)
+        var array = Array(s)
+        var distinct = Set<Character>()
+        var slow = 0
+        var fast = 0
+        var longest = 0
+        while fast < s.count {
+            if distinct.contains(array[fast]) {
+                //if there is duplicate character, need to move the slow pointer.
+                distinct.remove(array[slow])
+                slow += 1
+            } else {
+                //if there is no duplicate character, can slide fast pointer and we have
+                //a new sliding window of (slow, fast) containing all distinct characters
+                distinct.insert(array[fast])
+                fast += 1
+                longest = max(longest, fast - slow)
             }
-            //update to next valid position
-            seenCharToPos[char] = i + 1
-            maxLen = max(maxLen, i - startIdx + 1)
             
         }
-        return maxLen
+        return longest
     }
 }
+
+
+
+
+//    func lengthOfLongestSubstring(_ s: String) -> Int {
+//        var maxLen = 0, startIdx = 0, seenCharToPos = [Character: Int]()
+//        let sChars = Array(s)
+//        for (i, char) in sChars.enumerated(){
+//            if let pos = seenCharToPos[char]{
+//                startIdx = max(startIdx, pos)
+//            }
+//            //update to next valid position
+//            seenCharToPos[char] = i + 1
+//            maxLen = max(maxLen, i - startIdx + 1)
+//
+//        }
+//        return maxLen
+//    }
+
 
 
 class Q3_Longest_Substring_Without_Repeating_Characters: XCTestCase {
@@ -83,8 +113,9 @@ class Q3_Longest_Substring_Without_Repeating_Characters: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         let s = Solution()
         let result = s.lengthOfLongestSubstring("abcabef")
-        let expected = 5
-        XCTAssert(result == expected)
+        print("result: =====", result)
+//        let expected = 5
+//        XCTAssert(result == expected)
     }
 
 }
