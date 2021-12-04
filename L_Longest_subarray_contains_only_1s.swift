@@ -32,46 +32,46 @@
 
  Explanation: k is 0 so you can not flip any 0 to 1, then the length of longest subarray that contains only integer 1 is 3.
  */
-import XCTest
-private class Solution {
-func longestConsecutiveOnes(_ nums: [Int], _ k: Int) -> Int {
-    var slow = 0
-    var fast = 0
-    var count = 0
-    var longest = 0
-    while fast < nums.count {
-        if nums[fast] == 1 {
-            fast += 1
-            longest = max(longest, fast - slow)
-            continue
-        }
-        if count < k {
-            count += 1
-            fast += 1
-            longest = max(longest, fast - slow)
-            continue
-        }
-        if nums[slow] == 0 {
-            count -= 1
-        }
-        slow += 1
-    }
-    return longest
-}
-
-}
-class L_Longest_subarray_contains_only_1s: XCTestCase {
-
-   
-
-    func testExample() throws {
-        let s = Solution()
-        let a1 = [1,1,0,0,1,1,1,0,0,0]
-        let k = 2
-        var result = s.longestConsecutiveOnes(a1, k)
-        print("result1: =====", result)
-    }
-
-   
-
-}
+//import XCTest
+//private class Solution {
+//func longestConsecutiveOnes(_ nums: [Int], _ k: Int) -> Int {
+//    var slow = 0
+//    var fast = 0
+//    var count = 0
+//    var longest = 0
+//    while fast < nums.count {
+//        if nums[fast] == 1 {
+//            fast += 1
+//            longest = max(longest, fast - slow)
+//            continue
+//        }
+//        if count < k {
+//            count += 1
+//            fast += 1
+//            longest = max(longest, fast - slow)
+//            continue
+//        }
+//        if nums[slow] == 0 {
+//            count -= 1
+//        }
+//        slow += 1
+//    }
+//    return longest
+//}
+//
+//}
+//class L_Longest_subarray_contains_only_1s: XCTestCase {
+//
+//
+//
+//    func testExample() throws {
+//        let s = Solution()
+//        let a1 = [1,1,0,0,1,1,1,0,0,0]
+//        let k = 2
+//        var result = s.longestConsecutiveOnes(a1, k)
+//        print("result1: =====", result)
+//    }
+//
+//
+//
+//}
