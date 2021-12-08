@@ -1,5 +1,6 @@
 import UIKit
 
-var a = ["1","n","}"]
-var b = a.joined()
-print(b)
+
+var a = " Hello Google "
+var s = a.split(separator: " ").reversed()
+print (s)
