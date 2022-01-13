@@ -36,7 +36,7 @@ private class Solution {
         var secondNode = head!.next
         
         //swapping
-        firstNode!.next = swapPairs(secondNode!.next)
+        firstNode!.next = swapPairs_recursion(secondNode!.next)
         secondNode!.next = firstNode
         
         //now the head is the second node
