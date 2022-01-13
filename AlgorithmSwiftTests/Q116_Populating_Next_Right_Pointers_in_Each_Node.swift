@@ -31,47 +31,41 @@
  Output: []
  */
 import XCTest
-private class Solution {
-func connect(_ root: Node?) -> Node? {
-    guard let root = root else {return nil}
-    //initiate an array which contains just the root of the tree
-    var q = [Node]()
-    q.append(root)
-    //outer while loop which iterates over each level
-    while q.count > 0 {
-        //note the size of the queue
-        var size : Int = q.count
-        //iterate over all the nodes on the current level
-        for i in 0..<size {
-            let node = q.removeFirst()
-            //pop a node from the front of the queue
-            if i < size - 1 {
-                node.next = q.first!
-                
-            }
-            //add the children if any to the back of the queue
-            if let left = node.left {
-                q.append(left)
-            }
-            //add right child node
-            if let right = node.right {
-                q.append(right)
-            }
-            
-        }
-    }
-    return root
-}
-}
+//private class Solution {
+//func connect(_ root: Node?) -> Node? {
+//    guard let root = root else {return nil}
+//    //initiate an array which contains just the root of the tree
+//    var q = [Node]()
+//    q.append(root)
+//    //outer while loop which iterates over each level
+//    while q.count > 0 {
+//        //note the size of the queue
+//        var size : Int = q.count
+//        //iterate over all the nodes on the current level
+//        for i in 0..<size {
+//            let node = q.removeFirst()
+//            //pop a node from the front of the queue
+//            if i < size - 1 {
+//                node.next = q.first!
+//                
+//            }
+//            //add the children if any to the back of the queue
+//            if let left = node.left {
+//                q.append(left)
+//            }
+//            //add right child node
+//            if let right = node.right {
+//                q.append(right)
+//            }
+//            
+//        }
+//    }
+//    return root
+//}
+//}
 class Q116_Populating_Next_Right_Pointers_in_Each_Node: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+   
 
     func testExample() throws {
         // This is an example of a functional test case.
@@ -81,11 +75,6 @@ class Q116_Populating_Next_Right_Pointers_in_Each_Node: XCTestCase {
         // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+  
 
 }
