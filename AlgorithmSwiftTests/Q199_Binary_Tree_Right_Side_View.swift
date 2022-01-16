@@ -24,7 +24,21 @@
  Output: []
  */
 import XCTest
-
+private class Colution {
+    func rightSideView(_ root: TreeNode?) -> [Int] {
+        guard let root = root else {return []}
+        var    nextLevel: [TreeNode] = [TreeNode]()
+        nextLevel.append(root)
+        
+        var currentLevel: [TreeNode] = [TreeNode]()
+        var rightside: [Int] = [Int]()
+        var node: TreeNode = nil
+        while !nextLevel.isEmpty {
+            //prepare for the next level
+            var
+        }
+    }
+}
 class Q199_Binary_Tree_Right_Side_View: XCTestCase {
 
     override func setUpWithError() throws {
