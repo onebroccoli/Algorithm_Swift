@@ -34,8 +34,26 @@
  Explanation: Since the tree is empty, there are no root-to-leaf paths.
 
  */
-import XCTest
 
+
+import XCTest
+private class Solution {
+    func hasPathSum(_ root: TreeNode?, _ targetSum: Int) -> Bool {
+        var targetSum = targetSum
+        if root == nil {
+            return false
+        }
+        targetSum -= root!.val
+        if root!.left == nil && root!.right == nil {
+            return targetSum == 0
+        }
+        
+        return hasPathSum(root!.left, targetSum) || hasPathSum(root!.right, targetSum)
+    }
+    
+    
+    
+}
 class Q112_Path_Sum: XCTestCase {
 
     override func setUpWithError() throws {
