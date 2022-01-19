@@ -93,20 +93,20 @@ private class Solution {
         }
     }
     //优化版
-    func dfs(_ board: inout [[Character]], _ row: Int, _ col: Int, _ rows: Int, _ cols: Int) {
-       if row < 0 || row >= rows || col < 0 || col >= cols {
-           return
-       }
-        if board[row][col] != "O" {
-            return
-        }
-        board[row][col] = "E"
-        //jump to neighbors without boundary checks
-        for dir in [[0,1],[1,0],[0,-1],[-1,0]] {
-            dfs(&board, row + dir[0], col + dir[1], rows, cols)
-        }
-        
+func dfs(_ board: inout [[Character]], _ row: Int, _ col: Int, _ rows: Int, _ cols: Int) {
+   if row < 0 || row >= rows || col < 0 || col >= cols {
+       return
+   }
+    if board[row][col] != "O" {
+        return
     }
+    board[row][col] = "E"
+    //jump to neighbors without boundary checks
+    for dir in [[0,1],[1,0],[0,-1],[-1,0]] {
+        dfs(&board, row + dir[0], col + dir[1], rows, cols)
+    }
+    
+}
 }
 class Q130_Surrounded_Regions: XCTestCase {
 
