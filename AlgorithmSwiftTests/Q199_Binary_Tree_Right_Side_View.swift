@@ -25,84 +25,37 @@
  */
 import XCTest
 private class Colution {
-//    func rightSideView(_ root: TreeNode?) -> [Int] {
-//        guard let root = root else {return []}
-//        var queue: [TreeNode] = [TreeNode]()
-//        queue.append(root)
-//        queue.append(TreeNode(-1))
-//        var prev: TreeNode = root
-//        var curr: TreeNode = root
-//        var rightSide: [Int] = [Int]()
-//
-//        while !queue.isEmpty {
-//            prev = curr
-//            curr = queue.removeFirst()
-//
-//            while curr != nil && curr.val != -1 {
-//                //add child nodes in the queue
-//                if curr.left != nil {
-//                    queue.append(curr.left!)
-//
-//                }
-//                if curr.right != nil {
-//                    queue.append(curr.right!)
-//                }
-//                prev = curr
-//                curr = queue.removeFirst()
-//
-//            }
-//
-//            //current level is finished, prev is its rightmost element
-//            rightSide.append(prev.val)
-//
-//            //add a sentinel to mark the endof the next leevel
-//            if !queue.isEmpty {
-//                queue.append(TreeNode(-1))
-//            }
-//        }
-//        return rightSide
-//    }
-    func rightSideView(_ root: TreeNode?) -> [Int] {
-         guard let root = root else {return []}
-         var queue: [TreeNode] = [TreeNode]()
-         queue.append(root)
-         queue.append(TreeNode(-1))
-         var prev: TreeNode = root
-         var curr: TreeNode = root
-         var rightSide: [Int] = [Int]()
-         
-         while !queue.isEmpty {
-             prev = curr
-             curr = queue.removeFirst()
-             
-             while curr != nil && curr.val != -1 {
-                 var flag = false
-                 //add child nodes in the queue
-                 if curr.left != nil {
-                     queue.append(curr.left!)
-                     flag = true //flag shows we have a left subtree
-                 }
-                 if curr.right != nil {
-                     if flag {
-                         queue.removeFirst()
-                     }
-                     queue.append(curr.right!)
-                 }
-                 prev = curr
-                 curr = queue.removeFirst()
-                 
-             }
-             
-             //current level is finished, prev is its rightmost element
-             rightSide.append(prev.val)
-             
-             //add a sentinel to mark the endof the next leevel
-             if !queue.isEmpty {
-                 queue.append(TreeNode(-1))
-             }
-         }
-         return rightSide
-     }
+
+func rightSideView(_ root: TreeNode?) -> [Int] {
+    if let root = root {
+        var result: [Int] = []
+        var current: [TreeNode] = [root]
+        var next: [TreeNode] = []
+        
+        while !current.isEmpty {
+            if current.count == 1 {
+                result.append(current[0].val)
+            }
+            
+            let node = current.removeFirst()
+            if let left = node.left {
+                next.append(left)
+            }
+            if let right = node.right {
+                next.append(right)
+            }
+            //when current level is finished , move to next level (next, update next to empty
+            if current.count == 0 {
+                current = next
+                next = []
+            }
+        }
+        return result
+        
+    } else {
+        return []
+    }
+}
 }
 class Q199_Binary_Tree_Right_Side_View: XCTestCase {
 
