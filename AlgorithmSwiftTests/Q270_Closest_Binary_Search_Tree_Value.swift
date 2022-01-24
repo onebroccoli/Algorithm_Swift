@@ -22,7 +22,24 @@
  */
 import XCTest
 private class Solution {
-    
+func closestValue(_ root: TreeNode?, _ target: Double) -> Int {
+    var minValue: Double = Double(Int.max)
+    var result: Int = Int.max
+    helper(root, target, &minValue, &result)
+    return result
+}
+
+func helper(_ root: TreeNode?, _ target: Double,  _ min: inout Double, _ result: inout Int) {
+    if root == nil {
+        return
+    }
+    helper(root?.left, target, &min, &result)
+    if abs(Double(root!.val) - target) < min {
+        min = abs(Double(root!.val) - target)
+        result = root!.val
+    }
+    helper(root?.right, target, &min, &result)
+}
 }
 class Q270_Closest_Binary_Search_Tree_Value: XCTestCase {
 
