@@ -25,7 +25,37 @@
  */
 import XCTest
 private class Solution {
+func longestPalindrome(_ s: String) -> String {
+    guard  s.count > 1 else {
+        return s
+    }
+    let chars = Array(s)
+    var maxLen: Int = 0
+    var start: Int = 0
     
+    for i in 0..<chars.count {
+        helper(chars, i, i, &maxLen, &start)
+        helper(chars, i, i+1, &maxLen, &start)
+        
+        
+    }
+    return String(chars[start..<start+maxLen])
+}
+
+
+func helper(_ chars:[Character], _ l: Int, _ r: Int, _ maxLen: inout Int, _ start: inout Int) {
+    var l: Int = l
+    var r: Int = r
+    while l >= 0 && r < chars.count && chars[l] == chars[r]{
+        l -= 1
+        r += 1
+    }
+    
+    if maxLen < r - l - 1 {
+        start = l + 1
+        maxLen = r - l - 1
+    }
+}
     
 }
 class Q5_Longest_Palindromic_Substring: XCTestCase {
