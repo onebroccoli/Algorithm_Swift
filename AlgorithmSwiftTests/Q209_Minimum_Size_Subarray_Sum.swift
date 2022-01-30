@@ -35,30 +35,56 @@
  Follow up: If you have figured out the O(n) solution, try coding another solution of which the time complexity is O(n log(n)).
  */
 import XCTest
-
+private class Solution {
+    func minSubArrayLen(_ target: Int, _ nums: [Int]) -> Int {
+        if nums == nil || nums.count == 0 {
+            return 0
+        }
+        var sums = [Int](repeatElement(0, count: nums.count + 1))
+        var result = Int.max
+        
+        for i in 1..<sums.count {
+            sums[i] = sums[i - 1] + nums[i - 1]
+            
+        }
+        for i in 0..<sums.count {
+            let end = binarySearch(i + 1, sums.count - 1, sums, sums[i] + target)
+            if end == sums.count {
+                break
+                
+            }
+            if end - i < result {
+                result = end - i
+            }
+        }
+        return result == Int.max ? 0 : result
+    }
+    
+    func binarySearch(_ left: Int, _ right: Int, _ nums: [Int], _ target: Int) -> Int {
+        var left = left
+        var right = right
+        var mid = 0
+        
+        while left <= right {
+            mid = left + (right - left) / 2
+            if nums[mid] < target {
+                left = mid + 1
+            } else {
+                right = mid - 1
+            }
+        }
+        return left
+    }
+}
 class Q209_Minimum_Size_Subarray_Sum: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+    
 
     func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+        let s = Solution()
+        var a = [2,3,1,2,4,3]
+        var result = s.minSubArrayLen( 7,a)
+        print("result = : ",result)
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
 
 }
