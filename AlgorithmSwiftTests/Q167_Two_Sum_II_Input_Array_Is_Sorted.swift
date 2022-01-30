@@ -56,7 +56,7 @@ private class Solution {
     }
     
     
-func twoSum(_ numbers: [Int], _ target: Int) -> [Int] {
+func twoSum2(_ numbers: [Int], _ target: Int) -> [Int] {
     if numbers == nil || numbers.count == 0 || numbers.count == 1 {
         return  [-1, -1]
     }
