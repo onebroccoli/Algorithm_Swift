@@ -37,7 +37,41 @@
  Follow up: Can you come up with an algorithm that runs in O(n log(n)) time complexity?
  */
 import XCTest
+private class Solution {
+func lengthOfLIS(_ nums: [Int]) -> Int {
+    var res: [Int] = [Int]()
+    res.append(nums[0])
+    
+    for i in 1..<nums.count {
+        var num = nums[i]
+        if num > res[res.count - 1] {
+            res.append(num)
+        } else {
+            var insertIndex = binarySearch(res, num)
+            res[insertIndex] = num
+        }
+    }
+    return res.count
+}
 
+
+func binarySearch(_ nums:[Int], _ num: Int) -> Int {
+    var left = 0
+    var right = nums.count - 1
+    
+    while left < right {
+        var mid = left + (right - left) / 2
+        if nums[mid] == num {
+            return mid
+        } else if nums[mid] < num {
+            left = mid + 1
+        } else {
+            right = mid
+        }
+    }
+    return left
+}
+}
 class Q300__Longest_Increasing_Subsequence: XCTestCase {
 
     override func setUpWithError() throws {
