@@ -27,34 +27,53 @@ import XCTest
 private class Colution {
 
 func rightSideView(_ root: TreeNode?) -> [Int] {
-    if let root = root {
-        var result: [Int] = []
-        var current: [TreeNode] = [root]
-        var next: [TreeNode] = []
-        
-        while !current.isEmpty {
-            if current.count == 1 {
-                result.append(current[0].val)
-            }
-            
-            let node = current.removeFirst()
-            if let left = node.left {
-                next.append(left)
-            }
-            if let right = node.right {
-                next.append(right)
-            }
-            //when current level is finished , move to next level (next, update next to empty
-            if current.count == 0 {
-                current = next
-                next = []
-            }
+    guard let root = root else {return []}
+    
+    var result: [Int] = []
+    var current: [TreeNode] = [root]
+
+    var next: [TreeNode] = []
+
+    while !current.isEmpty {
+        if current.count == 1 {
+            result.append(current[0].val)
         }
-        return result
-        
-    } else {
-        return []
+
+        let node = current.removeFirst()
+        if let left = node.left {
+            next.append(left)
+        }
+        if let right = node.right {
+            next.append(right)
+        }
+        //when current level is finished, move to next level, update next to empty
+        if current.count == 0 {
+            current = next
+            next = []
+        }
     }
+    return result
+            
+    }
+    //[1] , [1,2] (5, 2) [1, 2, 5], (3, 1) res[1] = 3, [1, 3], (4, 2) -> res[2] = 4, [1,3,4]
+    //dfs
+func rightSideView_DFS(_ root: TreeNode?) -> [Int] {
+    var res = [Int]()
+    guard let root = root else {return res}
+    dfs(root, 0, &res)
+    return res
+    
+    
+}
+func dfs(_ root: TreeNode?, _ level: Int, _ res: inout [Int]) {
+    guard let root = root else {return}
+    if level >= res.count {
+        res.append(root.val)
+    } else {
+        res[level] = root.val
+    }
+    dfs(root.left, level + 1, &res)
+    dfs(root.right, level + 1, &res)
 }
 }
 class Q199_Binary_Tree_Right_Side_View: XCTestCase {
