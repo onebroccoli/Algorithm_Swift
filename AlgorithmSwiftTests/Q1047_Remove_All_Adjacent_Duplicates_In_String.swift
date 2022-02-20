@@ -33,19 +33,19 @@
  */
 import XCTest
 private class Solution{
-    func removeDuplicates(_ s: String) -> String {
-        var stack = [Character]()
-        for char in s {
-            if stack.last == char {
-                stack.removeLast()
-                
-            } else {
-                stack.append(char)
-            }
+func removeDuplicates(_ s: String) -> String {
+    var stack = [Character]()
+    for char in s {
+        if stack.last == char {
+            stack.removeLast()
             
+        } else {
+            stack.append(char)
         }
-        return String(stack)
+        
     }
+    return String(stack)
+}
     
     //remove adjacent repeated characters in a given string , leaving only one character for each group
     func removeDuplicates_leave_one_per_group(_ s: String) -> String {
