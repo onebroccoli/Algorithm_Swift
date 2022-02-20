@@ -86,7 +86,7 @@ private class Solution {
         }
         
         if right == nil {
-            return right
+            return left
         }
         
         return root
