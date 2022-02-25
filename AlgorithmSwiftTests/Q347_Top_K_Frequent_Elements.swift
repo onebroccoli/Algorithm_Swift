@@ -26,16 +26,16 @@
  */
 import XCTest
 private class Solution {
-func topKFrequent(_ nums: [Int], _ k: Int) -> [Int] {
-    //create map for nums
-    var map: [Int : Int] = [:]
-    for num in nums {
-        map[num, default: 0] += 1
+    func topKFrequent(_ nums: [Int], _ k: Int) -> [Int] {
+        //create map for nums
+        var map: [Int : Int] = [:]
+        for num in nums {
+            map[num, default: 0] += 1
+        }
+        let mapSort = map.sorted(by: {$0.value > $1.value})
+        return mapSort[0..<k].map({$0.key})
+        
     }
-    let mapSort = map.sorted(by: {$0.value > $1.value})
-    return mapSort[0..<k].map({$0.key})
-    
-}
 }
 
 class Q347_Top_K_Frequent_Elements: XCTestCase {
