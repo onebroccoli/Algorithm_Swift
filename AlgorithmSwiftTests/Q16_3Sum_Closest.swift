@@ -19,38 +19,40 @@
 import XCTest
 
 private class Solution{
-    func threeSumClosest(_ nums: [Int], _ target: Int) -> Int {
-        var minDiff = Int.max
-        let nums = nums.sorted()
-        
-        for i in 0..<nums.count - 2{
-            if i > 0 && nums[i] == nums[i - 1]{
-                continue
+func threeSumClosest(_ nums: [Int], _ target: Int) -> Int {
+    var diff = Int.max
+    let nums = nums.sorted()
+    
+    
+    
+    for i in 0..<nums.count {
+        var low = i + 1
+        var high = nums.count - 1
+        while low < high {
+            var sum = nums[i] + nums[low] + nums[high]
+            if abs(target - sum ) < abs(diff) {
+                diff = target - sum
             }
-            let twoSum = target - nums[i]
-            var left = i + 1
-            var right = nums.count - 1
-            
-            while left < right{
-                let diff = nums[left] + nums[right] - twoSum
-                if abs(diff) < abs(minDiff){
-                    minDiff = diff
-                }
-                if diff == 0 {
-                    return target
-                } else if diff > 0 {
-                    repeat {
-                        right -= 1
-                    } while left < right && nums[right] == nums[right + 1]
+            if diff == 0 {
+                return target - diff
+            } else {
+                if sum < target {
+                    low += 1
                 } else {
-                    repeat {
-                        left += 1
-                    } while left < right && nums[left] == nums[left - 1]
+                    high -= 1
                 }
             }
+            
+            
         }
-        return target + minDiff
+        
+        
     }
+    return target - diff
+    
+    
+}
+
 }
 
 class Q16_3Sum_Closest: XCTestCase {
