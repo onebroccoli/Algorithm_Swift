@@ -32,17 +32,25 @@
 import XCTest
 private class Solution {
     func canPlaceFlowers(_ flowerbed: [Int], _ n: Int) -> Bool {
-        var cnt = flowerbed.count
-        if cnt < n {
-            return false
+        var count = 0
+        var flowerbed = flowerbed
+        for i in 0..<flowerbed.count {
+            //check if current plot if empty
+            if flowerbed[i] == 0 {
+                //check if the left and right plots are empty
+                var emptyLeftPlot = i == 0 || flowerbed[i - 1] == 0
+                var emptyRightPlot = i == flowerbed.count - 1 || flowerbed[i + 1] == 0
+                //if both plots are empty, we can plant a flower here
+                if emptyLeftPlot && emptyRightPlot {
+                    flowerbed[i] = 1
+                    count += 1
+                    if count >= n {
+                        return true
+                    }
+                }
+            }
         }
-        if cnt % 2 == 0 && cnt/2 < n {
-            return false
-        } else if cnt%2 == 1&& cnt /2 + 1 < n {
-            return false
-        }
-        
-        
+        return count >= n
     }
 }
 class Q605__Can_Place_Flowers: XCTestCase {
