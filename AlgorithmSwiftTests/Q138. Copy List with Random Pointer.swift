@@ -90,6 +90,23 @@ private class Solution {
         }
         return dict[dummy.next!] as? Node
     }
+ var visited: [Node? : Node?] = [:]
+ func copyRandomList(_ head: Node?) -> Node? {
+        guard let head = head else {return nil }
+        if let node = visited[head] {
+            return node
+        }
+        var node = Node(head.val)
+        visited[head] = node
+        if let next = head.next {
+            node.next = copyRandomList(head.next)
+        }
+        if let random = head.random {
+            node.random = copyRandomList(head.random)
+        }
+        return node
+ }
+ 
 }
  
  */
