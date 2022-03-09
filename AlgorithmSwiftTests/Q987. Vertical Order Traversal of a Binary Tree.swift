@@ -56,33 +56,91 @@
  
  */
 //import XCTest
-//private class Solution {
-//    var map: [Int: [(Int, Int)]] = [:]
-//    func verticalTraversal(_ root: TreeNode?) -> [[Int]] {
-//        var ans: [[Int]] = []
-//        helper(root, 0, 0)
-//        for k in map.keys.sorted() {
-//            ans.append(map[k]![0])
-//        }
-//        return ans
-//    }
-//
-//    func helper(_ root: TreeNode?, _ level: Int, _ depth: Int) {
-//        guard let root = root else {return}
-//        if map[level] == nil {
-//            map[level] = [(root.val, depth)]
-//        } else {
-//            map[level]!.append((root.val, depth))
-//        }
-//
-//        helper(root.right, level + 1, depth + 1)
-//        helper(root.left, level - 1, depth + 1)
-//
-//
-//    }
-//
-//
-//}
+private class Solution {
+func verticalTraversal(_ root: TreeNode?) -> [[Int]] {
+    var result: [[Int]] = []
+    var queue: [(node: TreeNode?, column: Int)] = []
+    var hash: [Int: [Int]] = [:] //map, key is row number, value is [Int] storing the elements for each row.
+    
+    queue.append((node: root, column: 0))
+    while !queue.isEmpty {
+        var count = queue.count - 1
+        var temp: [Int: [Int]] = [:]
+        while count >= 0 {
+            let value = queue.removeFirst()
+            if let root = value.node {
+                if let left = root.left {
+                    queue.append((node: left, column: value.column - 1))
+                    
+                }
+                if let right = root.right {
+                    queue.append((node: right, column: value.column + 1))
+                    
+                }
+                
+                //if temp[column] exists, insert root.val
+                if var isInHash = temp[value.column] {
+                    isInHash.append(root.val)
+                    temp[value.column] = isInHash
+                //if not exists, append [root.val] directly
+                } else {
+                    temp[value.column] = [root.val]
+                }
+            }
+            count -= 1
+        }
+        
+        if !temp.isEmpty {
+            for (key, value) in temp {
+                if var isInHash = hash[key] {
+                    isInHash.append(contentsOf: value.sorted())
+                    hash[key] = isInHash
+                } else {
+                    hash[key] = value.sorted()
+                }
+            }
+        }
+    }
+    
+    //Formulating the result:
+    for key in hash.keys.sorted() {
+        if let value = hash[key] {
+            result.append(value)
+        }
+    }
+    return result
+    
+}
+   //[3,9,20,null,null,15,7]
+    /*
+     
+
+    var map: [Int: [(Int, Int)]] = [:]
+    func verticalTraversal(_ root: TreeNode?) -> [[Int]] {
+        var ans: [[Int]] = []
+        helper(root, 0, 0)
+        for k in map.keys.sorted() {
+            ans.append(map[k]![0])
+        }
+        return ans
+    }
+
+    func helper(_ root: TreeNode?, _ level: Int, _ depth: Int) {
+        guard let root = root else {return}
+        if map[level] == nil {
+            map[level] = [(root.val, depth)]
+        } else {
+            map[level]!.append((root.val, depth))
+        }
+
+        helper(root.right, level + 1, depth + 1)
+        helper(root.left, level - 1, depth + 1)
+
+
+    }
+     */
+
+}
 //class Q987__Vertical_Order_Traversal_of_a_Binary_Tree: XCTestCase {
 //
 //    override func setUpWithError() throws {
