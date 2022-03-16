@@ -53,18 +53,18 @@ private class Solution {
 //    }
     
     //有问题还没修好
-    func missingNumber(_ nums: [Int]) -> Int {
-        var temp = Array(repeating: false, count: nums.count)
-        for i in nums {
-            temp[i] = true
-        }
-        for j in 0..<temp.count {
-            if temp[j] == false {
-                return j
-            }
-        }
-        return nums.count
-    }
+//    func missingNumber(_ nums: [Int]) -> Int {
+//        var temp = Array(repeating: false, count: nums.count)
+//        for i in nums {
+//            temp[i] = true
+//        }
+//        for j in 0..<temp.count {
+//            if temp[j] == false {
+//                return j
+//            }
+//        }
+//        return nums.count
+//    }
     
     
 }
@@ -74,10 +74,10 @@ class Q268_Missing_Number: XCTestCase {
 
   
 
-    func testExample() throws {
-        let s = Solution()
-        let r = s.missingNumber([0,1,3])
-        print(r)
-    }
+//    func testExample() throws {
+//        let s = Solution()
+//        let r = s.missingNumber([0,1,3])
+//        print(r)
+//    }
 
 }
