@@ -33,32 +33,32 @@
 import XCTest
 
 private class Solution {
-    func removeNthFromEnd(_ head: ListNode?, _ n: Int) -> ListNode? {
-        guard let node = head, n > 0 else {return nil}
-        var listNode = node
-        var slowNode = node
-        var fastIndex = 0
-        var slowIndex = 0
-        
-        //first move fast to the end, move slow together and keep n gap
-        while listNode.next != nil {
-            if fastIndex >= n {
-                slowIndex += 1
-                slowNode = slowNode.next!
-            }
-            fastIndex += 1
-            listNode = listNode.next!
+func removeNthFromEnd(_ head: ListNode?, _ n: Int) -> ListNode? {
+    guard let node = head, n > 0 else {return nil}
+    var listNode = node
+    var slowNode = node
+    var fastIndex = 0
+    var slowIndex = 0
+    
+    //first move fast to the end, move slow together and keep n gap
+    while listNode.next != nil {
+        if fastIndex >= n {
+            slowIndex += 1
+            slowNode = slowNode.next!
         }
-        
-        //remove head
-        //fastIndex = 0, n = 1
-        if n == fastIndex + 1 {
-            return slowNode.next
-        }
-        //remove the underlying node
-        slowNode.next = slowNode.next?.next
-        return node
+        fastIndex += 1
+        listNode = listNode.next!
     }
+    
+    //remove head
+    //fastIndex = 0, n = 1
+    if n == fastIndex + 1 {
+        return slowNode.next
+    }
+    //remove the underlying node
+    slowNode.next = slowNode.next?.next
+    return node
+}
 }
 
 class Q19_Remove_Nth_Node_From_End_of_List: XCTestCase {
