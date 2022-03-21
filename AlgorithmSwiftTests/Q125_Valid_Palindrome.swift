@@ -34,10 +34,13 @@ private class Solution{
         var i = 0
         var j = chars.count - 1
         while i < j {
+            //exclude non-alphabetic characters(1. no letter, 2. no number)
             if !chars[i].isLetter && !chars[i].isNumber {
                 i += 1
             } else if !chars[j].isLetter && !chars[j].isNumber {
                 j -= 1
+            
+            //need to convert character to string to compare the lowercased()
             } else if String(chars[i]).lowercased() == String(chars[j]).lowercased(){
                 i += 1
                 j -= 1
