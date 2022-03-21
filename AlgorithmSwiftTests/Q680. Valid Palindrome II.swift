@@ -32,37 +32,44 @@
  */
 import XCTest
 private class Solution {
-    func validPalindrome(_ s: String) -> Bool {
-        var i = 0
-        var count = 0
-        var chars = Array(s)
-        var j = chars.count - 1
-        
-        while i <= j {
-            if chars[i] != chars[j] {
+func validPalindrome(_ s: String) -> Bool {
+    var i = 0
+    var count = 0
+    var chars = Array(s)
+    var j = chars.count - 1
+    
+    while i <= j {
+        if chars[i] != chars[j] {
+            if count < 1 {
+                count += 1
                 return isPalindrome(chars, i + 1, j) || isPalindrome(chars, i, j - 1)
-            }
-            i += 1
-            j -= 1
-        }
-        return true
-    }
-    
-    
-    func isPalindrome(_ chars: [Character], _ i: Int, _ j: Int) -> Bool {
-        var left = i
-        var right = j
-        while left < right {
-            if chars[left] != chars[right] {
+                
+            } else {
                 return false
             }
-            left += 1
-            right -= 1
             
         }
-        return true
+        i += 1
+        j -= 1
+    }
+    return true
+}
+
+
+func isPalindrome(_ chars: [Character], _ i: Int, _ j: Int) -> Bool {
+    var left = i
+    var right = j
+    while left < right {
+        if chars[left] != chars[right] {
+            return false
+        }
+        left += 1
+        right -= 1
         
     }
+    return true
+    
+}
 }
 class Q680__Valid_Palindrome_II: XCTestCase {
     
