@@ -43,6 +43,46 @@
  0 <= nums1[i], nums2[i] <= 100
  */
 //import XCTest
+
+class SparseVector {
+    
+    //initialize array pairs, and iterate through the nums array, for non-zero elemetns, put their index, and numerical value into pair array
+    private var pairs: [[Int]] = []
+    init(_ nums: [Int]) {
+        for i in 0..<nums.count {
+            if nums[i] != 0 {
+                self.pairs.append([i, nums[i]])
+            }
+        }
+    }
+    
+    
+    
+    //return the dotProduct of two sparse vectors
+    func dotProduct(_ vec: SparseVector) -> Int {
+        var result = 0
+        var p1 = 0 //pointer 1: first vector
+        var p2 = 0 //pointer 2: sparsevector
+        
+        while p1 < self.pairs.count && p2 < vec.pairs.count {
+            if self.pairs[p1][0] == vec.pairs[p2][0] {  //if index same
+                //compute
+                result += self.pairs[p1][1] * vec.pairs[p2][1]
+                p1 += 1
+                p2 += 1
+            } else if self.pairs[p1][0] < vec.pairs[p2][0] {
+                p1 += 1
+            } else {
+                p2 += 1
+            }
+        }
+        return result
+        
+    }
+    
+}
+
+
 //private class Solution {
 //    private var pairs: [[Int]] = []
 //    init(_ nums: [Int]) {
@@ -73,7 +113,7 @@
 //        }
 //        return result
 //    }
-//}
+}
 //
 //
 //
