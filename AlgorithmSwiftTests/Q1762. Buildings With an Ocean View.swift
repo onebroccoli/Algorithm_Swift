@@ -38,19 +38,6 @@
  */
 import XCTest
 private class Solution {
-    func findBuildings(_ heights: [Int]) -> [Int] {
-        var i = heights.count - 1
-        var result: [Int] = []
-        var maxHeight = Int.min
-        while i >= 0 {
-            if heights[i] > maxHeight {
-                maxHeight = heights[i]
-                result.insert(i, at: 0)
-            }
-            i -= 0
-        }
-    }
-    
     
     func findBuildings(_ heights: [Int]) -> [Int] {
         var i = heights.count - 1
