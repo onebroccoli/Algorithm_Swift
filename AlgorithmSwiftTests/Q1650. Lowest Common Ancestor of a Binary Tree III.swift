@@ -67,6 +67,7 @@ private class Solution {
         guard var root = p else {
             return nil
         }
+        //find root of the tree
         while root.parent != nil {
             root = root.parent!
         }
