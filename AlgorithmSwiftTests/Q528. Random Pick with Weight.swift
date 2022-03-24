@@ -74,7 +74,7 @@ private class Solution {
         let index = Int.random(in: 0..<total)
         var low = 0
         var high = pTotal.count - 1
-        while low != high {
+        while low < high {
             let mid = low + (high - low) / 2
             if pTotal[mid] <= index {
                 low = mid + 1
