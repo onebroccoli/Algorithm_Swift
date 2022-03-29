@@ -44,44 +44,92 @@ private class Solution {
         return l != nil ? l : r
     }
     
-    func lowestCommonAncestor_Iterative(_ root: TreeNode?, _ p: TreeNode?, _ q: TreeNode?) -> TreeNode? {
-        guard let root = root else {return nil}
-        guard let p = p, let q = q else {
-            return root
-        }
-        var parent = [TreeNode: TreeNode]()
-        var stack = [TreeNode]()
-        parent[root] = nil
-        stack.append(root)
-        while !parent.keys.contains(p) || !parent.keys.contains(q) {
-            let node = stack.removeLast()
-            if let left = node.left {
-                parent[left] = node
-                stack.append(left)
-            }
-            if let right = node.right {
-                parent[right] = node
-                stack.append(right)
-            }
-        }
-        
-        var ancestors: Set<TreeNode> = [p]
-        var pNode: TreeNode? = parent[p]
-        while pNode != nil {
-            ancestors.insert(pNode!)
-            pNode = parent[pNode!]
-        }
-        var qNode = q
-        while !ancestors.contains(qNode) {
-            if let qParent = parent[qNode]{
-                qNode = qParent
-                
-            } else {
-                break
-            }
-        }
-        return q
-    }
+//    func lowestCommonAncestor_Iterative(_ root: TreeNode?, _ p: TreeNode?, _ q: TreeNode?) -> TreeNode? {
+//        guard let root = root else {return nil}
+//        guard let p = p, let q = q else {
+//            return root
+//        }
+//        var parent = [TreeNode: TreeNode]()
+//        var stack = [TreeNode]()
+//        parent[root] = nil
+//        stack.append(root)
+//        while !parent.keys.contains(p) || !parent.keys.contains(q) {
+//            let node = stack.removeLast()
+//            if let left = node.left {
+//                parent[left] = node
+//                stack.append(left)
+//            }
+//            if let right = node.right {
+//                parent[right] = node
+//                stack.append(right)
+//            }
+//        }
+//
+//        var ancestors: Set<TreeNode> = [p]
+//        var pNode: TreeNode? = parent[p]
+//        while pNode != nil {
+//            ancestors.insert(pNode!)
+//            pNode = parent[pNode!]
+//        }
+//        var qNode = q
+//        while !ancestors.contains(qNode) {
+//            if let qParent = parent[qNode]{
+//                qNode = qParent
+//
+//            } else {
+//                break
+//            }
+//        }
+//        return q
+//    }
+    
+    
+//func lowestCommonAncestor(_ root: TreeNode?, _ p: TreeNode?, _ q: TreeNode?) -> TreeNode? {
+//    guard let root = root else {return nil}
+//    guard let p = p, let q = q else {
+//        return root
+//    }
+//    //stack for the tree traversal
+//    var stack = [TreeNode]()
+//    //hashmap for parent pointers
+//    var parent = [TreeNode: TreeNode]()
+//    parent[root] = nil
+//    stack.append(root)
+//    //iterate until we find both the nodes p and q
+//    while !parent.keys.contains(p) || !parent.keys.contains(q) {
+//        let node = stack.removeLast()
+//        //while traversing the tree, keep saving the parent pointers
+//        if let left = node.left {
+//            parent[left] = node
+//            stack.append(left)
+//        }
+//        if let right = node.right {
+//            parent[right] = node
+//            stack.append(right)
+//        }
+//    }
+//    //ancestors set() for node p
+//    var ancestors =  Set<TreeNode>()
+//    //process all ancestors for node p usng parent pointers
+//    var p = p
+//    while p != nil {
+//        ancestors.insert(p!)
+//        p = parent[p!]
+//    }
+//
+//    //first ancestor of q which appears in p's ancestor set() is their lca
+//    var q = q
+//    while !ancestor.contains(q) {
+//        if let qParent = parent[q] {
+//            q = qParent
+//        } else {
+//            break
+//        }
+//    }
+//    return q
+//
+//}
+
 }
 class Q236_Lowest_Common_Ancestor_of_a_Binary_Tree: XCTestCase {
 
