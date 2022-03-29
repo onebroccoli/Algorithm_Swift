@@ -25,6 +25,32 @@
  */
 import XCTest
 private class Colution {
+    func rightSideView(_ root: TreeNode?) -> [Int] {
+        guard let root = root else {return []}
+        var result = [Int]()
+        var current: [TreeNode] = [root]
+        var next: [TreeNode] = []
+        
+        while !current.isEmpty {
+            if current.count == 1 {
+                result.append(current[0].val)
+            }
+            let node = current.removeFirst()
+            if let left = node.left {
+                next.append(left)
+            }
+            if let right = node.right {
+                next.append(right)
+            }
+            
+            if current.count == 0 {
+                current = next
+                next = []
+            }
+        }
+        return result
+    }
+    
 
 func rightSideView(_ root: TreeNode?) -> [Int] {
     guard let root = root else {return []}
@@ -72,8 +98,8 @@ func dfs(_ root: TreeNode?, _ level: Int, _ res: inout [Int]) {
     } else {
         res[level] = root.val
     }
-    dfs(root.left, level + 1, &res)
     dfs(root.right, level + 1, &res)
+    dfs(root.left, level + 1, &res)
 }
 }
 class Q199_Binary_Tree_Right_Side_View: XCTestCase {
