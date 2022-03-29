@@ -28,21 +28,60 @@
  */
 import XCTest
 private class Solution {
-func lowestCommonAncestor(_ root: TreeNode?, _ p: TreeNode?, _ q: TreeNode?) -> TreeNode? {
-    guard let root = root else {return nil}
-    //if root is one or two, we can ignore the later recursion
-    if root.val == p?.val || root.val == q?.val {
-        return root
+    func lowestCommonAncestor(_ root: TreeNode?, _ p: TreeNode?, _ q: TreeNode?) -> TreeNode? {
+        guard let root = root else {return nil}
+        //if root is one or two, we can ignore the later recursion
+        if root.val == p?.val || root.val == q?.val {
+            return root
+        }
+        
+        var l:TreeNode? = lowestCommonAncestor(root.left, p, q)
+        var r: TreeNode? = lowestCommonAncestor(root.right, p, q)
+        
+        if l != nil && r != nil {
+            return root
+        }
+        return l != nil ? l : r
     }
     
-    var l:TreeNode? = lowestCommonAncestor(root.left, p, q)
-    var r: TreeNode? = lowestCommonAncestor(root.right, p, q)
-    
-    if l != nil && r != nil {
-        return root
+    func lowestCommonAncestor_Iterative(_ root: TreeNode?, _ p: TreeNode?, _ q: TreeNode?) -> TreeNode? {
+        guard let root = root else {return nil}
+        guard let p = p, let q = q else {
+            return root
+        }
+        var parent = [TreeNode: TreeNode]()
+        var stack = [TreeNode]()
+        parent[root] = nil
+        stack.append(root)
+        while !parent.keys.contains(p) || !parent.keys.contains(q) {
+            let node = stack.removeLast()
+            if let left = node.left {
+                parent[left] = node
+                stack.append(left)
+            }
+            if let right = node.right {
+                parent[right] = node
+                stack.append(right)
+            }
+        }
+        
+        var ancestors: Set<TreeNode> = [p]
+        var pNode: TreeNode? = parent[p]
+        while pNode != nil {
+            ancestors.insert(pNode!)
+            pNode = parent[pNode!]
+        }
+        var qNode = q
+        while !ancestors.contains(qNode) {
+            if let qParent = parent[qNode]{
+                qNode = qParent
+                
+            } else {
+                break
+            }
+        }
+        return q
     }
-    return l != nil ? l : r
-}
 }
 class Q236_Lowest_Common_Ancestor_of_a_Binary_Tree: XCTestCase {
 
