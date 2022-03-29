@@ -48,7 +48,7 @@ func sumNumbers(_ root: TreeNode?) -> Int {
 func dfs(_ node: TreeNode?, _ sum: Int) {
     var sum = sum
     if node != nil {
-        sum = sum * 10 + node!.val
+        sum = sum * 10 + node!.val //as go deeper in the tree, need to * 10 + current node value.
         //if it's a leaf, update root-to-leaf sum
         if node!.left == nil && node!.right == nil {
             rootToLeaf += sum
