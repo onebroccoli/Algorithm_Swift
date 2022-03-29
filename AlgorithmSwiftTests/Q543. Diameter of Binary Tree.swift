@@ -45,7 +45,7 @@ private class Solution {
         if root == nil {
             return 0
         }
-        //recursivel find the longest path in both left and right child
+        //recursively find the longest path in both left and right child
         var leftPath = dfs(root!.left)
         var rightPath = dfs(root!.right)
         //update diameter if left path and right path is larger
