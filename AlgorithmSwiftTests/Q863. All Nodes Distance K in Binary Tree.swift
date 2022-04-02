@@ -34,6 +34,49 @@
  */
 import XCTest
 
+private class Solution {
+func distanceK(_ root: TreeNode?, _ target: TreeNode?, _ k: Int) -> [Int] {
+    guard let root = root, let target = target?.val else { return []}
+    
+    //convert to graph
+    var g = [Int: [Int]]()
+    build(&g, root)
+    
+    //BFS
+    var visited = Set<Int>()
+    var queue = [target]
+    var steps = 0
+    
+    while !queue.isEmpty && steps < k {
+        
+        visited.formUnion(queue)
+        
+        let nexts = queue.flatMap {
+            (g[$0] ?? []).filter{!visited.contains($0)}
+            
+        }
+        queue = nexts
+        steps += 1
+        
+    }
+    return queue
+    
+}
+
+//build graph
+func build(_ graph: inout [Int: [Int]], _ curr: TreeNode) {
+    if let left = curr.left {
+        graph[curr.val, default: []].append(left.val)
+        graph[left.val, default: []].append(curr.val)
+        build(&graph, left)
+    }
+    if let right = curr.right {
+        graph[curr.val, default: []].append(right.val)
+        graph[right.val, default: []].append(curr.val)
+        build(&graph, right)
+    }
+}
+}
 class Q863__All_Nodes_Distance_K_in_Binary_Tree: XCTestCase {
 
     override func setUpWithError() throws {
