@@ -31,15 +31,16 @@
  1 <= Node.val <= 105
  */
 import XCTest
+/*
+ //dfs
 private class Solution {
     func balanceBST(_ root: TreeNode?) -> TreeNode? {
-        var inOrderArray = [Int]()
-        getSortedNodesArray(root, &inOrderArray)
-        return getBalancedBST(inOrderArray)
-    }
-    
-    
-    func getBalancedBinarySearchTree(_ rootsArr: [Int]) -> TreeNode? {
+            var inOrderArr = [Int]()
+            getSortedNodesArray(root, &inOrderArr)
+            return getBalancedBinarySearchTree(inOrderArr)
+        }
+        
+        func getBalancedBinarySearchTree(_ rootsArr: [Int]) -> TreeNode? {
             guard !rootsArr.isEmpty else {
                 return nil
             }
@@ -53,39 +54,113 @@ private class Solution {
             }
             return root
         }
-    
-    //turn the tree into in-order traversal array
-    func getSortedNodesArray(_ root: TreeNode?, _ array: inout [Int]){
-        guard let root = root else {return}
-        getSortedNodesArray(root.left, &array)
-        array.append(root.val)
-        getSortedNodesArray(root.right, &array)
         
-    }
-}
-class Q1382__Balance_a_Binary_Search_Tree: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        func getSortedNodesArray(_ root: TreeNode?, _ arr: inout [Int]) {
+            guard let inRoot = root else {
+                return
+            }
+            getSortedNodesArray(inRoot.left, &arr)
+            arr.append(inRoot.val)
+            getSortedNodesArray(inRoot.right, &arr)
         }
-    }
-
 }
+ */
+
+// binary search
+private class Solution {
+    
+func balanceBST(_ root: TreeNode?) -> TreeNode? {
+    var array = [Int]()
+    inOrder(root, array: &array)
+    return buildBST(array, 0, array.count - 1)
+}
+
+//inorder traversal tree to get sorted array
+private func inOrder(_ node: TreeNode?, array: inout [Int]) {
+    guard let node = node else {return}
+    inOrder(node.left, array: &array)
+    array.append(node.val)
+    inOrder(node.right, array: &array)
+}
+
+//turn sorted array into a balanced tree
+private func buildBST(_ array: [Int], _ start: Int, _ end: Int) -> TreeNode? {
+    if start > end {
+        return nil
+    }
+    let mid = start + (end - start) / 2
+    let node = TreeNode(array[mid])
+    node.left = buildBST(array, start, mid - 1)
+    node.right = buildBST(array, mid + 1, end)
+    return node
+}
+        /*
+        round1: start 0, end 3
+          mid = 1
+        node = treenode(2)
+         node(2).left =
+        */
+        
+//        if start - end == 0 {
+//            return nil
+//        }
+//        let midIndex = start + (end - start) / 2
+//        let node = TreeNode(array[midIndex])
+//        if midIndex > 0 {
+//            node.left = treeFromArray(array, start: start, end: midIndex)
+//        }
+//        if midIndex + 1 < array.count {
+//            node.right = treeFromArray(array, start: midIndex + 1, end: end)
+//        }
+//        return node
+    }
+    
+    /*
+     test:
+     1
+      \2
+       \3
+        \4
+     
+     result:
+     2
+     /\
+     1 3
+     first convert to 1 2 3 4
+     treeFromArray([1,2,3,4], 0, 3)
+     mid = 1
+     node = TreeNode(2)
+     //node(2)
+     node(2).left = treeFromArray([1,2,3,4], 0, 1) = node(1)
+        //
+        mid = 0
+        node = treenode(1)
+        node(1).right = treeFromArray([1,2,3,4], 1, 1)
+         //return nil
+        return node(1)
+     
+     mid(1) + 1< count(4)
+     node(2).right = treeFromArray([1,2,3,4], 2, 3) //3
+        //
+        mid = 2 + (3-2)/2 = 2
+        node = treenode(3)
+        node(3).left = treeFromArray([1,2,3,4], 2, 2)
+            // 2-2 == 0
+            return nil
+        node(3).right = treeFromArray([1,2,3,4], 3, 3)
+            //3 -3 = 0
+            return nil
+        return node(3)
+     
+            
+        
+     */
+    
+
+//class Q1382__Balance_a_Binary_Search_Tree: XCTestCase {
+//
+//
+//    func testExample() throws {
+//    }
+//
+//}
