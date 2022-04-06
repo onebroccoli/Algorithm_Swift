@@ -22,23 +22,42 @@
  */
 import XCTest
 private class Solution {
-func closestValue(_ root: TreeNode?, _ target: Double) -> Int {
-    var minValue: Double = Double(Int.max)
-    var result: Int = Int.max
-    helper(root, target, &minValue, &result)
-    return result
-}
+    /*
+     func closestValue(_ root: TreeNode?, _ target: Double) -> Int {
+         var minValue: Double = Double(Int.max)
+         var result: Int = Int.max
+         helper(root, target, &minValue, &result)
+         return result
+     }
 
-func helper(_ root: TreeNode?, _ target: Double,  _ min: inout Double, _ result: inout Int) {
+     func helper(_ root: TreeNode?, _ target: Double,  _ min: inout Double, _ result: inout Int) {
+         if root == nil {
+             return
+         }
+         helper(root?.left, target, &min, &result)
+         if abs(Double(root!.val) - target) < min {
+             min = abs(Double(root!.val) - target)
+             result = root!.val
+         }
+         helper(root?.right, target, &min, &result)
+     }
+     */
+
+func closestValue(_ root: TreeNode?, _ target: Double) -> Int {
     if root == nil {
-        return
+        return Int.max
     }
-    helper(root?.left, target, &min, &result)
-    if abs(Double(root!.val) - target) < min {
-        min = abs(Double(root!.val) - target)
-        result = root!.val
+    var root = root
+    var closest = root!.val
+    var val = root!.val
+    while root != nil {
+        val = root!.val
+        closest = abs(Double(val) - target) < abs(Double(closest) - target) ? val : closest
+        root = target < Double(root!.val) ? root!.left : root!.right
+        
     }
-    helper(root?.right, target, &min, &result)
+    return closest
+    
 }
 }
 class Q270_Closest_Binary_Search_Tree_Value: XCTestCase {
