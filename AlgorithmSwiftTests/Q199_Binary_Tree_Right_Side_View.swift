@@ -25,7 +25,7 @@
  */
 import XCTest
 private class Colution {
-    func rightSideView(_ root: TreeNode?) -> [Int] {
+    func rightSideView2(_ root: TreeNode?) -> [Int] {
         guard let root = root else {return []}
         var result = [Int]()
         var current: [TreeNode] = [root]
