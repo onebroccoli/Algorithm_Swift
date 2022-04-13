@@ -52,29 +52,42 @@
 
 
 //import XCTest
-//private class Solution {
-//    var visitedNode: [Int: Node] = [:]
-//
-//    func cloneGraph(_ node: Node?) -> Node? {
-//        guard let val = node?.val else { return nil }
-//        //1. if already visited, return and pass
-//        if let cloneNode = visitedNode[val] { return cloneNode }
-//
-//        //2. if not visited, turn val into node, and register in visitedNode
-//        let root = Node(val) //copy
-//        visitedNode[val] = root
-//        // for neighbor in node?.neighbors ?? [] {
-//
-//        //start copy neighbors using dfs, then append to new root.
-//        for neighbor in node!.neighbors{
-//
-//            if let cloneNeighbor = cloneGraph(neighbor) {
-//                root.neighbors.append(cloneGraph(neighbor))
-//            }
-//        }
-//        return root
-//    }
-//}
+private class bNode {
+    public var val: Int
+    public var neighbors: [bNode?]
+    public init(_ val: Int) {
+        self.val = val
+        self.neighbors = []
+    }
+    
+    
+}
+
+
+
+private class Solution {
+    var visitedNode: [Int: bNode] = [:]
+
+    func cloneGraph(_ node: bNode?) -> bNode? {
+        guard let val = node?.val else { return nil }
+        //1. if already visited, return and pass
+        if let cloneNode = visitedNode[val] { return cloneNode }
+
+        //2. if not visited, turn val into node, and register in visitedNode
+        let root = bNode(val) //copy
+        visitedNode[val] = root
+        // for neighbor in node?.neighbors ?? [] {
+
+        //start copy neighbors using dfs, then append to new root.
+        for neighbor in node!.neighbors{
+
+            if let cloneNeighbor = cloneGraph(neighbor) {
+                root.neighbors.append(cloneGraph(neighbor))
+            }
+        }
+        return root
+    }
+}
 //class Q133_Clone_Graph: XCTestCase {
 //
 //
