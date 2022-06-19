@@ -32,24 +32,24 @@
 import XCTest
 
 private class Solution{
-    func threeSumSmaller(_ nums: [Int], _ target: Int) -> Int{
-        let nums = nums.sorted()
-        if nums.count < 3 {return 0}
-        var result: Int = 0
-        for i in 0..<(nums.count - 2){
-            var left: Int = i + 1
-            var right: Int = nums.count - 1
-            while left < right {
-                if nums[i] + nums[left] + nums[right] < target {
-                    result += right - left
-                    left += 1
-                } else {
-                    right -= 1
-                }
+func threeSumSmaller(_ nums: [Int], _ target: Int) -> Int{
+    let nums = nums.sorted()
+    if nums.count < 3 {return 0}
+    var result: Int = 0
+    for i in 0..<(nums.count - 2){
+        var left: Int = i + 1
+        var right: Int = nums.count - 1
+        while left < right {
+            if nums[i] + nums[left] + nums[right] < target {
+                result += right - left
+                left += 1
+            } else {
+                right -= 1
             }
         }
-        return result
     }
+    return result
+}
 }
 //    func threeSumSmaller(_ nums: [Int], _ target: Int) -> Int {
 //        if nums.count < 3 {
