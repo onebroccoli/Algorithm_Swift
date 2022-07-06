@@ -82,8 +82,8 @@ class Q167_Two_Sum_II_Input_Array_Is_Sorted: XCTestCase {
 
     func testExample() throws {
         let s = Solution()
-        let a = [2,7, 11, 15]
-        var result = s.twoSum(a, 9)
+        let a = [2,3,1,2,4,3]
+        var result = s.twoSum(a, 7)//2
         print(result)
     }
 
