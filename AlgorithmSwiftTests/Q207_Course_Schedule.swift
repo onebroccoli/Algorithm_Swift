@@ -61,20 +61,20 @@ func canFinish(_ numCourses: Int, _ prerequisites: [[Int]]) -> Bool {
     //all prerequisite pairs must be found
     //we dont need to visit courses with no prerequisites, those can be taken freely
     //we need to construct a graph of courses with prerequisites
-    var prereqMap: [Int: [Int]] = [Int:[Int]]() //prerequisite map
+    var courseDict: [Int: [Int]] = [Int:[Int]]() //prerequisite map
     for pair in prerequisites {
         var course = pair[0]
         var prereq = pair[1]
-        if prereqMap[course] == nil {
-            prereqMap[course] = [Int]()
+        if courseDict[course] == nil {
+            courseDict[course] = [Int]()
         }
-        prereqMap[course]!.append(prereq)
+        courseDict[course]!.append(prereq)
     }
     //check all courses with prereqs
-    for course in prereqMap.keys {
+    for course in courseDict.keys {
         var seen = Set<Int>()
         var taken = Set<Int>()//add taken set to handle time limit exceeded. we dont need to recheck prereqs for already taken classes
-        var didTake = self.takeCourse(course, &seen, &taken, prereqMap)
+        var didTake = self.takeCourse(course, &seen, &taken, courseDict)
         if didTake == false {
             return false
         }
@@ -84,13 +84,13 @@ func canFinish(_ numCourses: Int, _ prerequisites: [[Int]]) -> Bool {
     
 }
 
-func takeCourse(_ course: Int, _ seen: inout Set<Int>, _ taken: inout Set<Int>, _ prereqMap: [Int:[Int]]) -> Bool {
+func takeCourse(_ course: Int, _ seen: inout Set<Int>, _ taken: inout Set<Int>, _ courseDict: [Int:[Int]]) -> Bool {
     //course does not have prereqs
-    if prereqMap[course] == nil {
+    if courseDict[course] == nil {
         taken.insert(course)
         return true
     }
-    if let prereqs = prereqMap[course]{
+    if let prereqs = courseDict[course]{
         for prereq in prereqs {
             //already took the prereq, skip checking
             if taken.contains(prereq) {
@@ -101,7 +101,7 @@ func takeCourse(_ course: Int, _ seen: inout Set<Int>, _ taken: inout Set<Int>, 
                 return false
             } else {
                 seen.insert(course)
-                var didTake = takeCourse(prereq, &seen, &taken, prereqMap)
+                var didTake = takeCourse(prereq, &seen, &taken, courseDict)
                 seen.remove(course)
                 if didTake == false {
                     return false
