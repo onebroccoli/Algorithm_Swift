@@ -39,100 +39,150 @@
  All the pairs [ai, bi] are distinct.
  */
 import XCTest
+
+//Solution 1:
+
+//private class Solution {
+//func findOrder(_ numCourses: Int, _ prerequisites: [[Int]]) -> [Int] {
+//
+//    /**
+//    Create a graph of empty arrays for each course.
+//    The graph represents each courses goal.
+//    For example: I need this course to be able to do XY.
+//    I need to finish course 2 to be able to do courses [3,4]
+//    */
+//    var graph: [[Int]] = Array(repeating: [], count: numCourses)
+//
+//    // Iterate through the prerequisites to fill the graph
+//    for element in prerequisites {
+//
+//        // Set for each requirement the course you can do once done
+//        graph[element[1]].append(element[0])
+//    }
+//
+//    /**
+//    Init a visiting and visited array.
+//    Both representing the total amount of courses and both
+//    implemented false to begin with.
+//    */
+//    var visiting: [Bool] =  Array(repeating: false, count: numCourses)
+//    var visited: [Bool] =  Array(repeating: false, count: numCourses)
+//    var result: [Int] = []
+//
+//    // Iterate through each course
+//    for course in 0..<numCourses {
+//
+//        // And check if we can find a circle
+//        if foundCircle(in: graph, at: course, visiting: &visiting, visited: &visited, result: &result) {
+//            return []
+//        }
+//    }
+//
+//    /**
+//    The result array is in descending order
+//    starting from the last node of the DFS.
+//    So we need to reverse it.
+//    */
+//    return result.reversed()
+//}
+//
+//private func foundCircle(in graph: [[Int]],
+//                        at course: Int,
+//                        visiting: inout [Bool],
+//                        visited: inout [Bool],
+//                        result: inout [Int]) -> Bool {
+//
+//    /**
+//    If we are currently visiting the neighbors of this course,
+//    it means that we have found a circle.
+//    Example: Course 0 requires course 1, and course 1 course 0.
+//    */
+//    if visiting[course] == true {
+//        return true
+//    }
+//
+//    /**
+//    If we have already visited this node, we know it's fine
+//    and we can return true. There can't be a circle
+//    otherwise we would have never successfully visited it.
+//    */
+//    if visited[course] == true {
+//        return false
+//    }
+//
+//    /**
+//    Set the current node to visiting,
+//    to be able to catch it above on the recursion
+//    */
+//    visiting[course] = true
+//
+//    // Iterate through the current node's neighbors
+//    for neighbor in graph[course] {
+//
+//        // If we find a circle, return true
+//        if foundCircle(in: graph, at: neighbor, visiting: &visiting, visited: &visited, result: &result) {
+//            return true
+//        }
+//    }
+//
+//    // Append the current node
+//    result.append(course)
+//
+//    // Set the visiting back to false
+//    visiting[course] = false
+//
+//    // And update the visitation
+//    visited[course] = true
+//    return false
+//}
+//
+//}
+
+//Solution 2:
+
 private class Solution {
 func findOrder(_ numCourses: Int, _ prerequisites: [[Int]]) -> [Int] {
-        
-    /**
-    Create a graph of empty arrays for each course.
-    The graph represents each courses goal.
-    For example: I need this course to be able to do XY.
-    I need to finish course 2 to be able to do courses [3,4]
-    */
-    var graph: [[Int]] = Array(repeating: [], count: numCourses)
-    
-    // Iterate through the prerequisites to fill the graph
-    for element in prerequisites {
-
-        // Set for each requirement the course you can do once done
-        graph[element[1]].append(element[0])
+    var visited = [Int: Bool]()
+    var cycle = [Int: Bool]()
+    var courseMap = [Int: [Int]]()
+    var output = [Int]()
+    for pre in prerequisites {
+        courseMap[pre[0], default: [Int]()].append(pre[1])
     }
     
-    /**
-    Init a visiting and visited array.
-    Both representing the total amount of courses and both
-    implemented false to begin with.
-    */
-    var visiting: [Bool] =  Array(repeating: false, count: numCourses)
-    var visited: [Bool] =  Array(repeating: false, count: numCourses)
-    var result: [Int] = []
     
-    // Iterate through each course
+    
     for course in 0..<numCourses {
-        
-        // And check if we can find a circle
-        if foundCircle(in: graph, at: course, visiting: &visiting, visited: &visited, result: &result) {
+        if !dfs(course, &visited, &cycle, &output, courseMap) {
             return []
         }
     }
     
-    /**
-    The result array is in descending order
-    starting from the last node of the DFS.
-    So we need to reverse it.
-    */
-    return result.reversed()
+    return output
 }
 
-private func foundCircle(in graph: [[Int]],
-                        at course: Int,
-                        visiting: inout [Bool],
-                        visited: inout [Bool],
-                        result: inout [Int]) -> Bool {
-    
-    /**
-    If we are currently visiting the neighbors of this course,
-    it means that we have found a circle.
-    Example: Course 0 requires course 1, and course 1 course 0.
-    */
-    if visiting[course] == true {
+
+func dfs(_ course: Int, _ visited: inout [Int: Bool], _ cycle: inout [Int: Bool], _ output: inout [Int], _ courseMap: [Int: [Int]]) -> Bool {
+    if visited[course] != nil {
         return true
     }
-    
-    /**
-    If we have already visited this node, we know it's fine
-    and we can return true. There can't be a circle
-    otherwise we would have never successfully visited it.
-    */
-    if visited[course] == true {
+    if cycle[course] != nil {
         return false
     }
     
-    /**
-    Set the current node to visiting,
-    to be able to catch it above on the recursion
-    */
-    visiting[course] = true
-    
-    // Iterate through the current node's neighbors
-    for neighbor in graph[course] {
-        
-        // If we find a circle, return true
-        if foundCircle(in: graph, at: neighbor, visiting: &visiting, visited: &visited, result: &result) {
-            return true
+    if let pre = courseMap[course] {
+        cycle[course] = true
+        for prerequisite in pre {
+            if !dfs(prerequisite, &visited, &cycle, &output, courseMap) {
+                return false
+            }
         }
+        cycle[course] = nil
     }
-
-    // Append the current node
-    result.append(course)
-    
-    // Set the visiting back to false
-    visiting[course] = false
-
-    // And update the visitation
     visited[course] = true
-    return false
+    output.append(course)
+    return true
 }
-    
 }
 class Q210_Course_Schedule_II: XCTestCase {
 
