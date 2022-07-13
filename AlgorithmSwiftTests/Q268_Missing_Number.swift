@@ -43,41 +43,51 @@
  */
 import XCTest
 private class Solution {
-//    func missingNumber(_ nums: [Int]) -> Int {
-//        let n = nums.count
-//        var sum = (1+n) * n / 2
-//        for n in nums {
-//            sum -= n
-//        }
-//        return sum
-//    }
+func missingNumber(_ nums: [Int]) -> Int {
+    let n = nums.count
+    var sum = (1+n) * n / 2
+    for n in nums {
+        sum -= n
+    }
+    return sum
+}
+func missingNumberBinarySearch(_ nums: [Int]) -> Int {
+    if nums == nil || nums.count == 0 {
+        return -1
+    }
+    var nums = nums.sorted()
+    var left =  0
+    var right = nums.count
+    if nums[0] == 1 {return 0}
+    if nums[right - 1] == right - 1 {return right}
     
-    //有问题还没修好
-//    func missingNumber(_ nums: [Int]) -> Int {
-//        var temp = Array(repeating: false, count: nums.count)
-//        for i in nums {
-//            temp[i] = true
-//        }
-//        for j in 0..<temp.count {
-//            if temp[j] == false {
-//                return j
-//            }
-//        }
-//        return nums.count
-//    }
+    while left <= right {
+        var mid = left + (right - left) / 2
+        if nums[mid - 1] + 1 != nums[mid] {return nums[mid - 1] + 1}
+        if mid == nums[mid] {
+            left = mid + 1
+        } else {
+            right = mid - 1
+        }
+    }
+    return -1
+}
+
+    
+
     
     
 }
 
 
 class Q268_Missing_Number: XCTestCase {
-
+    
   
 
-//    func testExample() throws {
-//        let s = Solution()
-//        let r = s.missingNumber([0,1,3])
-//        print(r)
-//    }
+    func testExample() throws {
+        let s = Solution()
+        let r = s.missingNumber([0,1,3])
+        print(r)
+    }
 
 }
