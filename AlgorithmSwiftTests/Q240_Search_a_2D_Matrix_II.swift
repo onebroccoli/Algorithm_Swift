@@ -37,49 +37,49 @@
  */
 import XCTest
 private class Solution{
-    func searchMatrix(_ matrix: [[Int]], _ target: Int) -> Bool {
-        if matrix[0].count == 0 {
-            return false
+func searchMatrix(_ matrix: [[Int]], _ target: Int) -> Bool {
+    if matrix[0].count == 0 {
+        return false
+    }
+    //iterate over matrix diagnals
+    let shorterDim = min(matrix.count, matrix[0].count);
+    for i in 0..<shorterDim {
+        let verticalFound = binarySearch(matrix, target, i, true);
+        let horizontalFound = binarySearch(matrix, target, i, false);
+        if (verticalFound || horizontalFound){
+            return true
         }
-        //iterate over matrix diagnals
-        let shorterDim = min(matrix.count, matrix[0].count);
-        for i in 0..<shorterDim {
-            let verticalFound = binarySearch(matrix, target, i, true);
-            let horizontalFound = binarySearch(matrix, target, i, false);
-            if (verticalFound || horizontalFound){
+    }
+    return false
+}
+
+func binarySearch(_ matrix: [[Int]], _ target: Int, _ start: Int, _ vertical: Bool) -> Bool {
+    var lo = start
+    var hi = vertical ? matrix[0].count - 1 : matrix.count - 1
+    while (lo <= hi){
+        let mid = (lo + hi) / 2
+        //search column
+        if vertical {
+            if matrix[start][mid] == target {
                 return true
-            }
-        }
-        return false
-    }
-    
-    func binarySearch(_ matrix: [[Int]], _ target: Int, _ start: Int, _ vertical: Bool) -> Bool {
-        var lo = start
-        var hi = vertical ? matrix[0].count - 1 : matrix.count - 1
-        while (lo <= hi){
-            let mid = (lo + hi) / 2
-            //search column
-            if vertical {
-                if matrix[start][mid] == target {
-                    return true
-                } else if matrix[start][mid] < target {
-                    lo = mid + 1
-                } else {
-                    hi = mid - 1
-                }
-            //search row
+            } else if matrix[start][mid] < target {
+                lo = mid + 1
             } else {
-                if matrix[mid][start] == target {
-                    return true
-                } else if matrix[mid][start] < target{
-                    lo = mid + 1
-                } else {
-                    hi = mid - 1
-                }
+                hi = mid - 1
+            }
+            //search row
+        } else {
+            if matrix[mid][start] == target {
+                return true
+            } else if matrix[mid][start] < target{
+                lo = mid + 1
+            } else {
+                hi = mid - 1
             }
         }
-        return false
     }
+    return false
+}
 }
 
 
