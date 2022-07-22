@@ -122,14 +122,23 @@ private class Solution {
     
     
 }
+/*
+ left =  0,0,1,
+ right = 0,1,
+ minDeque = 0,nil 1,  [1,2],
+ maxDeque = 0,[0,1],1, 2,
+ 
+ 
+ */
 class Q1438__Longest_Continuous_Subarray_With_Absolute_Diff_Less_Than_or_Equal_to_Limit: XCTestCase {
 
    
     func testExample() throws {
        let s = Solution()
-        let a = [8,2,4,7]
-        let result = s.longestSubarray_bruteforce(a, 4)
+        let a = [10,1,2,4,7,2]
+        let result = s.longestSubarray(a, 5) //output: 4
         print("result ==== : ", result)
     }
 
 }
+
